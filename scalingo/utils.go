@@ -1,11 +1,11 @@
-package zendesk
+package scalingo
 
 import (
 	"context"
 	"errors"
 	"os"
 
-	"github.com/scalingo/go-scalingo"
+	"github.com/Scalingo/go-scalingo/v4"
 	"github.com/turbot/steampipe-plugin-sdk/plugin"
 )
 
@@ -14,9 +14,9 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	token := os.Getenv("SCALINGO_TOKEN")
 
 	scalingoConfig := GetConfig(d.Connection)
-	if &scalingoonfig != nil {
-		if scalingokConfig.Endpoint != nil {
-			endpoint = *scalingokConfig.Endpoint
+	if &scalingoConfig != nil {
+		if scalingoConfig.Endpoint != nil {
+			endpoint = *scalingoConfig.Endpoint
 		}
 		if scalingoConfig.Token != nil {
 			token = *scalingoConfig.Token

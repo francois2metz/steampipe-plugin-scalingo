@@ -1,10 +1,10 @@
 package main
 
 import (
-    "github.com/turbot/steampipe-plugin-sdk/plugin"
-    "github.com/francois2metz/steampipe-plugin-scalingo/scalingo"
+	"github.com/francois2metz/steampipe-plugin-scalingo/scalingo"
+	"github.com/turbot/steampipe-plugin-sdk/plugin"
 )
 
 func main() {
-    plugin.Serve(&plugin.ServeOpts{PluginFunc: scalingo.Plugin})
+	plugin.Serve(&plugin.ServeOpts{PluginFunc: scalingo.Plugin})
 }

@@ -3,8 +3,6 @@ package scalingo
 import (
     "context"
 
-    "github.com/Scalingo/go-scalingo"
-
     "github.com/turbot/steampipe-plugin-sdk/grpc/proto"
     "github.com/turbot/steampipe-plugin-sdk/plugin"
 )
@@ -22,7 +20,7 @@ func tableScalingoApps() *plugin.Table {
         },
         Columns: []*plugin.Column{
             {Name: "id", Type: proto.ColumnType_STRING, Description: "unique id of the appliation"},
-            {Name: "name", Type: &proto.ColumnType_STRING, Description: "name of the application"},
+            {Name: "name", Type: proto.ColumnType_STRING, Description: "name of the application"},
             {Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "creation date of the applciation"},
             {Name: "updated_at", Type: proto.ColumnType_DATETIME, Description: "last time the application has been updated"},
             {Name: "git_url", Type: proto.ColumnType_STRING, Description: "URL to the GIT remote to access your application"},
@@ -41,7 +39,7 @@ func tableScalingoApps() *plugin.Table {
 }
 
 func listApp(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
-	client, err := connect(ctx)
+	client, err := connect(ctx, d)
 	if err != nil {
 		return nil, err
 	}
@@ -56,15 +54,15 @@ func listApp(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 }
 
 func getApp(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
-    client, err := connect(ctx)
+    client, err := connect(ctx, d)
     if err != nil {
         return nil, err
     }
     quals := d.KeyColumnQuals
     plugin.Logger(ctx).Warn("getApp", "quals", quals)
-    name := quals["name"].GetInt64Value()
-    plugin.Logger(ctx).Warn("getApp", "name", id)
-    result, err := client.AppsShow(ctx, name)
+    name := quals["name"].GetStringValue()
+    plugin.Logger(ctx).Warn("getApp", "name", name)
+    result, err := client.AppsShow(name)
     if err != nil {
         return nil, err
     }
