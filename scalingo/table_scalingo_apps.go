@@ -22,6 +22,8 @@ func tableScalingoApps() *plugin.Table {
         Columns: []*plugin.Column{
             {Name: "id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Id"), Description: "unique id of the application"},
             {Name: "name", Type: proto.ColumnType_STRING, Description: "name of the application"},
+            {Name: "region", Type: proto.ColumnType_STRING, Description: "region of the application"},
+            {Name: "status", Type: proto.ColumnType_STRING, Description: "status of the application"},
             {Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "creation date of the application"},
             {Name: "updated_at", Type: proto.ColumnType_DATETIME, Description: "last time the application has been updated"},
             {Name: "git_url", Type: proto.ColumnType_STRING, Transform: transform.FromField("GitUrl"), Description: "URL to the GIT remote to access your application"},
@@ -33,7 +35,6 @@ func tableScalingoApps() *plugin.Table {
             {Name: "router_logs", Type: proto.ColumnType_BOOL, Description: "activation of the router logs in your app logs"},
             {Name: "last_deployed_at", Type: proto.ColumnType_DATETIME, Description: "date of the last deployment attempt"},
             {Name: "last_deployed_by", Type: proto.ColumnType_STRING, Description: "user who attempted the last deployment"},
-            {Name: "last_deployment_id", Type: proto.ColumnType_STRING, Description: "id of the last successful deployment"},
             {Name: "stack_id", Type: proto.ColumnType_STRING, Description: "id of the stack used"},
         },
     }
