@@ -37,3 +37,8 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	}
 	return scalingo.New(config)
 }
+
+
+func appNameQual(_ context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
+	return d.KeyColumnQuals["app_name"].GetStringValue(), nil
+}
