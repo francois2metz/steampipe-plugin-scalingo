@@ -30,6 +30,13 @@ func tableScalingoAddons() *plugin.Table {
 			{Name: "provider_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("AddonProvider.ID"), Description: "id of the provider"},
 			{Name: "provider_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("AddonProvider.Name"), Description: "name of the provider"},
 			{Name: "provider_logo_url", Type: proto.ColumnType_STRING, Transform: transform.FromField("AddonProvider.LogoURL"), Description: "Logo url of the provider"},
+			{Name: "plan_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.ID"), Description: "id of the plan"},
+			{Name: "plan_logo_url", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.LogoURL"), Description: "logo url of the plan"},
+			{Name: "plan_display_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.DisplayName"), Description: "display name of the plan"},
+			{Name: "plan_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.Name"), Description: "name of the plan"},
+			{Name: "plan_description", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.Description"), Description: "description of the plan"},
+			{Name: "plan_price", Type: proto.ColumnType_DOUBLE, Transform: transform.FromField("Plan.Price"), Description: "price of the plan"},
+			{Name: "plan_sku", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.SKU"), Description: "SKU of the plan"},
 		},
 	}
 }
