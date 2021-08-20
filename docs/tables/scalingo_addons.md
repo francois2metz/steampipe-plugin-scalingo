@@ -1,4 +1,4 @@
-# Table: scalingo_apps
+# Table: scalingo_addons
 
 An addons is a database or other things attached to an application.
 
