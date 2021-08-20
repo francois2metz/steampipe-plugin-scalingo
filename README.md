@@ -16,4 +16,4 @@ Install the plugin with [Steampipe][]:
 Apache 2
 
 [steampipe]: https://steampipe.io
-[scalingo]: https://scalingo.io
+[scalingo]: https://scalingo.com
