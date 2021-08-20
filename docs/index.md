@@ -108,7 +108,7 @@ connection "scalingo_all {
 
 Querying tables from this connection will return results from the `scalingo_osc`, and `scalingo_secnum` connections:
 ```sql
-select * from scalingo_app.scalingo_apps
+select * from scalingo_all.scalingo_apps
 ```
 
 Steampipe supports the `*` wildcard in the connection names.  For example, to aggregate all the Scalingo plugin connections whose names begin with `scalingo_`:
