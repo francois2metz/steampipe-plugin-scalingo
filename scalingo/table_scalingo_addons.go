@@ -14,7 +14,7 @@ func tableScalingoAddons() *plugin.Table {
 		Description: "Get addons from a specific app",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate: listAddon,
+			Hydrate:    listAddon,
 		},
 		Get: &plugin.GetConfig{
 			KeyColumns: plugin.AllColumns([]string{"app_name", "id"}),
