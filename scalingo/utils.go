@@ -9,6 +9,8 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/plugin"
 )
 
+const defaultEndpointUrl = "https://api.osc-fr1.scalingo.com"
+
 func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error) {
 	endpoint := os.Getenv("SCALINGO_ENDPOINT")
 	token := os.Getenv("SCALINGO_TOKEN")
@@ -24,7 +26,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	}
 
 	if endpoint == "" {
-		return nil, errors.New("'endpoint' must be set in the connection configuration. Edit your connection configuration file and then restart Steampipe")
+		endpoint = defaultEndpointUrl
 	}
 
 	if token == "" {

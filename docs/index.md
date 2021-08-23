@@ -56,8 +56,8 @@ Installing the latest scalingo plugin will create a config file (`~/.steampipe/c
 connection "scalingo" {
   plugin    = "scalingo"
 
-  # The API Endpoint (required)
-  endpoint      = "https://api.osc-fr1.scalingo.com"
+  # The API Endpoint (default is https://api.osc-fr1.scalingo.com)
+  # endpoint      = "https://api.osc-fr1.scalingo.com"
 
   # API token for your scalingo instance (required).
   #token      = "YOUR_SCALINGO_TOKEN"
