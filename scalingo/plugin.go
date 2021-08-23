@@ -16,8 +16,8 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			Schema:      ConfigSchema,
 		},
 		TableMap: map[string]*plugin.Table{
-			"scalingo_apps":   tableScalingoApps(),
-			"scalingo_addons": tableScalingoAddons(),
+			"scalingo_apps":          tableScalingoApps(),
+			"scalingo_addons":        tableScalingoAddons(),
 			"scalingo_collaborators": tableScalingoCollaborators(),
 		},
 	}
