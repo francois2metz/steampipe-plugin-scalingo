@@ -7,4 +7,4 @@ connection "scalingo" {
 
     # API token for your scalingo instance (required).
     #token      = "YOUR_SCALINGO_TOKEN"
-  }
+}
