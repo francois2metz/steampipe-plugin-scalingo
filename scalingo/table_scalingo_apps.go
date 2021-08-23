@@ -63,9 +63,7 @@ func getApp(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (in
 		return nil, err
 	}
 	quals := d.KeyColumnQuals
-	plugin.Logger(ctx).Warn("getApp", "quals", quals)
 	name := quals["name"].GetStringValue()
-	plugin.Logger(ctx).Warn("getApp", "name", name)
 	result, err := client.AppsShow(name)
 	if err != nil {
 		return nil, err
