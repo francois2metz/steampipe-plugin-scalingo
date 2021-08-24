@@ -1,4 +1,4 @@
-# Scalingo plugin for Steampipe 
+# Scalingo plugin for Steampipe
 
 Use SQL to query infrastructure including applications and addons from [Scalingo][].
 
@@ -10,6 +10,16 @@ Use SQL to query infrastructure including applications and addons from [Scalingo
 Install the plugin with [Steampipe][]:
 
     steampipe plugin install francois2metz/scalingo
+
+## Development
+
+To buile the plugin and install it in your `.steampipe` directory
+
+    make
+
+Copy the default config file:
+
+    cp config/scalingo.spc ~/.steampipe/config/scalingo.spc
 
 ## License
 
