@@ -3,6 +3,7 @@ package scalingo
 import (
 	"context"
 
+	"github.com/Scalingo/go-scalingo/v4"
 	"github.com/turbot/steampipe-plugin-sdk/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
@@ -44,13 +45,20 @@ func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
+	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
 
-	deployments, err := client.DeploymentList(appName)
-	if err != nil {
-		return nil, err
-	}
-	for _, deployment := range deployments {
-		d.StreamListItem(ctx, deployment)
+	for {
+		deployments, pagination, err := client.DeploymentListWithPagination(appName, opts)
+		if err != nil {
+			return nil, err
+		}
+		for _, deployment := range deployments {
+			d.StreamListItem(ctx, deployment)
+		}
+		if pagination.NextPage == 0 {
+			break
+		}
+		opts.Page = pagination.NextPage
 	}
 	return nil, nil
 }
