@@ -8,9 +8,9 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
 )
 
-func tableScalingoDeployments() *plugin.Table {
+func tableScalingoDeployment() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_deployments",
+		Name:        "scalingo_deployment",
 		Description: "Get deployments from a specific app",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),

@@ -8,9 +8,9 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
 )
 
-func tableScalingoCollaborators() *plugin.Table {
+func tableScalingoCollaborator() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_collaborators",
+		Name:        "scalingo_collaborator",
 		Description: "Get collaborators from a specific app",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),

@@ -8,10 +8,10 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
 )
 
-func tableScalingoApps() *plugin.Table {
+func tableScalingoApp() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_apps",
-		Description: "Scalingo apps",
+		Name:        "scalingo_app",
+		Description: "Scalingo app",
 		List: &plugin.ListConfig{
 			Hydrate: listApp,
 		},

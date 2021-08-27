@@ -1,8 +1,8 @@
-# Table: scalingo_collaborators
+# Table: scalingo_collaborator
 
 A collaborator can access a scalingo application.
 
-The `scalingo_collaborators` table can be used to query information about app collaborators, and you must specify which application in the where or join clause using the `app_name` column.
+The `scalingo_collaborator` table can be used to query information about app collaborators, and you must specify which application in the where or join clause using the `app_name` column.
 
 ## Examples
 
@@ -13,7 +13,7 @@ select
   status,
   email
 from
-  scalingo_collaborators
+  scalingo_collaborator
 where
   app_name='caresteouvert-api';
 ```
@@ -24,8 +24,8 @@ where
 select
   distinct(c.email) as email
 from
-  scalingo_collaborators as c
+  scalingo_collaborator as c
 inner join
-  scalingo_apps as a
+  scalingo_app as a
 on a.name = c.app_name
 ```

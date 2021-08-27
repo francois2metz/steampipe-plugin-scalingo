@@ -8,9 +8,9 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
 )
 
-func tableScalingoAddons() *plugin.Table {
+func tableScalingoAddon() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_addons",
+		Name:        "scalingo_addon",
 		Description: "Get addons from a specific app",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),

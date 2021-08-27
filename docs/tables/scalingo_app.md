@@ -1,8 +1,8 @@
-# Table: scalingo_apps
+# Table: scalingo_app
 
 An application is the base object of the scalingo API.
 
-The `scalingo_apps` table can be used to query information about any applications.
+The `scalingo_app` table can be used to query information about any applications.
 
 ## Examples
 
@@ -14,7 +14,7 @@ select
   region,
   url
 from
-  scalingo_apps;
+  scalingo_app;
 ```
 
 ### Get stopped applications
@@ -23,7 +23,7 @@ from
 select
     name
 from
-  scalingo_apps
+  scalingo_app
 where
     status = 'stopped';
 ```

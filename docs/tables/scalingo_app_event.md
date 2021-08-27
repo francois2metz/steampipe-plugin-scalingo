@@ -1,8 +1,8 @@
-# Table: scalingo_app_events
+# Table: scalingo_app_event
 
 List events associated to an app.
 
-The `scalingo_app_events` table can be used to query information about an app event, and you must specify which application in the where or join clause using the `app_name` column.
+The `scalingo_app_event` table can be used to query information about an app event, and you must specify which application in the where or join clause using the `app_name` column.
 
 ## Examples
 
@@ -14,7 +14,7 @@ select
   type,
   user_username
 from
-  scalingo_app_events
+  scalingo_app_event
 where
   app_name='caresteouvert-api';
 ```
@@ -27,7 +27,7 @@ select
   type,
   user_username
 from
-  scalingo_app_events
+  scalingo_app_event
 where
   app_name='caresteouvert-api'
   and type='edit_variables';

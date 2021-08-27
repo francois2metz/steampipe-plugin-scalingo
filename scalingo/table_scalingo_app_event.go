@@ -9,9 +9,9 @@ import (
 	"github.com/Scalingo/go-scalingo/v4"
 )
 
-func tableScalingoAppEvents() *plugin.Table {
+func tableScalingoAppEvent() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_app_events",
+		Name:        "scalingo_app_event",
 		Description: "Get events from a specific app",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),

@@ -22,7 +22,7 @@ select
   region,
   url
 from
-  scalingo_apps
+  scalingo_app
 ```
 
 ```
@@ -54,7 +54,7 @@ Installing the latest scalingo plugin will create a config file (`~/.steampipe/c
 
 ```hcl
 connection "scalingo" {
-  plugin    = "scalingo"
+  plugin    = "francois2metz/scalingo"
 
   # The API Endpoint (default is https://api.osc-fr1.scalingo.com)
   # endpoint      = "https://api.osc-fr1.scalingo.com"
@@ -78,13 +78,13 @@ You can also use environment variables:
 You may create multiple scalingo connections:
 ```hcl
 connection "scalingo_osc {
-  plugin   = "scalingo"
+  plugin   = "francois2metz/scalingo"
   endpoint = "https://api.osc-fr1.scalingo.com"
   token    = "tk-us-00000-0000-000"
 }
 
 connection "scalingo_secnum {
-  plugin   = "scalingo"
+  plugin   = "francois2metz/scalingo"
   endpoint = "https://api.osc-secnum-fr1.scalingo.com"
   token    = "tk-us-00000-0000-000"
 }
@@ -93,14 +93,14 @@ connection "scalingo_secnum {
 Each connection is implemented as a distinct [Postgres schema](https://www.postgresql.org/docs/current/ddl-schemas.html).  As such, you can use qualified table names to query a specific connection:
 
 ```sql
-select * from scalingo_osc.scalingo_apps
+select * from scalingo_osc.scalingo_app
 ```
 
 You can multi-account connections by using an [**aggregator** connection](https://steampipe.io/docs/using-steampipe/managing-connections#using-aggregators).  Aggregators allow you to query data from multiple connections for a plugin as if they are a single connection:
 
 ```
 connection "scalingo_all {
-  plugin      = "scalingo"
+  plugin      = "francois2metz/scalingo"
   type        = "aggregator"
   connections = ["scalingo_osc", "scalingo_secnum"]
 }
@@ -108,7 +108,7 @@ connection "scalingo_all {
 
 Querying tables from this connection will return results from the `scalingo_osc`, and `scalingo_secnum` connections:
 ```sql
-select * from scalingo_all.scalingo_apps
+select * from scalingo_all.scalingo_app
 ```
 
 Steampipe supports the `*` wildcard in the connection names.  For example, to aggregate all the Scalingo plugin connections whose names begin with `scalingo_`:
@@ -116,7 +116,7 @@ Steampipe supports the `*` wildcard in the connection names.  For example, to ag
 ```hcl
 connection "scalingo_all" {
   type        = "aggregator"
-  plugin      = "scalingo"
+  plugin      = "francois2metz/scalingo"
   connections = ["scalingo_*"]
 }
 ```

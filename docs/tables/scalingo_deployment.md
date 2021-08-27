@@ -1,8 +1,8 @@
-# Table: scalingo_deployments
+# Table: scalingo_deployment
 
 List deployments associated to an app.
 
-The `scalingo_deployments` table can be used to query information about deployments, and you must specify which application in the where or join clause using the `app_name` column.
+The `scalingo_deployment` table can be used to query information about deployments, and you must specify which application in the where or join clause using the `app_name` column.
 
 ## Examples
 
@@ -14,7 +14,7 @@ select
   status,
   user_username
 from
-  scalingo_deployments
+  scalingo_deployment
 where
   app_name='caresteouvert-api';
 ```
@@ -25,7 +25,7 @@ where
 select
   mean(duration)
 from
-  scalingo_deployments
+  scalingo_deployment
 where
   app_name='caresteouvert-api';
 ```

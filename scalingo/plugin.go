@@ -16,11 +16,11 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			Schema:      ConfigSchema,
 		},
 		TableMap: map[string]*plugin.Table{
-			"scalingo_apps":          tableScalingoApps(),
-			"scalingo_addons":        tableScalingoAddons(),
-			"scalingo_collaborators": tableScalingoCollaborators(),
-			"scalingo_app_events":    tableScalingoAppEvents(),
-			"scalingo_deployments":   tableScalingoDeployments(),
+			"scalingo_app":          tableScalingoApp(),
+			"scalingo_addon":        tableScalingoAddon(),
+			"scalingo_collaborator": tableScalingoCollaborator(),
+			"scalingo_app_event":    tableScalingoAppEvent(),
+			"scalingo_deployment":   tableScalingoDeployment(),
 		},
 	}
 	return p
