@@ -1,5 +1,5 @@
 connection "scalingo" {
-    plugin = "scalingo"
+    plugin = "francois2metz/scalingo"
 
 
     # The API Endpoint (default is https://api.osc-fr1.scalingo.com)
