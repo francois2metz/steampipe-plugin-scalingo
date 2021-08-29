@@ -17,4 +17,4 @@ jobs:
       - run: make
 
       - name: check fmt
-        run: if [ "$(gofmt -l .)" -gt 0 ]; then exit 1; fi
+        run: if [ "$(gofmt -l . | wc -l)" -gt 0 ]; then exit 1; fi
