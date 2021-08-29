@@ -24,6 +24,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scalingo_domain":       tableScalingoDomain(),
 			"scalingo_key":          tableScalingoKey(),
 			"scalingo_region":       tableScalingoRegion(),
+			"scalingo_token":        tableScalingoToken(),
 		},
 	}
 	return p
