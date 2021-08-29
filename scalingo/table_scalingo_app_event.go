@@ -3,10 +3,10 @@ package scalingo
 import (
 	"context"
 
+	"github.com/Scalingo/go-scalingo/v4"
 	"github.com/turbot/steampipe-plugin-sdk/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/plugin/transform"
-	"github.com/Scalingo/go-scalingo/v4"
 )
 
 func tableScalingoAppEvent() *plugin.Table {
@@ -37,7 +37,7 @@ func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
-	opts := scalingo.PaginationOpts{ Page: 1, PerPage: 100 }
+	opts := scalingo.PaginationOpts{Page: 1, PerPage: 100}
 
 	for {
 		events, pagination, err := client.EventsList(appName, opts)
