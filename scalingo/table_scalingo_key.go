@@ -9,8 +9,8 @@ import (
 
 func tableScalingoKey() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_app_event",
-		Description: "Display the list of the regions accessible to your account.",
+		Name:        "scalingo_key",
+		Description: "List SSH Keys associated to the user",
 		List: &plugin.ListConfig{
 			Hydrate: listKey,
 		},

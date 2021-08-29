@@ -10,7 +10,7 @@ import (
 
 func tableScalingoRegion() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_app_event",
+		Name:        "scalingo_region",
 		Description: "Display the list of the regions accessible to your account.",
 		List: &plugin.ListConfig{
 			Hydrate: listRegion,
