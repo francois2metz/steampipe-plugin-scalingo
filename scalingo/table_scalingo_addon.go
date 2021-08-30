@@ -27,6 +27,8 @@ func tableScalingoAddon() *plugin.Table {
 			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application which owns the addon"},
 			{Name: "resource_id", Type: proto.ColumnType_STRING, Description: "resource reference"},
 			{Name: "status", Type: proto.ColumnType_STRING, Description: "current status of the addon"},
+			{Name: "provisioned_at", Type: proto.ColumnType_DATETIME, Description: "current status of the addon"},
+			{Name: "deprovisioned_at", Type: proto.ColumnType_DATETIME, Description: "current status of the addon"},
 			{Name: "provider_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("AddonProvider.ID"), Description: "id of the provider"},
 			{Name: "provider_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("AddonProvider.Name"), Description: "name of the provider"},
 			{Name: "provider_logo_url", Type: proto.ColumnType_STRING, Transform: transform.FromField("AddonProvider.LogoURL"), Description: "Logo url of the provider"},
