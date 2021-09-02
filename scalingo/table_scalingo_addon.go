@@ -11,7 +11,7 @@ import (
 func tableScalingoAddon() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_addon",
-		Description: "Get addons from a specific app",
+		Description: "An addon is a database or similar associated to an application",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listAddon,

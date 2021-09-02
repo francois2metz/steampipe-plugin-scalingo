@@ -11,7 +11,7 @@ import (
 func tableScalingoDomain() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_domain",
-		Description: "Get domains from a specific app",
+		Description: "A domain name associated to an application",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listDomain,

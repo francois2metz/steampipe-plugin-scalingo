@@ -11,7 +11,7 @@ import (
 func tableScalingoCollaborator() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_collaborator",
-		Description: "Get collaborators from a specific app",
+		Description: "A collaborator is someone who have access to an application",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listCollaborator,

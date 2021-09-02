@@ -10,7 +10,7 @@ import (
 func tableScalingoKey() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_key",
-		Description: "List SSH Keys associated to the user",
+		Description: "An SSH key associated to the account",
 		List: &plugin.ListConfig{
 			Hydrate: listKey,
 		},

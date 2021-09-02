@@ -11,7 +11,7 @@ import (
 func tableScalingoRegion() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_region",
-		Description: "Display the list of the regions accessible to your account.",
+		Description: "A region is a location in which an application can be deployed",
 		List: &plugin.ListConfig{
 			Hydrate: listRegion,
 		},

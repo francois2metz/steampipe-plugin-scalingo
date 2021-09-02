@@ -11,7 +11,7 @@ import (
 func tableScalingoApp() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_app",
-		Description: "Scalingo app",
+		Description: "An application is the program that is running on Scalingo",
 		List: &plugin.ListConfig{
 			Hydrate: listApp,
 		},

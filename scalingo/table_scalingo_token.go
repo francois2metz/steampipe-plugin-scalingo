@@ -10,7 +10,7 @@ import (
 func tableScalingoToken() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_token",
-		Description: "Tokens associated to the account",
+		Description: "An API token associated to the account",
 		List: &plugin.ListConfig{
 			Hydrate: listToken,
 		},

@@ -12,7 +12,7 @@ import (
 func tableScalingoDeployment() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_deployment",
-		Description: "Get deployments from a specific app",
+		Description: "A deployment represent a new version deployed of an application",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listDeployment,
