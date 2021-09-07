@@ -27,5 +27,6 @@ from
   scalingo_collaborator as c
 inner join
   scalingo_app as a
-on a.name = c.app_name
+on
+  a.name = c.app_name
 ```

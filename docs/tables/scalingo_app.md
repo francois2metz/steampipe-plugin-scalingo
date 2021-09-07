@@ -21,9 +21,9 @@ from
 
 ```sql
 select
-    name
+  name
 from
   scalingo_app
 where
-    status = 'stopped';
+  status = 'stopped';
 ```
