@@ -1,11 +1,13 @@
 ---
 organization: francois2metz
 category: ["public cloud"]
-brand_color: "#FF9900"
+brand_color: "#45AFE4"
 display_name: "Scalingo"
 short_name: "scalingo"
 description: "Steampipe plugin for querying apps, addons and more from Scalingo."
 og_description: "Query Scalingo with SQL! Open source CLI. No DB required."
+og_image: "/images/plugins/francois2metz/scalingo-social-graphic.png"
+icon_url: "/images/plugins/francois2metz/scalingo.svg"
 ---
 
 # Scalingo + Steampipe
