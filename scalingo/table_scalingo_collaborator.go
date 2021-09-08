@@ -17,7 +17,7 @@ func tableScalingoCollaborator() *plugin.Table {
 			Hydrate:    listCollaborator,
 		},
 		Columns: []*plugin.Column{
-			{Name: "app_name", Type: proto.ColumnType_STRING, Hydrate: appNameQual, Transform: transform.FromValue(), Description: "The name of the app"},
+			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "The name of the app"},
 
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "unique ID identifying the collaborator"},
 			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the collaborator belong"},
