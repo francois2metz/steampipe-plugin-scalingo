@@ -11,20 +11,20 @@ import (
 func tableScalingoCollaborator() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_collaborator",
-		Description: "A collaborator is someone who have access to an application",
+		Description: "A collaborator is someone who have access to an application.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listCollaborator,
 		},
 		Columns: []*plugin.Column{
-			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "The name of the app"},
+			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},
 
-			{Name: "id", Type: proto.ColumnType_STRING, Description: "unique ID identifying the collaborator"},
-			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the collaborator belong"},
-			{Name: "status", Type: proto.ColumnType_STRING, Description: "status of the invitation"},
-			{Name: "username", Type: proto.ColumnType_STRING, Description: "username of the collaborator"},
-			{Name: "email", Type: proto.ColumnType_STRING, Description: "email of the collaborator"},
-			{Name: "user_id", Type: proto.ColumnType_STRING, Description: "user id of the collaborator"},
+			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the collaborator."},
+			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the collaborator belong."},
+			{Name: "status", Type: proto.ColumnType_STRING, Description: "Status of the invitation."},
+			{Name: "username", Type: proto.ColumnType_STRING, Description: "Username of the collaborator."},
+			{Name: "email", Type: proto.ColumnType_STRING, Description: "Email of the collaborator."},
+			{Name: "user_id", Type: proto.ColumnType_STRING, Description: "User id of the collaborator."},
 		},
 	}
 }

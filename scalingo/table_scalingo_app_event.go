@@ -12,21 +12,21 @@ import (
 func tableScalingoAppEvent() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_app_event",
-		Description: "An event is generated automically according to your action on an application",
+		Description: "An event is generated automically according to your action on an application.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listAppEvent,
 		},
 		Columns: []*plugin.Column{
-			{Name: "app_name", Type: proto.ColumnType_STRING, Description: "The name of the app"},
+			{Name: "app_name", Type: proto.ColumnType_STRING, Description: "Name of the app."},
 
-			{Name: "id", Type: proto.ColumnType_STRING, Description: "unique ID identifying the event"},
-			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the event belong"},
-			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "creation date of the event"},
-			{Name: "type", Type: proto.ColumnType_STRING, Description: "type of the event"},
-			{Name: "user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.ID"), Description: "unique id of the user"},
-			{Name: "user_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Username"), Description: "username of the user"},
-			{Name: "user_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Email"), Description: "email of the user"},
+			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the event."},
+			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the event belong."},
+			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "Creation date of the event."},
+			{Name: "type", Type: proto.ColumnType_STRING, Description: "Type of the event."},
+			{Name: "user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.ID"), Description: "Unique id of the user."},
+			{Name: "user_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Username"), Description: "Username of the user."},
+			{Name: "user_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Email"), Description: "Email of the user."},
 		},
 	}
 }

@@ -12,7 +12,7 @@ import (
 func tableScalingoDeployment() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_deployment",
-		Description: "A deployment represent a new version deployed of an application",
+		Description: "A deployment represent a new version deployed of an application.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listDeployment,
@@ -22,19 +22,19 @@ func tableScalingoDeployment() *plugin.Table {
 			Hydrate:    getDeployment,
 		},
 		Columns: []*plugin.Column{
-			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "The name of the app"},
+			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},
 
-			{Name: "id", Type: proto.ColumnType_STRING, Description: "unique ID identifying the event"},
-			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the event belong"},
-			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "creation date of the event"},
-			{Name: "status", Type: proto.ColumnType_STRING, Description: "status of the deployment"},
-			{Name: "git_ref", Type: proto.ColumnType_STRING, Description: "status of the deployment"},
-			{Name: "image", Type: proto.ColumnType_STRING, Description: "status of the deployment"},
-			{Name: "registry", Type: proto.ColumnType_STRING, Description: "status of the deployment"},
-			{Name: "duration", Type: proto.ColumnType_INT, Description: "duration of the deployment"},
-			{Name: "user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.ID"), Description: "unique id of the user"},
-			{Name: "user_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Username"), Description: "username of the user"},
-			{Name: "user_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Email"), Description: "email of the user"},
+			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the event."},
+			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the event belong."},
+			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "Creation date of the event."},
+			{Name: "status", Type: proto.ColumnType_STRING, Description: "Status of the deployment."},
+			{Name: "git_ref", Type: proto.ColumnType_STRING, Description: "Git SHA."},
+			{Name: "image", Type: proto.ColumnType_STRING, Description: "Link to the resulting image."},
+			{Name: "registry", Type: proto.ColumnType_STRING, Description: "Name of the registry."},
+			{Name: "duration", Type: proto.ColumnType_INT, Description: "Duration of the deployment."},
+			{Name: "user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.ID"), Description: "Unique id of the user."},
+			{Name: "user_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Username"), Description: "Username of the user."},
+			{Name: "user_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Email"), Description: "Email of the user."},
 		},
 	}
 }

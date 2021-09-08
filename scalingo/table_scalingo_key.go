@@ -10,14 +10,14 @@ import (
 func tableScalingoKey() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_key",
-		Description: "An SSH key associated to the account",
+		Description: "An SSH key associated to the account.",
 		List: &plugin.ListConfig{
 			Hydrate: listKey,
 		},
 		Columns: []*plugin.Column{
-			{Name: "id", Type: proto.ColumnType_STRING, Description: "unique ID of the key"},
-			{Name: "name", Type: proto.ColumnType_STRING, Description: "Given name to the key"},
-			{Name: "content", Type: proto.ColumnType_STRING, Description: "Raw content of the SSH public key"},
+			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the key."},
+			{Name: "name", Type: proto.ColumnType_STRING, Description: "Given name to the key."},
+			{Name: "content", Type: proto.ColumnType_STRING, Description: "Raw content of the SSH public key."},
 		},
 	}
 }

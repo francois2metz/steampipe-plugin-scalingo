@@ -10,15 +10,15 @@ import (
 func tableScalingoToken() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_token",
-		Description: "An API token associated to the account",
+		Description: "An API token associated to the account.",
 		List: &plugin.ListConfig{
 			Hydrate: listToken,
 		},
 		Columns: []*plugin.Column{
-			{Name: "id", Type: proto.ColumnType_STRING, Description: "unique ID of the token"},
-			{Name: "name", Type: proto.ColumnType_STRING, Description: "token name"},
-			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "token creation date"},
-			{Name: "last_used_at", Type: proto.ColumnType_DATETIME, Description: "token last used date"},
+			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the token."},
+			{Name: "name", Type: proto.ColumnType_STRING, Description: "Token name."},
+			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "Token creation date."},
+			{Name: "last_used_at", Type: proto.ColumnType_DATETIME, Description: "Token last used date."},
 		},
 	}
 }
