@@ -12,6 +12,12 @@ import (
 const defaultEndpointUrl = "https://api.osc-fr1.scalingo.com"
 
 func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error) {
+	// get scalingo client from cache
+	cacheKey := "scalingo"
+	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
+		return cachedData.(*scalingo.Client), nil
+	}
+
 	endpoint := os.Getenv("SCALINGO_ENDPOINT")
 	token := os.Getenv("SCALINGO_TOKEN")
 
@@ -37,7 +43,16 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 		APIEndpoint: endpoint,
 		APIToken:    token,
 	}
-	return scalingo.New(config)
+	client, err := scalingo.New(config)
+
+	if err != nil {
+		return nil, err
+	}
+
+	// Save to cache
+	d.ConnectionManager.Cache.Set(cacheKey, client)
+
+	return client, nil
 }
 
 func appNameQual(_ context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
