@@ -4,6 +4,8 @@ List events associated to an app.
 
 The `scalingo_app_event` table can be used to query information about an app event, and you must specify which application in the where or join clause using the `app_name` column.
 
+By default the plugin request the last 1000 events. If you want more, you can use a `limit` parameter in your sql query to increase it (or decrease if needed).
+
 ## Examples
 
 ### List all events of an application
