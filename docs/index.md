@@ -62,6 +62,7 @@ connection "scalingo" {
   # endpoint = "https://api.osc-fr1.scalingo.com"
 
   # API token for your scalingo instance (required).
+  # Get it on: https://dashboard.scalingo.com/account/tokens
   #token = "tk-us-0000-0000-000000000-000000000000000"
 }
 ```

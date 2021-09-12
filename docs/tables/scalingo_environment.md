@@ -27,7 +27,7 @@ from
 join
   scalingo_environment as e
 on
- a.name = e.app_name
+  a.name = e.app_name
 where
   e.value = 'my variable value'
 ```
