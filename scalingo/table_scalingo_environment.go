@@ -11,7 +11,7 @@ import (
 func tableScalingoEnvironment() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_environment",
-		Description: "Environment variables associated to an app.",
+		Description: "An environment variable is used to configure your app.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listEnvironment,
