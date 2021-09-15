@@ -31,7 +31,7 @@ from
 +--------------------+----------------+------------------------------------------------------+
 | name               | region         | url                                                  |
 +--------------------+----------------+------------------------------------------------------+
-| caresteouvert-map  | osc-fr1        | https://carestouvert.fr                              |
+| caresteouvert-map  | osc-fr1        | https://caresteouvert.fr                             |
 | caresteouvert-api  | osc-secnum-fr1 | https://caresteouvert-api.osc-secnum-fr1.scalingo.io |
 +--------------------+----------------+------------------------------------------------------+
 ```
