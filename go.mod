@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/Scalingo/go-scalingo/v4 v4.14.0
-	github.com/turbot/steampipe-plugin-sdk v1.5.0
+	github.com/turbot/steampipe-plugin-sdk v1.6.1
 )
 
 require (
