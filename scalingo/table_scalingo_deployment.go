@@ -14,12 +14,14 @@ func tableScalingoDeployment() *plugin.Table {
 		Name:        "scalingo_deployment",
 		Description: "A deployment represent a new version deployed of an application.",
 		List: &plugin.ListConfig{
-			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate:    listDeployment,
+			KeyColumns:        plugin.SingleColumn("app_name"),
+			Hydrate:           listDeployment,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns: plugin.AllColumns([]string{"app_name", "id"}),
-			Hydrate:    getDeployment,
+			KeyColumns:        plugin.AllColumns([]string{"app_name", "id"}),
+			Hydrate:           getDeployment,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},

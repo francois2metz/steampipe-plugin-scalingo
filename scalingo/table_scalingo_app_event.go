@@ -14,8 +14,9 @@ func tableScalingoAppEvent() *plugin.Table {
 		Name:        "scalingo_app_event",
 		Description: "An event is generated automically according to your action on an application.",
 		List: &plugin.ListConfig{
-			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate:    listAppEvent,
+			KeyColumns:        plugin.SingleColumn("app_name"),
+			Hydrate:           listAppEvent,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Description: "Name of the app."},

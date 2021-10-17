@@ -13,12 +13,14 @@ func tableScalingoAddon() *plugin.Table {
 		Name:        "scalingo_addon",
 		Description: "An addon is a database or similar associated to an application.",
 		List: &plugin.ListConfig{
-			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate:    listAddon,
+			KeyColumns:        plugin.SingleColumn("app_name"),
+			Hydrate:           listAddon,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns: plugin.AllColumns([]string{"app_name", "id"}),
-			Hydrate:    getAddon,
+			KeyColumns:        plugin.AllColumns([]string{"app_name", "id"}),
+			Hydrate:           getAddon,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},

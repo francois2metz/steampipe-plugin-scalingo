@@ -13,8 +13,9 @@ func tableScalingoEnvironment() *plugin.Table {
 		Name:        "scalingo_environment",
 		Description: "An environment variable is used to configure your app.",
 		List: &plugin.ListConfig{
-			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate:    listEnvironment,
+			KeyColumns:        plugin.SingleColumn("app_name"),
+			Hydrate:           listEnvironment,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},

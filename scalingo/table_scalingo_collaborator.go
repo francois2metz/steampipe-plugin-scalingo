@@ -13,8 +13,9 @@ func tableScalingoCollaborator() *plugin.Table {
 		Name:        "scalingo_collaborator",
 		Description: "A collaborator is someone who have access to an application.",
 		List: &plugin.ListConfig{
-			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate:    listCollaborator,
+			KeyColumns:        plugin.SingleColumn("app_name"),
+			Hydrate:           listCollaborator,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},

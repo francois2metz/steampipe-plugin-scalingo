@@ -16,8 +16,9 @@ func tableScalingoApp() *plugin.Table {
 			Hydrate: listApp,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns: plugin.SingleColumn("name"),
-			Hydrate:    getApp,
+			KeyColumns:        plugin.SingleColumn("name"),
+			Hydrate:           getApp,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Id"), Description: "Unique id of the application."},

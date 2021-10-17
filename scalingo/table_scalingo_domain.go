@@ -13,12 +13,14 @@ func tableScalingoDomain() *plugin.Table {
 		Name:        "scalingo_domain",
 		Description: "A domain name associated to an application.",
 		List: &plugin.ListConfig{
-			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate:    listDomain,
+			KeyColumns:        plugin.SingleColumn("app_name"),
+			Hydrate:           listDomain,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns: plugin.AllColumns([]string{"app_name", "id"}),
-			Hydrate:    getDomain,
+			KeyColumns:        plugin.AllColumns([]string{"app_name", "id"}),
+			Hydrate:           getDomain,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},

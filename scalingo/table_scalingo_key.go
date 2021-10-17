@@ -12,7 +12,8 @@ func tableScalingoKey() *plugin.Table {
 		Name:        "scalingo_key",
 		Description: "An SSH key associated to the account.",
 		List: &plugin.ListConfig{
-			Hydrate: listKey,
+			Hydrate:           listKey,
+			ShouldIgnoreError: isNotFoundError,
 		},
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the key."},
