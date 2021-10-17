@@ -1,3 +1,9 @@
+## v0.0.4 [2021-10-18]
+
+_What's new?_
+
+- Handle 404 when the app_name cannot be found
+
 ## v0.0.3 [2021-09-14]
 
 _What's new?_
