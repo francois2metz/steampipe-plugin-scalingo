@@ -1,3 +1,5 @@
+![Steampipe + Scalingo](docs/scalingo-social-graphic.png)
+
 # Scalingo plugin for Steampipe
 
 Use SQL to query infrastructure including applications and addons from [Scalingo][].
