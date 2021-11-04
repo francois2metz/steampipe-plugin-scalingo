@@ -11,7 +11,7 @@ import (
 func tableScalingoContainer() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_container",
-		Description: "A container is running part of your application.",
+		Description: "A container is a running part of your application.",
 		List: &plugin.ListConfig{
 			KeyColumns:        plugin.SingleColumn("app_name"),
 			Hydrate:           listContainer,
