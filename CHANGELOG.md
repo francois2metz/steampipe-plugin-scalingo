@@ -1,3 +1,9 @@
+## v0.0.5 [2021-11-08]
+
+_What's new?_
+
+- Remove the default limit in the scalingo_app_event
+
 ## v0.0.4 [2021-10-18]
 
 _What's new?_
