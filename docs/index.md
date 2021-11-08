@@ -58,19 +58,23 @@ Installing the latest scalingo plugin will create a config file (`~/.steampipe/c
 connection "scalingo" {
   plugin = "francois2metz/scalingo"
 
-  # The API Endpoint (default is https://api.osc-fr1.scalingo.com)
-  # endpoint = "https://api.osc-fr1.scalingo.com"
+  # The region (default is osc-fr1)
+  # region = "osc-fr1"
 
   # API token for your scalingo instance (required).
   # Get it on: https://dashboard.scalingo.com/account/tokens
   #token = "tk-us-0000-0000-000000000-000000000000000"
+
+  # DEPRECATED: The API Endpoint (default is https://api.osc-fr1.scalingo.com)
+  # endpoint = "https://api.osc-fr1.scalingo.com"
 }
 ```
 
 You can also use environment variables:
 
-- `SCALINGO_ENDPOINT` the base url for the API endpoint of the region (ex: https://api.osc-fr1.scalingo.com)
+- `SCALINGO_REGION` the region name (ex: osc-fr1)
 - `SCALINGO_TOKEN` for the API token (ex: tk-us-00000-0000-000)
+- **DEPRECATED** `SCALINGO_ENDPOINT` the base url for the API endpoint of the region (ex: https://api.osc-fr1.scalingo.com)
 
 ## Get Involved
 
@@ -80,15 +84,15 @@ You can also use environment variables:
 
 You may create multiple scalingo connections:
 ```hcl
-connection "scalingo_osc {
+connection "scalingo_osc" {
   plugin   = "francois2metz/scalingo"
-  endpoint = "https://api.osc-fr1.scalingo.com"
+  region   = "osc-fr1"
   token    = "tk-us-00000-0000-000"
 }
 
-connection "scalingo_secnum {
+connection "scalingo_secnum" {
   plugin   = "francois2metz/scalingo"
-  endpoint = "https://api.osc-secnum-fr1.scalingo.com"
+  region   = "osc-secnum-fr1"
   token    = "tk-us-00000-0000-000"
 }
 ```

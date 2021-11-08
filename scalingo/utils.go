@@ -10,6 +10,7 @@ import (
 )
 
 const defaultEndpointUrl = "https://api.osc-fr1.scalingo.com"
+const secnumEndpointUrl = "https://api.osc-secnum-fr1.scalingo.com"
 
 func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error) {
 	// get scalingo client from cache
@@ -20,6 +21,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 
 	endpoint := os.Getenv("SCALINGO_ENDPOINT")
 	token := os.Getenv("SCALINGO_TOKEN")
+	region := os.Getenv("SCALINGO_REGION")
 
 	scalingoConfig := GetConfig(d.Connection)
 	if &scalingoConfig != nil {
@@ -29,10 +31,23 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 		if scalingoConfig.Token != nil {
 			token = *scalingoConfig.Token
 		}
+		if scalingoConfig.Region != nil {
+			region = *scalingoConfig.Region
+		}
 	}
 
 	if endpoint == "" {
 		endpoint = defaultEndpointUrl
+	}
+	if endpoint == defaultEndpointUrl && region == "" {
+		region = "osc-fr1"
+	}
+	if endpoint == secnumEndpointUrl && region == "" {
+		region = "osc-secnum-fr1"
+	}
+
+	if region == "" {
+		return nil, errors.New("'region' must be set in the connection configuration. Edit your connection configuration file and then restart Steampipe")
 	}
 
 	if token == "" {
@@ -40,8 +55,8 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	}
 
 	config := scalingo.ClientConfig{
-		APIEndpoint: endpoint,
 		APIToken:    token,
+		Region:      region,
 	}
 	client, err := scalingo.New(config)
 
