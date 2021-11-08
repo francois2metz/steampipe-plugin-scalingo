@@ -40,11 +40,8 @@ func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 100}
 
-	maxResult := int64(1000)
-
-	limit := d.QueryContext.Limit
-	if d.QueryContext.Limit != nil {
-		maxResult = *limit
+	if d.QueryContext.Limit != nil && *d.QueryContext.Limit < int64(opts.PerPage) {
+		opts.PerPage = int(*d.QueryContext.Limit)
 	}
 
 	for {
@@ -59,7 +56,7 @@ func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 			break
 		}
 		opts.Page = pagination.NextPage
-		if int64(opts.Page*opts.PerPage) > maxResult {
+		if d.QueryStatus.RowsRemaining(ctx) <= 0 {
 			break
 		}
 	}
