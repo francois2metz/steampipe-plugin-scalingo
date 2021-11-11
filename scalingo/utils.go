@@ -55,8 +55,8 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	}
 
 	config := scalingo.ClientConfig{
-		APIToken:    token,
-		Region:      region,
+		APIToken: token,
+		Region:   region,
 	}
 	client, err := scalingo.New(config)
 
