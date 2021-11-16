@@ -1,3 +1,10 @@
+## v0.0.6 [2021-11-16]
+
+_What's new?_
+
+- A new region config parameter has been added (set osc-fr1 or osc-secnum-fr1)
+- The endpoint config parameter has been deprecated
+
 ## v0.0.5 [2021-11-08]
 
 _What's new?_
