@@ -17,8 +17,8 @@ func tableScalingoToken() *plugin.Table {
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the token."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Token name."},
-			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "Token creation date."},
-			{Name: "last_used_at", Type: proto.ColumnType_DATETIME, Description: "Token last used date."},
+			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Token creation date."},
+			{Name: "last_used_at", Type: proto.ColumnType_TIMESTAMP, Description: "Token last used date."},
 		},
 	}
 }

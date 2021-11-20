@@ -31,7 +31,7 @@ func tableScalingoDomain() *plugin.Table {
 			{Name: "tls_cert", Type: proto.ColumnType_STRING, Transform: transform.FromField("TLSCert"), Description: "Subject of the submitted certificate."},
 			{Name: "tls_key", Type: proto.ColumnType_STRING, Transform: transform.FromField("TLSKey"), Description: "Private key type and length."},
 			{Name: "ssl", Type: proto.ColumnType_BOOL, Transform: transform.FromField("SSL"), Description: "Flag if SSL with a custom certificate is enabled."},
-			{Name: "validity", Type: proto.ColumnType_DATETIME, Description: "Once a certificate has been submitted, display the validity of it."},
+			{Name: "validity", Type: proto.ColumnType_TIMESTAMP, Description: "Once a certificate has been submitted, display the validity of it."},
 			{Name: "canonical", Type: proto.ColumnType_BOOL, Description: "The domain is the canonical domain of this application."},
 			{Name: "lets_encrypt", Type: proto.ColumnType_BOOL, Description: "The domain is using a Let’s Encrypt certificate."},
 			{Name: "lets_encrypt_status", Type: proto.ColumnType_STRING, Description: "Let’s Encrypt certificate generation status."},

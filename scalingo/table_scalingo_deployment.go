@@ -28,7 +28,7 @@ func tableScalingoDeployment() *plugin.Table {
 
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the event."},
 			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the event belong."},
-			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "Creation date of the event."},
+			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the event."},
 			{Name: "status", Type: proto.ColumnType_STRING, Description: "Status of the deployment."},
 			{Name: "git_ref", Type: proto.ColumnType_STRING, Description: "Git SHA."},
 			{Name: "image", Type: proto.ColumnType_STRING, Description: "Link to the resulting image."},

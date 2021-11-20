@@ -23,7 +23,7 @@ func tableScalingoAppEvent() *plugin.Table {
 
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the event."},
 			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the event belong."},
-			{Name: "created_at", Type: proto.ColumnType_DATETIME, Description: "Creation date of the event."},
+			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the event."},
 			{Name: "type", Type: proto.ColumnType_STRING, Description: "Type of the event."},
 			{Name: "user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.ID"), Description: "Unique id of the user."},
 			{Name: "user_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Username"), Description: "Username of the user."},
