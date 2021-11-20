@@ -21,6 +21,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scalingo_app_event":    tableScalingoAppEvent(),
 			"scalingo_collaborator": tableScalingoCollaborator(),
 			"scalingo_container":    tableScalingoContainer(),
+			"scalingo_cron":         tableScalingoCron(),
 			"scalingo_deployment":   tableScalingoDeployment(),
 			"scalingo_domain":       tableScalingoDomain(),
 			"scalingo_environment":  tableScalingoEnvironment(),
