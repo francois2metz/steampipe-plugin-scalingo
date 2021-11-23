@@ -1,3 +1,11 @@
+## v0.0.7 [2021-11-24]
+
+_What's new?_
+
+- Add scalingo_cron table
+- Update date column types to use timestamp instead of datetime
+- Update steampipe sdk to 1.8.2
+
 ## v0.0.6 [2021-11-16]
 
 _What's new?_
