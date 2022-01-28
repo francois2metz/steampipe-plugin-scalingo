@@ -1,3 +1,10 @@
+## v0.0.8 [2022-01-28]
+
+_What's new?_
+
+- Add scalingo_database table
+- Update steampipe sdk to 1.8.3
+
 ## v0.0.7 [2021-11-24]
 
 _What's new?_
