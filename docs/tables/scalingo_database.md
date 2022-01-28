@@ -1,6 +1,6 @@
 # Table: scalingo_database
 
-A database
+List databases associated to an app.
 
 The `scalingo_database` table can be used to query information about a addon database, and you must specify which application in the where or join clause using the `app_name` column and the `addon_id`.
 
