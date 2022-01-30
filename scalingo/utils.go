@@ -44,11 +44,11 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	}
 
 	if region == "" {
-		return nil, errors.New("'region' must be set in the connection configuration. Edit your connection configuration file and then restart Steampipe")
+		return nil, errors.New("'region' must be set in the connection configuration. Edit your connection configuration file or set the SCALINGO_REGION environment variable and then restart Steampipe")
 	}
 
 	if token == "" {
-		return nil, errors.New("'token' must be set in the connection configuration. Edit your connection configuration file and then restart Steampipe")
+		return nil, errors.New("'token' must be set in the connection configuration. Edit your connection configuration file or set the SCALINGO_TOKEN environment variable and then restart Steampipe")
 	}
 
 	config := scalingo.ClientConfig{
