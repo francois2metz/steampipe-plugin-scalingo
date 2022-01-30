@@ -19,7 +19,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 		return cachedData.(*scalingo.Client), nil
 	}
 
-	endpoint := os.Getenv("SCALINGO_ENDPOINT")
+	endpoint := ""
 	token := os.Getenv("SCALINGO_TOKEN")
 	region := os.Getenv("SCALINGO_REGION")
 
@@ -36,9 +36,6 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 		}
 	}
 
-	if endpoint == "" {
-		endpoint = defaultEndpointUrl
-	}
 	if endpoint == defaultEndpointUrl && region == "" {
 		region = "osc-fr1"
 	}

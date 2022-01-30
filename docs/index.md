@@ -64,9 +64,6 @@ connection "scalingo" {
   # API token for your scalingo instance (required).
   # Get it on: https://dashboard.scalingo.com/account/tokens
   #token = "tk-us-0000-0000-000000000-000000000000000"
-
-  # DEPRECATED: The API Endpoint (default is https://api.osc-fr1.scalingo.com)
-  # endpoint = "https://api.osc-fr1.scalingo.com"
 }
 ```
 
@@ -74,7 +71,6 @@ You can also use environment variables:
 
 - `SCALINGO_REGION` the region name (ex: osc-fr1)
 - `SCALINGO_TOKEN` for the API token (ex: tk-us-00000-0000-000)
-- **DEPRECATED** `SCALINGO_ENDPOINT` the base url for the API endpoint of the region (ex: https://api.osc-fr1.scalingo.com)
 
 ## Get Involved
 
