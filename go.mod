@@ -3,7 +3,7 @@ module github.com/francois2metz/steampipe-plugin-scalingo
 go 1.17
 
 require (
-	github.com/Scalingo/go-scalingo/v4 v4.15.1
+	github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220301140146-37b57e928b06
 	github.com/turbot/steampipe-plugin-sdk/v2 v2.0.3
 	gopkg.in/errgo.v1 v1.0.1
 )
@@ -19,7 +19,7 @@ require (
 	github.com/fatih/color v1.12.0 // indirect
 	github.com/gertd/go-pluralize v0.1.7 // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect
-	github.com/golang-jwt/jwt/v4 v4.1.0 // indirect
+	github.com/golang-jwt/jwt/v4 v4.3.0 // indirect
 	github.com/golang/glog v1.0.0 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
