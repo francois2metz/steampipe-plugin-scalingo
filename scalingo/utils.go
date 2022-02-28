@@ -6,7 +6,7 @@ import (
 	"os"
 
 	"github.com/Scalingo/go-scalingo/v4"
-	"github.com/turbot/steampipe-plugin-sdk/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v2/plugin"
 )
 
 const defaultEndpointUrl = "https://api.osc-fr1.scalingo.com"
