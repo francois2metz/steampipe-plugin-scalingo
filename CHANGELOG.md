@@ -1,3 +1,11 @@
+## v0.0.9 [2022-03-02]
+
+_What's new?_
+
+- Add scalingo_scm_repo_link table
+- Update steampipe sdk to 2.0.3
+- Remove deprecated configuration about endpoint
+
 ## v0.0.8 [2022-01-28]
 
 _What's new?_
