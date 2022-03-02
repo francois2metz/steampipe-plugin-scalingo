@@ -6,15 +6,11 @@ import (
 )
 
 type scalingoConfig struct {
-	Endpoint *string `cty:"endpoint"`
 	Token    *string `cty:"token"`
 	Region   *string `cty:"region"`
 }
 
 var ConfigSchema = map[string]*schema.Attribute{
-	"endpoint": {
-		Type: schema.TypeString,
-	},
 	"token": {
 		Type: schema.TypeString,
 	},
