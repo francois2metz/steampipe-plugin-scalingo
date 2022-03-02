@@ -6,8 +6,8 @@ import (
 )
 
 type scalingoConfig struct {
-	Token    *string `cty:"token"`
-	Region   *string `cty:"region"`
+	Token  *string `cty:"token"`
+	Region *string `cty:"region"`
 }
 
 var ConfigSchema = map[string]*schema.Attribute{
