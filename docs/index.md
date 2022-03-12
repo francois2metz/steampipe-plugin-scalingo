@@ -59,7 +59,7 @@ connection "scalingo" {
   plugin = "francois2metz/scalingo"
 
   # The region (default is osc-fr1)
-  # region = "osc-fr1"
+  # regions = ["osc-fr1", "osc-secnum-fr1"]
 
   # API token for your scalingo instance (required).
   # Get it on: https://dashboard.scalingo.com/account/tokens
@@ -69,7 +69,6 @@ connection "scalingo" {
 
 You can also use environment variables:
 
-- `SCALINGO_REGION` the region name (ex: osc-fr1)
 - `SCALINGO_TOKEN` for the API token (ex: tk-us-00000-0000-000)
 
 ## Get Involved
@@ -82,13 +81,13 @@ You may create multiple scalingo connections:
 ```hcl
 connection "scalingo_osc" {
   plugin   = "francois2metz/scalingo"
-  region   = "osc-fr1"
+  regions  = ["osc-fr1"]
   token    = "tk-us-00000-0000-000"
 }
 
 connection "scalingo_secnum" {
   plugin   = "francois2metz/scalingo"
-  region   = "osc-secnum-fr1"
+  regions  = ["osc-secnum-fr1"]
   token    = "tk-us-00000-0000-000"
 }
 ```

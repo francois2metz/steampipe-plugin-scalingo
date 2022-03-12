@@ -15,6 +15,7 @@ func tableScalingoKey() *plugin.Table {
 			Hydrate:           listKey,
 			ShouldIgnoreError: isNotFoundError,
 		},
+		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the key."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Given name to the key."},

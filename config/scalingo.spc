@@ -1,8 +1,9 @@
 connection "scalingo" {
     plugin = "francois2metz/scalingo"
 
-    # Region
-    region = "osc-fr1"
+    # Regions
+    # By default the scalingo plugin will only use the osc-fr1 region
+    #regions = ["osc-fr1", "osc-secnum-fr1"]
 
     # API token for your scalingo instance (required).
     # Get it on: https://dashboard.scalingo.com/account/tokens

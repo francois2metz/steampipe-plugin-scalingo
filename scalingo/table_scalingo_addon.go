@@ -22,6 +22,7 @@ func tableScalingoAddon() *plugin.Table {
 			Hydrate:           getAddon,
 			ShouldIgnoreError: isNotFoundError,
 		},
+		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},
 

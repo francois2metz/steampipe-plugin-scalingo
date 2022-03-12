@@ -20,6 +20,7 @@ func tableScalingoApp() *plugin.Table {
 			Hydrate:           getApp,
 			ShouldIgnoreError: isNotFoundError,
 		},
+		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Id"), Description: "Unique id of the application."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Name of the application."},
