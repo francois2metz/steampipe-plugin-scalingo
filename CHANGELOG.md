@@ -1,3 +1,10 @@
+## v0.1.0 [2022-03-14]
+
+_What's new?_
+
+- Add multi-region support per connection. This add a new `regions` configuration. The old `region` parameter is still supported for now, but the `SCALINGO_REGION` environmnent variable is removed.
+- The `endpoint` configuration support has been removed
+
 ## v0.0.9 [2022-03-02]
 
 _What's new?_
