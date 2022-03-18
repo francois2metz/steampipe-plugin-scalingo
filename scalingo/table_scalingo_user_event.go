@@ -9,23 +9,20 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/v2/plugin/transform"
 )
 
-func tableScalingoAppEvent() *plugin.Table {
+func tableScalingoUserEvent() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_app_event",
-		Description: "An application event is generated automatically according to your, other or plaform action on an application.",
+		Name:        "scalingo_user_event",
+		Description: "A user event is generated automatically according to your, other, or the plaform action ",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           listAppEvent,
+			Hydrate:           listUserEvent,
 			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{
-			{Name: "app_name", Type: proto.ColumnType_STRING, Description: "Name of the app."},
-
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the event."},
-			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application where the event belong."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the event."},
 			{Name: "type", Type: proto.ColumnType_STRING, Description: "Type of the event."},
+			{Name: "type_data", Type: proto.ColumnType_JSON, Description: "Data of the event."},
 			{Name: "user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.ID"), Description: "Unique id of the user."},
 			{Name: "user_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Username"), Description: "Username of the user."},
 			{Name: "user_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Email"), Description: "Email of the user."},
@@ -33,12 +30,11 @@ func tableScalingoAppEvent() *plugin.Table {
 	}
 }
 
-func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
+func listUserEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
 		return nil, err
 	}
-	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 100}
 
 	if d.QueryContext.Limit != nil && *d.QueryContext.Limit < int64(opts.PerPage) {
@@ -46,7 +42,7 @@ func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	}
 
 	for {
-		events, pagination, err := client.EventsList(appName, opts)
+		events, pagination, err := client.UserEventsList(opts)
 		if err != nil {
 			return nil, err
 		}
