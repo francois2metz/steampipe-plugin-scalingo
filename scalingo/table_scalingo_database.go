@@ -25,7 +25,7 @@ func tableScalingoDatabase() *plugin.Table {
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},
 			{Name: "addon_id", Type: proto.ColumnType_STRING, Transform: transform.FromQual("addon_id"), Description: "ID of the addon."},
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the database."},
-			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "creation date of the database."},
+			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the database."},
 			{Name: "resource_id", Type: proto.ColumnType_STRING, Description: "Resource reference."},
 			{Name: "encryption_at_rest", Type: proto.ColumnType_BOOL, Description: "Is encryption at rest enabled on this database."},
 			{Name: "force_ssl", Type: proto.ColumnType_BOOL, Transform: transform.FromP(featureValueToBool, "force-ssl"), Description: "Is SSL encryption is required."},
