@@ -1,3 +1,10 @@
+## v0.1.1 [2022-04-02]
+
+_What's new?_
+
+- Add scalingo_user_event table
+- Add scalingo_database_type_version table
+
 ## v0.1.0 [2022-03-14]
 
 _What's new?_
