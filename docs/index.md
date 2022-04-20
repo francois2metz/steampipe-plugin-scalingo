@@ -101,7 +101,7 @@ select * from scalingo_osc.scalingo_app
 You can multi-account connections by using an [**aggregator** connection](https://steampipe.io/docs/using-steampipe/managing-connections#using-aggregators).  Aggregators allow you to query data from multiple connections for a plugin as if they are a single connection:
 
 ```
-connection "scalingo_all {
+connection "scalingo_all" {
   plugin      = "francois2metz/scalingo"
   type        = "aggregator"
   connections = ["scalingo_osc", "scalingo_secnum"]
