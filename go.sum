@@ -4,6 +4,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220301140146-37b57e928b06 h1:c2gyYSjuHh91oZxNRfOhzf1isqZQc1Zyhya9KfNotEs=
 github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220301140146-37b57e928b06/go.mod h1:mxRDjwcNBzPaZeF3jEveqtvJfqlLbBob4qpxibFu5DI=
+github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220427070434-1319d6d7ef50 h1:Lt0+gdjpp7OSD/FJv/0VyS5Q7Ndm+Mc1tp8Nut3Hemc=
+github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220427070434-1319d6d7ef50/go.mod h1:QK9u8l/Xlge/BCyCYCe83mx63MgCJGseLLtLPYi6ua8=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d h1:licZJFw2RwpHMqeKTCYkitsPqHNxTmd4SNR5r94FGM8=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d/go.mod h1:asat636LX7Bqt5lYEZ27JNDcqxfjdBQuJ/MM4CN/Lzo=
 github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
@@ -59,6 +61,8 @@ github.com/go-test/deep v1.0.3 h1:ZrJSEWsXzPOxaZnFteGEfooLba+ju3FYIbOrS+rQd68=
 github.com/go-test/deep v1.0.3/go.mod h1:wGDj63lr65AM2AQyKZd/NYHGb0R+1RLqB8NKt3aSFNA=
 github.com/golang-jwt/jwt/v4 v4.3.0 h1:kHL1vqdqWNfATmA0FNMdmZNMyZI1U6O31X4rlIPoBog=
 github.com/golang-jwt/jwt/v4 v4.3.0/go.mod h1:/xlHOz8bRuivTWchD4jCa+NbatV+wEUSzwAxVc6locg=
+github.com/golang-jwt/jwt/v4 v4.4.1 h1:pC5DB52sCeK48Wlb9oPcdhnjkz1TKt1D/P7WKJ0kUcQ=
+github.com/golang-jwt/jwt/v4 v4.4.1/go.mod h1:m21LjoU+eqJr34lmDMbreY2eSTRJ1cv77w39/MY0Ch0=
 github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b/go.mod h1:SBH7ygxi8pfUlaOkMMuAQtPIUF8ecWP5IEl/CR7VP2Q=
 github.com/golang/glog v1.0.0 h1:nfP3RFugxnNRyKgeWd4oI1nYvXpxrx8ck8ZrcizshdQ=
 github.com/golang/glog v1.0.0/go.mod h1:EWib/APOK0SL3dFbYqvxE3UYd8E6s1ouQ7iEp/0LWV4=
@@ -170,6 +174,7 @@ github.com/stretchr/testify v1.5.1/go.mod h1:5W2xD1RspED5o8YsWQXVCued0rvSQ+mT+I5
 github.com/stretchr/testify v1.6.1/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
 github.com/stretchr/testify v1.7.0 h1:nwc3DEeHmmLAfoZucVR881uASk0Mfjw8xYJ99tb5CcY=
 github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/h/Wwjteg=
+github.com/stretchr/testify v1.7.1 h1:5TQK59W5E3v0r2duFAb7P95B6hEeOyEnHRa8MjYSMTY=
 github.com/tkrajina/go-reflector v0.5.4 h1:dS9aJEa/eYNQU/fwsb5CSiATOxcNyA/gG/A7a582D5s=
 github.com/tkrajina/go-reflector v0.5.4/go.mod h1:9PyLgEOzc78ey/JmQQHbW8cQJ1oucLlNQsg8yFvkVk8=
 github.com/turbot/go-kit v0.3.0 h1:o4zZIO1ovdmJ2bHWOdXnnt8jJMIDGqYSkZvBREzFeMQ=
