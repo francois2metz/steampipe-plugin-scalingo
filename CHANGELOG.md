@@ -1,3 +1,9 @@
+## v0.1.2 [2022-04-27]
+
+_What's new?_
+
+- Fetch all entries for scalingo_scm_repo_link table
+
 ## v0.1.1 [2022-04-02]
 
 _What's new?_
