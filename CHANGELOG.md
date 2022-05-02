@@ -1,3 +1,10 @@
+## v0.1.3 [2022-05-02]
+
+_What's new?_
+
+- Add scalingo_log_drain table
+- Add scalingo_log_drain_addon table
+
 ## v0.1.2 [2022-04-27]
 
 _What's new?_
