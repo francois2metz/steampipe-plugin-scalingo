@@ -1,3 +1,11 @@
+## v0.2.0 [2022-05-02]
+
+_What's new?_
+
+- Update steampipe sdk to 3.1.0
+- Update to go 1.18
+- Build ARM64 binaries
+
 ## v0.1.3 [2022-05-02]
 
 _What's new?_
