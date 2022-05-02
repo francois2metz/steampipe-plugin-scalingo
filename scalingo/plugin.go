@@ -28,6 +28,8 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scalingo_domain":                tableScalingoDomain(),
 			"scalingo_environment":           tableScalingoEnvironment(),
 			"scalingo_key":                   tableScalingoKey(),
+			"scalingo_log_drain":             tableScalingoLogDrain(),
+			"scalingo_log_drain_addon":       tableScalingoLogDrainAddon(),
 			"scalingo_region":                tableScalingoRegion(),
 			"scalingo_scm_repo_link":         tableScalingoScmRepoLink(),
 			"scalingo_token":                 tableScalingoToken(),
