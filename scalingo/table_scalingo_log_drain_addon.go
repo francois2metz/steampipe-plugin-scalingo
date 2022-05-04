@@ -41,7 +41,7 @@ func listLogDrainAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 	if err != nil {
 		return nil, err
 	}
-	for _, logDrain := range logDrains.Drains {
+	for _, logDrain := range logDrains {
 		d.StreamListItem(ctx, logDrain)
 	}
 	return nil, nil

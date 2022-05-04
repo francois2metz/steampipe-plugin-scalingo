@@ -4,6 +4,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220427070434-1319d6d7ef50 h1:Lt0+gdjpp7OSD/FJv/0VyS5Q7Ndm+Mc1tp8Nut3Hemc=
 github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220427070434-1319d6d7ef50/go.mod h1:QK9u8l/Xlge/BCyCYCe83mx63MgCJGseLLtLPYi6ua8=
+github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220504085518-b62c551678fd h1:rtNGTb+IUqGeqBne0knX6+fzYZ64w1rYjdwzQulSCcs=
+github.com/Scalingo/go-scalingo/v4 v4.15.2-0.20220504085518-b62c551678fd/go.mod h1:QK9u8l/Xlge/BCyCYCe83mx63MgCJGseLLtLPYi6ua8=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d h1:licZJFw2RwpHMqeKTCYkitsPqHNxTmd4SNR5r94FGM8=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d/go.mod h1:asat636LX7Bqt5lYEZ27JNDcqxfjdBQuJ/MM4CN/Lzo=
 github.com/agext/levenshtein v1.2.1/go.mod h1:JEDfjyjHDjOF/1e4FlBE/PkbqA9OfWu2ki2W0IB5558=
