@@ -1,3 +1,9 @@
+## v0.3.0 [2022-05-15]
+
+_What's new?_
+
+- Add scalingo_scm_integration table
+
 ## v0.2.0 [2022-05-02]
 
 _What's new?_
