@@ -1,3 +1,10 @@
+## v0.3.1 [2022-05-22]
+
+_What's new?_
+
+- Fix the documentation
+- Add error logs on all API calls
+
 ## v0.3.0 [2022-05-15]
 
 _What's new?_
