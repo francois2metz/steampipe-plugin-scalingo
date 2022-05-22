@@ -45,7 +45,7 @@ func listUserEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	for {
 		events, pagination, err := client.UserEventsList(opts)
 		if err != nil {
-		plugin.Logger(ctx).Error("scalingo_user_event.listUserEvent", err)
+			plugin.Logger(ctx).Error("scalingo_user_event.listUserEvent", err)
 			return nil, err
 		}
 		for _, event := range events {

@@ -54,7 +54,7 @@ func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 	for {
 		deployments, pagination, err := client.DeploymentListWithPagination(appName, opts)
 		if err != nil {
-		plugin.Logger(ctx).Error("scalingo_deployment.listDeployment", err)
+			plugin.Logger(ctx).Error("scalingo_deployment.listDeployment", err)
 			return nil, err
 		}
 		for _, deployment := range deployments {
