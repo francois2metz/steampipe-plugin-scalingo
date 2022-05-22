@@ -36,6 +36,7 @@ func tableScalingoAppEvent() *plugin.Table {
 func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_app_event.listAppEvent", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
@@ -48,6 +49,7 @@ func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	for {
 		events, pagination, err := client.EventsList(appName, opts)
 		if err != nil {
+			plugin.Logger(ctx).Error("scalingo_app_event.listAppEvent", err)
 			return nil, err
 		}
 		for _, event := range events {

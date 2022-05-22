@@ -51,12 +51,14 @@ func tableScalingoScmRepoLink() *plugin.Table {
 func listScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_scm_repo_link.listScmRepoLink", "connection_error", err)
 		return nil, err
 	}
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
 	for {
 		scmRepoLinks, pagination, err := client.SCMRepoLinkList(opts)
 		if err != nil {
+			plugin.Logger(ctx).Error("scalingo_scm_repo_link.listScmRepoLink", err)
 			return nil, err
 		}
 		for _, scmRepoLink := range scmRepoLinks {
@@ -73,12 +75,14 @@ func listScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 func getScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_scm_repo_link.getScmRepoLink", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	scmRepoLink, err := client.SCMRepoLinkShow(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_scm_repo_link.getScmRepoLink", err)
 		return nil, err
 	}
 	return scmRepoLink, nil

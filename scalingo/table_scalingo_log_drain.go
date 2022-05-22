@@ -30,12 +30,14 @@ func tableScalingoLogDrain() *plugin.Table {
 func listLogDrain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_log_drain.listLogDrain", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	logDrains, err := client.LogDrainsList(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_log_drain.listLogDrain", err)
 		return nil, err
 	}
 	for _, logDrain := range logDrains {

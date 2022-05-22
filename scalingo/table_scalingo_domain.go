@@ -47,12 +47,14 @@ func tableScalingoDomain() *plugin.Table {
 func listDomain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_domain.listDomain", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	domains, err := client.DomainsList(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_domain.listDomain", err)
 		return nil, err
 	}
 	for _, domain := range domains {
@@ -64,6 +66,7 @@ func listDomain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 func getDomain(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_domain.getDomain", "connection_error", err)
 		return nil, err
 	}
 	quals := d.KeyColumnQuals
@@ -73,6 +76,7 @@ func getDomain(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) 
 
 	result, err := client.DomainsShow(appName, id)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_domain.getDomain", err)
 		return nil, err
 	}
 	return result, nil

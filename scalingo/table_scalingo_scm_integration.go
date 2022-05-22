@@ -36,11 +36,13 @@ func tableScalingoScmIntegration() *plugin.Table {
 func listScmIntegration(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_scm_integration.listScmIntegration", "connection_error", err)
 		return nil, err
 	}
 
 	scmIntegrations, err := client.SCMIntegrationsList()
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_scm_integration.listScmIntegration", err)
 		return nil, err
 	}
 	for _, scmIntegration := range scmIntegrations {
@@ -53,12 +55,14 @@ func listScmIntegration(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydr
 func getScmIntegration(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_scm_integration.getScmIntegration", "connection_error", err)
 		return nil, err
 	}
 	id := d.KeyColumnQuals["id"].GetStringValue()
 
 	scmIntegration, err := client.SCMIntegrationsShow(id)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_scm_integration.getScmIntegration", err)
 		return nil, err
 	}
 	return scmIntegration, nil

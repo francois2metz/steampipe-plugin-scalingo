@@ -33,6 +33,7 @@ func tableScalingoUserEvent() *plugin.Table {
 func listUserEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_user_event.listUserEvent", "connection_error", err)
 		return nil, err
 	}
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 100}
@@ -44,6 +45,7 @@ func listUserEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	for {
 		events, pagination, err := client.UserEventsList(opts)
 		if err != nil {
+		plugin.Logger(ctx).Error("scalingo_user_event.listUserEvent", err)
 			return nil, err
 		}
 		for _, event := range events {

@@ -49,12 +49,14 @@ func tableScalingoAddon() *plugin.Table {
 func listAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_addon.listAddon", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	addons, err := client.AddonsList(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_addon.listAddon", err)
 		return nil, err
 	}
 	for _, addon := range addons {
@@ -66,6 +68,7 @@ func listAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 func getAddon(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_addon.getAddon", "connection_error", err)
 		return nil, err
 	}
 	quals := d.KeyColumnQuals
@@ -75,6 +78,7 @@ func getAddon(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (
 
 	result, err := client.AddonShow(appName, id)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_addon.getAddon", err)
 		return nil, err
 	}
 	return result, nil

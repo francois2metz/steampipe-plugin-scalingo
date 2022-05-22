@@ -33,12 +33,14 @@ func tableScalingoContainer() *plugin.Table {
 func listContainer(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_container.listContainer", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	containers, err := client.AppsContainerTypes(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_container.listContainer", err)
 		return nil, err
 	}
 	for _, container := range containers {

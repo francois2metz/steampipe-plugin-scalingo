@@ -32,12 +32,14 @@ func tableScalingoCron() *plugin.Table {
 func listCron(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_cron.listCron", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	tasks, err := client.CronTasksGet(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_cron.listCron", err)
 		return nil, err
 	}
 	for _, job := range tasks.Jobs {

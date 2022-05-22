@@ -47,10 +47,12 @@ func tableScalingoApp() *plugin.Table {
 func listApp(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_app.listApp", "connection_error", err)
 		return nil, err
 	}
 	apps, err := client.AppsList()
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_app.listApp", err)
 		return nil, err
 	}
 	for _, app := range apps {
@@ -62,12 +64,14 @@ func listApp(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 func getApp(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_app.getApp", "connection_error", err)
 		return nil, err
 	}
 	quals := d.KeyColumnQuals
 	name := quals["name"].GetStringValue()
 	result, err := client.AppsShow(name)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_app.getApp", err)
 		return nil, err
 	}
 	return result, nil

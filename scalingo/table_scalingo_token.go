@@ -26,10 +26,12 @@ func tableScalingoToken() *plugin.Table {
 func listToken(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_token.listToken", "connection_error", err)
 		return nil, err
 	}
 	tokens, err := client.TokensList()
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_token.listToken", err)
 		return nil, err
 	}
 	for _, token := range tokens {

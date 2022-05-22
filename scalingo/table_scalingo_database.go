@@ -46,6 +46,7 @@ func tableScalingoDatabase() *plugin.Table {
 func listDatabase(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_database.listDatabase", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
@@ -53,6 +54,7 @@ func listDatabase(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 
 	db, err := client.DatabaseShow(appName, addon)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_database.listDatabase", err)
 		return nil, err
 	}
 	d.StreamListItem(ctx, db)

@@ -45,6 +45,7 @@ func tableScalingoDeployment() *plugin.Table {
 func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_deployment.listDeployment", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
@@ -53,6 +54,7 @@ func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 	for {
 		deployments, pagination, err := client.DeploymentListWithPagination(appName, opts)
 		if err != nil {
+		plugin.Logger(ctx).Error("scalingo_deployment.listDeployment", err)
 			return nil, err
 		}
 		for _, deployment := range deployments {
@@ -69,6 +71,7 @@ func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 func getDeployment(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_deployment.getDeployment", "connection_error", err)
 		return nil, err
 	}
 	quals := d.KeyColumnQuals
@@ -78,6 +81,7 @@ func getDeployment(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateDa
 
 	result, err := client.Deployment(appName, id)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_deployment.getDeployment", err)
 		return nil, err
 	}
 	return result, nil

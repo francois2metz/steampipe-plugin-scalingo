@@ -34,12 +34,14 @@ func tableScalingoCollaborator() *plugin.Table {
 func listCollaborator(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_collaborator.listCollaborator", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	collaborators, err := client.CollaboratorsList(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_collaborator.listCollaborator", err)
 		return nil, err
 	}
 	for _, collaborator := range collaborators {

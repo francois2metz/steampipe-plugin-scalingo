@@ -31,12 +31,14 @@ func tableScalingoEnvironment() *plugin.Table {
 func listEnvironment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_environment.listEnvironment", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	variables, err := client.VariablesList(appName)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_environment.listEnvironment", err)
 		return nil, err
 	}
 	for _, variable := range variables {

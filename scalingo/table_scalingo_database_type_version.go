@@ -45,6 +45,7 @@ func tableScalingoDatabaseTypeVersion() *plugin.Table {
 func getDatabaseTypeVersion(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_database_type_version.getDatabaseTypeVersion", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
@@ -53,6 +54,7 @@ func getDatabaseTypeVersion(ctx context.Context, d *plugin.QueryData, _ *plugin.
 
 	dbVersion, err := client.DatabaseTypeVersion(appName, addon, id)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_database_type_version.getDatabaseTypeVersion", err)
 		return nil, err
 	}
 	return dbVersion, nil

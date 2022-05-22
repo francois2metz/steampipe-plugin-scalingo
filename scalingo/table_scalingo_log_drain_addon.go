@@ -31,6 +31,7 @@ func tableScalingoLogDrainAddon() *plugin.Table {
 func listLogDrainAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_log_drain_addon.listLogDrainAddon", "connection_error", err)
 		return nil, err
 	}
 	quals := d.KeyColumnQuals
@@ -39,6 +40,7 @@ func listLogDrainAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 
 	logDrains, err := client.LogDrainsAddonList(appName, id)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_log_drain_addon.listLogDrainAddon", err)
 		return nil, err
 	}
 	for _, logDrain := range logDrains {

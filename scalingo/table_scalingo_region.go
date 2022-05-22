@@ -30,10 +30,12 @@ func tableScalingoRegion() *plugin.Table {
 func listRegion(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_region.listRegion", "connection_error", err)
 		return nil, err
 	}
 	regions, err := client.RegionsList()
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_region.listRegion", err)
 		return nil, err
 	}
 	for _, region := range regions {

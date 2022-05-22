@@ -27,10 +27,12 @@ func tableScalingoKey() *plugin.Table {
 func listKey(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_key.listKey", "connection_error", err)
 		return nil, err
 	}
 	keys, err := client.KeysList()
 	if err != nil {
+		plugin.Logger(ctx).Error("scalingo_key.listKey", err)
 		return nil, err
 	}
 	for _, key := range keys {
