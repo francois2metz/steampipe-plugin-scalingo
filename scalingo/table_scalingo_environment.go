@@ -13,8 +13,8 @@ func tableScalingoEnvironment() *plugin.Table {
 		Name:        "scalingo_environment",
 		Description: "An environment variable is used to configure your app.",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           listEnvironment,
+			KeyColumns: plugin.SingleColumn("app_name"),
+			Hydrate:    listEnvironment,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

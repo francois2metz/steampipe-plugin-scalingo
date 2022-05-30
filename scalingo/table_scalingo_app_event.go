@@ -14,8 +14,8 @@ func tableScalingoAppEvent() *plugin.Table {
 		Name:        "scalingo_app_event",
 		Description: "An application event is generated automatically according to your, other or plaform action on an application.",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           listAppEvent,
+			KeyColumns: plugin.SingleColumn("app_name"),
+			Hydrate:    listAppEvent,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

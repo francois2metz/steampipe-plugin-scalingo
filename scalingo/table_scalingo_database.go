@@ -16,8 +16,8 @@ func tableScalingoDatabase() *plugin.Table {
 		Name:        "scalingo_database",
 		Description: "A database is associated to an application",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.AllColumns([]string{"app_name", "addon_id"}),
-			Hydrate:           listDatabase,
+			KeyColumns: plugin.AllColumns([]string{"app_name", "addon_id"}),
+			Hydrate:    listDatabase,
 			IgnoreConfig: &plugin.IgnoreConfig{
 				ShouldIgnoreErrorFunc: isTokenError,
 			},

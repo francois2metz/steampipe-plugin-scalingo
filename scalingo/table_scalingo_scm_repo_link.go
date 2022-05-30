@@ -17,8 +17,8 @@ func tableScalingoScmRepoLink() *plugin.Table {
 			Hydrate: listScmRepoLink,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           getScmRepoLink,
+			KeyColumns: plugin.SingleColumn("app_name"),
+			Hydrate:    getScmRepoLink,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

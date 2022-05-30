@@ -14,7 +14,7 @@ func tableScalingoUserEvent() *plugin.Table {
 		Name:        "scalingo_user_event",
 		Description: "A user event is generated automatically according to your, other, or the plaform action ",
 		List: &plugin.ListConfig{
-			Hydrate:           listUserEvent,
+			Hydrate: listUserEvent,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

@@ -13,8 +13,8 @@ func tableScalingoDatabaseTypeVersion() *plugin.Table {
 		Name:        "scalingo_database_type_verion",
 		Description: "A database type is a version of a database.",
 		Get: &plugin.GetConfig{
-			KeyColumns:        plugin.AllColumns([]string{"app_name", "addon_id", "id"}),
-			Hydrate:           getDatabaseTypeVersion,
+			KeyColumns: plugin.AllColumns([]string{"app_name", "addon_id", "id"}),
+			Hydrate:    getDatabaseTypeVersion,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

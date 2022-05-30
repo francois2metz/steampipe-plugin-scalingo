@@ -4,8 +4,8 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 	scalingohttp "github.com/Scalingo/go-scalingo/v4/http"
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 	"gopkg.in/errgo.v1"
 )
 

@@ -13,8 +13,8 @@ func tableScalingoCron() *plugin.Table {
 		Name:        "scalingo_cron",
 		Description: "A cron task is a command executed at a scheduled interval.",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           listCron,
+			KeyColumns: plugin.SingleColumn("app_name"),
+			Hydrate:    listCron,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

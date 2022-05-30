@@ -12,7 +12,7 @@ func tableScalingoKey() *plugin.Table {
 		Name:        "scalingo_key",
 		Description: "An SSH key associated to the account.",
 		List: &plugin.ListConfig{
-			Hydrate:           listKey,
+			Hydrate: listKey,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

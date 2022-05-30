@@ -13,12 +13,12 @@ func tableScalingoAddon() *plugin.Table {
 		Name:        "scalingo_addon",
 		Description: "An addon is a database or similar associated to an application.",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           listAddon,
+			KeyColumns: plugin.SingleColumn("app_name"),
+			Hydrate:    listAddon,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns:        plugin.AllColumns([]string{"app_name", "id"}),
-			Hydrate:           getAddon,
+			KeyColumns: plugin.AllColumns([]string{"app_name", "id"}),
+			Hydrate:    getAddon,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

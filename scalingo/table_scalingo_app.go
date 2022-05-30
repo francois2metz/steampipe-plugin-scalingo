@@ -16,8 +16,8 @@ func tableScalingoApp() *plugin.Table {
 			Hydrate: listApp,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns:        plugin.SingleColumn("name"),
-			Hydrate:           getApp,
+			KeyColumns: plugin.SingleColumn("name"),
+			Hydrate:    getApp,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

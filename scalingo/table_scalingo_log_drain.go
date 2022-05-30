@@ -13,8 +13,8 @@ func tableScalingoLogDrain() *plugin.Table {
 		Name:        "scalingo_log_drain",
 		Description: "A log drain send logs from an application to a log management service.",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           listLogDrain,
+			KeyColumns: plugin.SingleColumn("app_name"),
+			Hydrate:    listLogDrain,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

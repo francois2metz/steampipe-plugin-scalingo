@@ -16,8 +16,8 @@ func tableScalingoScmIntegration() *plugin.Table {
 			Hydrate: listScmIntegration,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns:        plugin.SingleColumn("id"),
-			Hydrate:           getScmIntegration,
+			KeyColumns: plugin.SingleColumn("id"),
+			Hydrate:    getScmIntegration,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

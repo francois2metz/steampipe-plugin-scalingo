@@ -14,12 +14,12 @@ func tableScalingoDeployment() *plugin.Table {
 		Name:        "scalingo_deployment",
 		Description: "A deployment represent a new version deployed of an application.",
 		List: &plugin.ListConfig{
-			KeyColumns:        plugin.SingleColumn("app_name"),
-			Hydrate:           listDeployment,
+			KeyColumns: plugin.SingleColumn("app_name"),
+			Hydrate:    listDeployment,
 		},
 		Get: &plugin.GetConfig{
-			KeyColumns:        plugin.AllColumns([]string{"app_name", "id"}),
-			Hydrate:           getDeployment,
+			KeyColumns: plugin.AllColumns([]string{"app_name", "id"}),
+			Hydrate:    getDeployment,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{
