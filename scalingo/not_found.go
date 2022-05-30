@@ -21,5 +21,13 @@ func isNotFoundError(ctx context.Context, d *plugin.QueryData, h *plugin.Hydrate
 		return false
 	}
 
-	return requestFailedError.Code == http.StatusNotFound
+	errorsCode := []int{http.StatusNotFound, http.StatusUnauthorized}
+	result := false
+	for _, code := range errorsCode {
+		if code == requestFailedError.Code {
+			result = true
+			break
+		}
+	}
+	return result
 }
