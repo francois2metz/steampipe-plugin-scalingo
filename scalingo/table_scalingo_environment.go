@@ -15,7 +15,6 @@ func tableScalingoEnvironment() *plugin.Table {
 		List: &plugin.ListConfig{
 			KeyColumns:        plugin.SingleColumn("app_name"),
 			Hydrate:           listEnvironment,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

@@ -1,13 +1,15 @@
 package scalingo
 
 import (
+	"context"
 	"net/http"
 
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 	scalingohttp "github.com/Scalingo/go-scalingo/v4/http"
 	"gopkg.in/errgo.v1"
 )
 
-func isNotFoundError(err error) bool {
+func isNotFoundError(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData, err error) bool {
 	errgo, ok := err.(*errgo.Err)
 	if !ok {
 		return false

@@ -16,7 +16,6 @@ func tableScalingoAppEvent() *plugin.Table {
 		List: &plugin.ListConfig{
 			KeyColumns:        plugin.SingleColumn("app_name"),
 			Hydrate:           listAppEvent,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

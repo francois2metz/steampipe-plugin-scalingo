@@ -13,7 +13,6 @@ func tableScalingoKey() *plugin.Table {
 		Description: "An SSH key associated to the account.",
 		List: &plugin.ListConfig{
 			Hydrate:           listKey,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

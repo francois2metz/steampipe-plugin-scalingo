@@ -15,7 +15,6 @@ func tableScalingoUserEvent() *plugin.Table {
 		Description: "A user event is generated automatically according to your, other, or the plaform action ",
 		List: &plugin.ListConfig{
 			Hydrate:           listUserEvent,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

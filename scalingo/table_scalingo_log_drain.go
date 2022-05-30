@@ -15,7 +15,6 @@ func tableScalingoLogDrain() *plugin.Table {
 		List: &plugin.ListConfig{
 			KeyColumns:        plugin.SingleColumn("app_name"),
 			Hydrate:           listLogDrain,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

@@ -16,12 +16,10 @@ func tableScalingoDeployment() *plugin.Table {
 		List: &plugin.ListConfig{
 			KeyColumns:        plugin.SingleColumn("app_name"),
 			Hydrate:           listDeployment,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		Get: &plugin.GetConfig{
 			KeyColumns:        plugin.AllColumns([]string{"app_name", "id"}),
 			Hydrate:           getDeployment,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{

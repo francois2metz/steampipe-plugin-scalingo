@@ -19,7 +19,6 @@ func tableScalingoScmRepoLink() *plugin.Table {
 		Get: &plugin.GetConfig{
 			KeyColumns:        plugin.SingleColumn("app_name"),
 			Hydrate:           getScmRepoLink,
-			ShouldIgnoreError: isNotFoundError,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{
