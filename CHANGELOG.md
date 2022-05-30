@@ -1,3 +1,10 @@
+## v0.3.2 [2022-05-30]
+
+_What's new?_
+
+- Update steampipe sdk to 3.2
+- Ignore unauthorized errors
+
 ## v0.3.1 [2022-05-22]
 
 _What's new?_
