@@ -36,6 +36,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scalingo_region":                tableScalingoRegion(),
 			"scalingo_scm_integration":       tableScalingoScmIntegration(),
 			"scalingo_scm_repo_link":         tableScalingoScmRepoLink(),
+			"scalingo_stack":                 tableScalingoStack(),
 			"scalingo_token":                 tableScalingoToken(),
 			"scalingo_user_event":            tableScalingoUserEvent(),
 		},
