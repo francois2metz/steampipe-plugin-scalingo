@@ -1,3 +1,9 @@
+## v0.4.0 [2022-05-31]
+
+_What's new?_
+
+- Add scalingo_stack table
+
 ## v0.3.2 [2022-05-30]
 
 _What's new?_
