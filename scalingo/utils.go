@@ -37,10 +37,8 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	token := os.Getenv("SCALINGO_TOKEN")
 
 	scalingoConfig := GetConfig(d.Connection)
-	if &scalingoConfig != nil {
-		if scalingoConfig.Token != nil {
-			token = *scalingoConfig.Token
-		}
+	if scalingoConfig.Token != nil {
+		token = *scalingoConfig.Token
 	}
 
 	if token == "" {
@@ -77,16 +75,14 @@ func BuildRegionList(ctx context.Context, connection *plugin.Connection) []map[s
 	// retrieve regions from connection config
 	scalingoConfig := GetConfig(connection)
 
-	if &scalingoConfig != nil {
-		// handle compatibility with the old region configuration
-		if scalingoConfig.Region != nil {
-			regions = append(regions, *scalingoConfig.Region)
-		}
+	// handle compatibility with the old region configuration
+	if scalingoConfig.Region != nil {
+		regions = append(regions, *scalingoConfig.Region)
+	}
 
-		// Get only the regions as required by config file
-		if len(*scalingoConfig.Regions) > 0 {
-			regions = *scalingoConfig.Regions
-		}
+	// Get only the regions as required by config file
+	if len(*scalingoConfig.Regions) > 0 {
+		regions = *scalingoConfig.Regions
 	}
 
 	if len(regions) > 0 {
