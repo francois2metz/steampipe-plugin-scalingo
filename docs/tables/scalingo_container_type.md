@@ -15,3 +15,14 @@ from
 where
   app_name='caresteouvert-api';
 ```
+
+### Count the number of all container types
+
+```sql
+select
+  sum(amount)
+from
+  scalingo_container_type
+where
+  app_name='caresteouvert-api';
+```
