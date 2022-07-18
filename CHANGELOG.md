@@ -1,3 +1,10 @@
+## v0.5.0 [2022-07-18]
+
+_What's new?_
+
+- **Breaking change**: The *scalingo_container* has been rename to *scalingo_container_type*
+- Add *scalingo_container* table
+
 ## v0.4.0 [2022-05-31]
 
 _What's new?_
