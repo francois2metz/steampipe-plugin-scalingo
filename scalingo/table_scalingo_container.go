@@ -8,13 +8,13 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
 )
 
-func tableScalingoContainer() *plugin.Table {
+func tableScalingoContainerType() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_container",
-		Description: "A container is a running part of your application.",
+		Name:        "scalingo_container_type",
+		Description: "Container type from an application.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
-			Hydrate:    listContainer,
+			Hydrate:    listContainerType,
 		},
 		GetMatrixItem: BuildRegionList,
 		Columns: []*plugin.Column{
@@ -29,17 +29,17 @@ func tableScalingoContainer() *plugin.Table {
 	}
 }
 
-func listContainer(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
+func listContainerType(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_container.listContainer", "connection_error", err)
+		plugin.Logger(ctx).Error("scalingo_container_type.listContainerType", "connection_error", err)
 		return nil, err
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
 	containers, err := client.AppsContainerTypes(appName)
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_container.listContainer", err)
+		plugin.Logger(ctx).Error("scalingo_container_type.listContainerType", err)
 		return nil, err
 	}
 	for _, container := range containers {
