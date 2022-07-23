@@ -22,7 +22,7 @@ func tableScalingoContainer() *plugin.Table {
 
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "ID of the container."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the container."},
-			{Name: "deleted_at", Type: proto.ColumnType_TIMESTAMP, Description: "Deletation date of the container."},
+			{Name: "deleted_at", Type: proto.ColumnType_TIMESTAMP, Description: "Deletion date of the container."},
 			{Name: "type", Type: proto.ColumnType_STRING, Description: "Type of container (web, worker, etc.)."},
 			{Name: "type_index", Type: proto.ColumnType_INT, Description: "Index number of the container for the given type."},
 			{Name: "label", Type: proto.ColumnType_STRING, Description: "Label of the container."},
