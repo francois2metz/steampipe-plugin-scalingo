@@ -26,8 +26,6 @@ func tableScalingoAlert() *plugin.Table {
 
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID, starts with “al-“."},
 			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application this alert applies to."},
-			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the alert."},
-			{Name: "updated_at", Type: proto.ColumnType_TIMESTAMP, Description: "Last time the alert has been updated."},
 			{Name: "container_typeo", Type: proto.ColumnType_STRING, Description: "Container type concerned by the alert."},
 			{Name: "disabled", Type: proto.ColumnType_BOOL, Description: "Is the alert disabled."},
 			{Name: "metric", Type: proto.ColumnType_STRING, Description: "Metric name this alert is about."},
