@@ -11,7 +11,7 @@ import (
 func tableScalingoAlert() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_alert",
-		Description: "Notifications are app events sent to a custom HTTP endpoint.",
+		Description: "Alert based on an application metric.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listAlert,
