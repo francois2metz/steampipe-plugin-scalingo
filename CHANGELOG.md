@@ -1,3 +1,13 @@
+## v0.6.0 [2022-07-24]
+
+_What's new?_
+
+- New tables added
+
+  - scalingo_alert
+  - scalingo_notifier
+  - scalingo_event_type
+
 ## v0.5.0 [2022-07-18]
 
 _What's new?_
