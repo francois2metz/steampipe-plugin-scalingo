@@ -41,3 +41,17 @@ from
 where
   app_name='caresteouvert-api' and type='slack';
 ```
+
+### List events type associated to notifiers
+
+```sql
+select
+  n.name,
+  e.name
+from
+  scalingo_notifier as n,
+  jsonb_array_elements_text(n.selected_event_ids) as event_id,
+  scalingo_event_type as e
+where
+  e.id = event_id and n.app_name='caresteouvert-api';
+```
