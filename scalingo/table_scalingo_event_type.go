@@ -17,7 +17,7 @@ func tableScalingoEventType() *plugin.Table {
 		},
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of event type."},
-			{Name: "category_id", Type: proto.ColumnType_STRING, Description: "category ID of the type."},
+			{Name: "category_id", Type: proto.ColumnType_STRING, Description: "Category ID of the type."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Camel case name of the type."},
 			{Name: "display_name", Type: proto.ColumnType_STRING, Description: "Fancy name of the type."},
 			{Name: "description", Type: proto.ColumnType_STRING, Description: "Description these events are produced."},
