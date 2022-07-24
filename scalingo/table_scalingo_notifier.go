@@ -23,6 +23,7 @@ func tableScalingoNotifier() *plugin.Table {
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the notifier."},
 			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "ID of the application which owns the notifier."},
 			{Name: "active", Type: proto.ColumnType_BOOL, Description: "Is the notifier active or not."},
+			{Name: "name", Type: proto.ColumnType_STRING, Description: "Name of the notifier."},
 			{Name: "type", Type: proto.ColumnType_STRING, Description: "Notifier type."},
 			{Name: "send_all_events", Type: proto.ColumnType_BOOL, Description: "Should the notifier accept all events."},
 			{Name: "send_all_alerts", Type: proto.ColumnType_BOOL, Description: "Should the notifier accept all alerts."},
