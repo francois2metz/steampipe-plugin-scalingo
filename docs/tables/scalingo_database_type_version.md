@@ -2,7 +2,7 @@
 
 Get the version of a database.
 
-The `scalingo_database_type_version` table can be used to query information about a a version of a database, and you must specify which application in the where or join clause using the `app_name` column and the `addon_id` as well as the version `id`.
+The `scalingo_database_type_version` table can be used to query information about a version of a database, and you must specify which application in the where or join clause using the `app_name` column and the `addon_id` as well as the version `id`.
 
 ## Examples
 
