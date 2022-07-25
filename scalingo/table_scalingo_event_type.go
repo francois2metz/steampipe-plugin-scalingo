@@ -9,8 +9,8 @@ import (
 
 func tableScalingoEventType() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_event_type",
-		Description: "The list of event types to get IDs to create Notifiers.",
+		Name:          "scalingo_event_type",
+		Description:   "The list of event types to get IDs to create Notifiers.",
 		GetMatrixItem: BuildRegionList,
 		List: &plugin.ListConfig{
 			Hydrate: listEventType,

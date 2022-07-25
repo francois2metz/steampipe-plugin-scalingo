@@ -10,8 +10,8 @@ import (
 
 func tableScalingoNotificationPlatform() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_notification_platform",
-		Description: "Scalingo lets you use different platforms to send your notifications.",
+		Name:          "scalingo_notification_platform",
+		Description:   "Scalingo lets you use different platforms to send your notifications.",
 		GetMatrixItem: BuildRegionList,
 		List: &plugin.ListConfig{
 			Hydrate: listNotificationPlatform,
