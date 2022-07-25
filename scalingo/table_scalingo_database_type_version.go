@@ -10,7 +10,7 @@ import (
 
 func tableScalingoDatabaseTypeVersion() *plugin.Table {
 	return &plugin.Table{
-		Name:        "scalingo_database_type_verion",
+		Name:        "scalingo_database_type_version",
 		Description: "A database type is a version of a database.",
 		Get: &plugin.GetConfig{
 			KeyColumns: plugin.AllColumns([]string{"app_name", "addon_id", "id"}),
