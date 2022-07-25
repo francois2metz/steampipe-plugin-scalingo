@@ -18,3 +18,32 @@ from
 where
   app_name='caresteouvert-api';
 ```
+
+### List alerts which do not send notifications when triggered
+
+```sql
+select
+  id,
+  disabled,
+  container_type,
+  metric
+from
+  scalingo_alert
+where
+  app_name='caresteouvert-api' and
+  not send_when_below;
+```
+
+### List alerts which are disabled
+
+```sql
+select
+  id,
+  container_type,
+  metric
+from
+  scalingo_alert
+where
+  app_name='caresteouvert-api' and
+  disabled;
+```
