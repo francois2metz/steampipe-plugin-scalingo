@@ -24,5 +24,5 @@ select
 from
   scalingo_stack
 where
-  "default"=true;
+  "default";
 ```
