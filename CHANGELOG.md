@@ -1,3 +1,17 @@
+## v0.7.0 [2022-07-26]
+
+_What's new?_
+
+- New tables added
+
+  - scalingo_autoscaler
+  - scalingo_notification_platform
+
+- Update steampipe sdk to 3.3.2
+- Fix the scalingo_database_type_version name and error
+- Add some examples on scalingo_alert
+- Comment the scalingo token on the default config
+  
 ## v0.6.0 [2022-07-24]
 
 _What's new?_
