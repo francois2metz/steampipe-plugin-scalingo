@@ -19,7 +19,7 @@ func tableScalingoDatabase() *plugin.Table {
 			KeyColumns: plugin.AllColumns([]string{"app_name", "addon_id"}),
 			Hydrate:    listDatabase,
 			IgnoreConfig: &plugin.IgnoreConfig{
-				ShouldIgnoreErrorFunc: isTokenError,
+				ShouldIgnoreErrorFunc: isAddonTokenError,
 			},
 		},
 		GetMatrixItem: BuildRegionList,
@@ -77,7 +77,7 @@ func featureValueToBool(ctx context.Context, d *transform.TransformData) (interf
 	return false, nil
 }
 
-func isTokenError(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData, err error) bool {
+func isAddonTokenError(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData, err error) bool {
 	errgo, ok := err.(*errgo.Err)
 	if !ok {
 		return false

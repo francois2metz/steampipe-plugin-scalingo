@@ -16,7 +16,7 @@ func tableScalingoDatabaseTypeVersion() *plugin.Table {
 			KeyColumns: plugin.AllColumns([]string{"app_name", "addon_id", "id"}),
 			Hydrate:    getDatabaseTypeVersion,
 			IgnoreConfig: &plugin.IgnoreConfig{
-				ShouldIgnoreErrorFunc: isTokenError,
+				ShouldIgnoreErrorFunc: isAddonTokenError,
 			},
 		},
 		GetMatrixItem: BuildRegionList,
