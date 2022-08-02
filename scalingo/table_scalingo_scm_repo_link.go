@@ -26,9 +26,9 @@ func tableScalingoScmRepoLink() *plugin.Table {
 
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the link."},
 			{Name: "app_id", Type: proto.ColumnType_STRING, Description: "The application ID."},
-			{Name: "linker_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.Username"), Description: "The size of the one-off container."},
-			{Name: "linker_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.Email"), Description: "The size of the one-off container."},
-			{Name: "linker_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.ID"), Description: "The size of the one-off container."},
+			{Name: "linker_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.Username"), Description: "Username of the user that linked the repository."},
+			{Name: "linker_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.Email"), Description: "Email of the user that linked the repository."},
+			{Name: "linker_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.ID"), Description: "ID of the user that linked the repository."},
 			{Name: "owner", Type: proto.ColumnType_STRING, Description: "Repository owner name."},
 			{Name: "repo", Type: proto.ColumnType_STRING, Description: "Repository name."},
 			{Name: "branch", Type: proto.ColumnType_STRING, Description: "The branch used for auto deployment."},
