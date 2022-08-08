@@ -5,6 +5,7 @@ import (
 
 	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
 )
 
 func tableScalingoEventType() *plugin.Table {
@@ -16,6 +17,8 @@ func tableScalingoEventType() *plugin.Table {
 			Hydrate: listEventType,
 		},
 		Columns: []*plugin.Column{
+			{Name: "region", Type: proto.ColumnType_STRING, Transform: transform.FromMatrixItem(matrixKeyRegion), Description: "The region associated to this event."},
+
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of event type."},
 			{Name: "category_id", Type: proto.ColumnType_STRING, Description: "Category ID of the type."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Camel case name of the type."},

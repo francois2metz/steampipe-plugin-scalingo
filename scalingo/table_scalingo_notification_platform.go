@@ -17,6 +17,8 @@ func tableScalingoNotificationPlatform() *plugin.Table {
 			Hydrate: listNotificationPlatform,
 		},
 		Columns: []*plugin.Column{
+			{Name: "region", Type: proto.ColumnType_STRING, Transform: transform.FromMatrixItem(matrixKeyRegion), Description: "The region associated to this notification platform."},
+
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the notification platform."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Name of the notification platform."},
 			{Name: "display_name", Type: proto.ColumnType_STRING, Description: "Human readable name for this notification platform."},
