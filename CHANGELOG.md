@@ -1,3 +1,11 @@
+## v0.7.1 [2022-08-08]
+
+_What's new?_
+
+- Add an example on `scalingo_database_type_version` database
+- Fix some columns description
+- Add a column `region` on `scalingo_event_type` and `scalingo_notification_platform` tables
+
 ## v0.7.0 [2022-07-26]
 
 _What's new?_
