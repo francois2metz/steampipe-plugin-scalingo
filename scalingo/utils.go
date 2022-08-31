@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Scalingo/go-scalingo/v4"
+	"github.com/Scalingo/go-scalingo/v5"
 	"github.com/turbot/steampipe-plugin-sdk/v3/connection"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 )
@@ -49,7 +49,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 		APIToken: token,
 		Region:   region,
 	}
-	client, err := scalingo.New(config)
+	client, err := scalingo.New(ctx, config)
 
 	if err != nil {
 		return nil, err

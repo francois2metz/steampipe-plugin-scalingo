@@ -38,7 +38,7 @@ func listCollaborator(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrat
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	collaborators, err := client.CollaboratorsList(appName)
+	collaborators, err := client.CollaboratorsList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_collaborator.listCollaborator", err)
 		return nil, err

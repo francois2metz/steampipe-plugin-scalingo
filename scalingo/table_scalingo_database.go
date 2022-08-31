@@ -5,7 +5,7 @@ import (
 	"gopkg.in/errgo.v1"
 	"regexp"
 
-	"github.com/Scalingo/go-scalingo/v4"
+	"github.com/Scalingo/go-scalingo/v5"
 	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
@@ -54,7 +54,7 @@ func listDatabase(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 	addon := d.KeyColumnQuals["addon_id"].GetStringValue()
 
-	db, err := client.DatabaseShow(appName, addon)
+	db, err := client.DatabaseShow(ctx, appName, addon)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_database.listDatabase", err)
 		return nil, err

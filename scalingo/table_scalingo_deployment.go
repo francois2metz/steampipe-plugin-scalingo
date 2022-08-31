@@ -3,7 +3,7 @@ package scalingo
 import (
 	"context"
 
-	"github.com/Scalingo/go-scalingo/v4"
+	"github.com/Scalingo/go-scalingo/v5"
 	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
@@ -50,7 +50,7 @@ func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
 
 	for {
-		deployments, pagination, err := client.DeploymentListWithPagination(appName, opts)
+		deployments, pagination, err := client.DeploymentListWithPagination(ctx, appName, opts)
 		if err != nil {
 			plugin.Logger(ctx).Error("scalingo_deployment.listDeployment", err)
 			return nil, err
@@ -77,7 +77,7 @@ func getDeployment(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateDa
 	id := quals["id"].GetStringValue()
 	appName := quals["app_name"].GetStringValue()
 
-	result, err := client.Deployment(appName, id)
+	result, err := client.Deployment(ctx, appName, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_deployment.getDeployment", err)
 		return nil, err

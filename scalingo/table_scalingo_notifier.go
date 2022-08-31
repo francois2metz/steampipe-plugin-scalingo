@@ -43,7 +43,7 @@ func listNotifier(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	notifiers, err := client.NotifiersList(appName)
+	notifiers, err := client.NotifiersList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_notifier.listNotifier", err)
 		return nil, err

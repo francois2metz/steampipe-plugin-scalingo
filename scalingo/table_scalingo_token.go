@@ -29,7 +29,7 @@ func listToken(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 		plugin.Logger(ctx).Error("scalingo_token.listToken", "connection_error", err)
 		return nil, err
 	}
-	tokens, err := client.TokensList()
+	tokens, err := client.TokensList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_token.listToken", err)
 		return nil, err

@@ -52,7 +52,7 @@ func listAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	addons, err := client.AddonsList(appName)
+	addons, err := client.AddonsList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_addon.listAddon", err)
 		return nil, err
@@ -74,7 +74,7 @@ func getAddon(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (
 	id := quals["id"].GetStringValue()
 	appName := quals["app_name"].GetStringValue()
 
-	result, err := client.AddonShow(appName, id)
+	result, err := client.AddonShow(ctx, appName, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_addon.getAddon", err)
 		return nil, err

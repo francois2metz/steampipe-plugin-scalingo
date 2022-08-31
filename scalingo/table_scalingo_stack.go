@@ -31,7 +31,7 @@ func listStack(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 		plugin.Logger(ctx).Error("scalingo_stack.listStack", "connection_error", err)
 		return nil, err
 	}
-	stacks, err := client.StacksList()
+	stacks, err := client.StacksList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_stack.listStack", err)
 		return nil, err

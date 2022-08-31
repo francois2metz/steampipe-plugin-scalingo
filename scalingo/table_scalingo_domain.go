@@ -50,7 +50,7 @@ func listDomain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	domains, err := client.DomainsList(appName)
+	domains, err := client.DomainsList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_domain.listDomain", err)
 		return nil, err
@@ -72,7 +72,7 @@ func getDomain(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) 
 	id := quals["id"].GetStringValue()
 	appName := quals["app_name"].GetStringValue()
 
-	result, err := client.DomainsShow(appName, id)
+	result, err := client.DomainsShow(ctx, appName, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_domain.getDomain", err)
 		return nil, err

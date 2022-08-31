@@ -54,7 +54,7 @@ func getDatabaseTypeVersion(ctx context.Context, d *plugin.QueryData, _ *plugin.
 	addon := d.KeyColumnQuals["addon_id"].GetStringValue()
 	id := d.KeyColumnQuals["id"].GetStringValue()
 
-	dbVersion, err := client.DatabaseTypeVersion(appName, addon, id)
+	dbVersion, err := client.DatabaseTypeVersion(ctx, appName, addon, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_database_type_version.getDatabaseTypeVersion", err)
 		return nil, err

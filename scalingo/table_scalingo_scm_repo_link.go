@@ -3,7 +3,7 @@ package scalingo
 import (
 	"context"
 
-	"github.com/Scalingo/go-scalingo/v4"
+	"github.com/Scalingo/go-scalingo/v5"
 	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
@@ -55,7 +55,7 @@ func listScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 	}
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
 	for {
-		scmRepoLinks, pagination, err := client.SCMRepoLinkList(opts)
+		scmRepoLinks, pagination, err := client.SCMRepoLinkList(ctx, opts)
 		if err != nil {
 			plugin.Logger(ctx).Error("scalingo_scm_repo_link.listScmRepoLink", err)
 			return nil, err
@@ -79,7 +79,7 @@ func getScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	scmRepoLink, err := client.SCMRepoLinkShow(appName)
+	scmRepoLink, err := client.SCMRepoLinkShow(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_scm_repo_link.getScmRepoLink", err)
 		return nil, err

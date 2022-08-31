@@ -43,7 +43,7 @@ func listAutoscaler(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	autoscalers, err := client.AutoscalersList(appName)
+	autoscalers, err := client.AutoscalersList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_autoscaler.listAutoscaler", err)
 		return nil, err
@@ -65,7 +65,7 @@ func getAutoscaler(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateDa
 	id := quals["id"].GetStringValue()
 	appName := quals["app_name"].GetStringValue()
 
-	result, err := client.AutoscalerShow(appName, id)
+	result, err := client.AutoscalerShow(ctx, appName, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_autoscaler.getAutoscaler", err)
 		return nil, err

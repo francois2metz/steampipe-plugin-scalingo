@@ -39,7 +39,7 @@ func listScmIntegration(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydr
 		return nil, err
 	}
 
-	scmIntegrations, err := client.SCMIntegrationsList()
+	scmIntegrations, err := client.SCMIntegrationsList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_scm_integration.listScmIntegration", err)
 		return nil, err
@@ -59,7 +59,7 @@ func getScmIntegration(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 	}
 	id := d.KeyColumnQuals["id"].GetStringValue()
 
-	scmIntegration, err := client.SCMIntegrationsShow(id)
+	scmIntegration, err := client.SCMIntegrationsShow(ctx, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_scm_integration.getScmIntegration", err)
 		return nil, err

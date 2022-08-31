@@ -48,7 +48,7 @@ func listContainer(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	containers, err := client.AppsContainersPs(appName)
+	containers, err := client.AppsContainersPs(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_container.listContainer", err)
 		return nil, err

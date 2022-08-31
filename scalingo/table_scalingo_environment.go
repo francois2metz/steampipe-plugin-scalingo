@@ -35,7 +35,7 @@ func listEnvironment(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	variables, err := client.VariablesList(appName)
+	variables, err := client.VariablesList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_environment.listEnvironment", err)
 		return nil, err

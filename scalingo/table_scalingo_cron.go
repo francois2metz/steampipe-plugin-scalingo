@@ -36,7 +36,7 @@ func listCron(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	tasks, err := client.CronTasksGet(appName)
+	tasks, err := client.CronTasksGet(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_cron.listCron", err)
 		return nil, err

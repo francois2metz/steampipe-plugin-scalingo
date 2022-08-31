@@ -29,7 +29,7 @@ func listKey(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 		plugin.Logger(ctx).Error("scalingo_key.listKey", "connection_error", err)
 		return nil, err
 	}
-	keys, err := client.KeysList()
+	keys, err := client.KeysList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_key.listKey", err)
 		return nil, err

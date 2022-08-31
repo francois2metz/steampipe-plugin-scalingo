@@ -34,7 +34,7 @@ func listEventType(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 		plugin.Logger(ctx).Error("scalingo_event_type.listEventType", "connection_error", err)
 		return nil, err
 	}
-	event_types, err := client.EventTypesList()
+	event_types, err := client.EventTypesList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_event_type.listEventType", err)
 		return nil, err

@@ -3,7 +3,7 @@ package scalingo
 import (
 	"context"
 
-	"github.com/Scalingo/go-scalingo/v4"
+	"github.com/Scalingo/go-scalingo/v5"
 	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
@@ -46,7 +46,7 @@ func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	}
 
 	for {
-		events, pagination, err := client.EventsList(appName, opts)
+		events, pagination, err := client.EventsList(ctx, appName, opts)
 		if err != nil {
 			plugin.Logger(ctx).Error("scalingo_app_event.listAppEvent", err)
 			return nil, err

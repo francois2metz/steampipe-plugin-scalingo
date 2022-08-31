@@ -33,7 +33,7 @@ func listRegion(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 		plugin.Logger(ctx).Error("scalingo_region.listRegion", "connection_error", err)
 		return nil, err
 	}
-	regions, err := client.RegionsList()
+	regions, err := client.RegionsList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_region.listRegion", err)
 		return nil, err

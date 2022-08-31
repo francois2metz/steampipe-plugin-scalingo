@@ -35,7 +35,7 @@ func listNotificationPlatform(ctx context.Context, d *plugin.QueryData, _ *plugi
 		plugin.Logger(ctx).Error("scalingo_notification_platform.listNotificationPlatform", "connection_error", err)
 		return nil, err
 	}
-	notification_platforms, err := client.NotificationPlatformsList()
+	notification_platforms, err := client.NotificationPlatformsList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_notification_platform.listNotificationPlatform", err)
 		return nil, err

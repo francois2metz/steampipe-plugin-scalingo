@@ -45,7 +45,7 @@ func listAlert(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	alerts, err := client.AlertsList(appName)
+	alerts, err := client.AlertsList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_alert.listAlert", err)
 		return nil, err
@@ -67,7 +67,7 @@ func getAlert(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (
 	id := quals["id"].GetStringValue()
 	appName := quals["app_name"].GetStringValue()
 
-	result, err := client.AlertShow(appName, id)
+	result, err := client.AlertShow(ctx, appName, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_alert.getAlert", err)
 		return nil, err

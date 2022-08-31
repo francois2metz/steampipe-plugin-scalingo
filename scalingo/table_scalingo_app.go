@@ -49,7 +49,7 @@ func listApp(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 		plugin.Logger(ctx).Error("scalingo_app.listApp", "connection_error", err)
 		return nil, err
 	}
-	apps, err := client.AppsList()
+	apps, err := client.AppsList(ctx)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_app.listApp", err)
 		return nil, err
@@ -68,7 +68,7 @@ func getApp(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (in
 	}
 	quals := d.KeyColumnQuals
 	name := quals["name"].GetStringValue()
-	result, err := client.AppsShow(name)
+	result, err := client.AppsShow(ctx, name)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_app.getApp", err)
 		return nil, err

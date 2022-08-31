@@ -37,7 +37,7 @@ func listLogDrainAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 	appName := quals["app_name"].GetStringValue()
 	id := quals["id"].GetStringValue()
 
-	logDrains, err := client.LogDrainsAddonList(appName, id)
+	logDrains, err := client.LogDrainsAddonList(ctx, appName, id)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_log_drain_addon.listLogDrainAddon", err)
 		return nil, err

@@ -37,7 +37,7 @@ func listContainerType(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	containers, err := client.AppsContainerTypes(appName)
+	containers, err := client.AppsContainerTypes(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_container_type.listContainerType", err)
 		return nil, err

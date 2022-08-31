@@ -34,7 +34,7 @@ func listLogDrain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	}
 	appName := d.KeyColumnQuals["app_name"].GetStringValue()
 
-	logDrains, err := client.LogDrainsList(appName)
+	logDrains, err := client.LogDrainsList(ctx, appName)
 	if err != nil {
 		plugin.Logger(ctx).Error("scalingo_log_drain.listLogDrain", err)
 		return nil, err
