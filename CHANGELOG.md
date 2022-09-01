@@ -1,3 +1,11 @@
+## v0.8.0 [2022-09-01]
+
+_What's new?_
+
+- Update to go 1.19
+- Update steampipe sdk to 4.1.5
+- Update go-scalingo to v5
+
 ## v0.7.1 [2022-08-08]
 
 _What's new?_
