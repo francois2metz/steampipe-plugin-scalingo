@@ -21,7 +21,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 
 	// get scalingo client from cache
 	cacheKey := fmt.Sprintf("scalingo-%s", region)
-	if cachedData, ok := d.ConnectionCache.Get(ctx, cacheKey); ok {
+	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
 		return cachedData.(*scalingo.Client), nil
 	}
 
@@ -55,7 +55,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 func BuildRegionList(ctx context.Context, d *plugin.QueryData) []map[string]interface{} {
 	// cache matrix
 	cacheKey := "RegionListMatrix"
-	if cachedData, ok := d.ConnectionCache.Get(ctx, cacheKey); ok {
+	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
 		return cachedData.([]map[string]interface{})
 	}
 
@@ -81,7 +81,7 @@ func BuildRegionList(ctx context.Context, d *plugin.QueryData) []map[string]inte
 		}
 
 		// set cache
-		d.ConnectionCache.Set(ctx, cacheKey, matrix)
+		d.ConnectionManager.Cache.Set(cacheKey, matrix)
 		return matrix
 	}
 
@@ -90,6 +90,6 @@ func BuildRegionList(ctx context.Context, d *plugin.QueryData) []map[string]inte
 	}
 
 	// set cache
-	d.ConnectionCache.Set(ctx, cacheKey, matrix)
+	d.ConnectionManager.Cache.Set(cacheKey, matrix)
 	return matrix
 }
