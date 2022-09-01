@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/Scalingo/go-scalingo/v5"
-	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
 )
 
 func tableScalingoScmRepoLink() *plugin.Table {
@@ -20,7 +20,7 @@ func tableScalingoScmRepoLink() *plugin.Table {
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    getScmRepoLink,
 		},
-		GetMatrixItem: BuildRegionList,
+		GetMatrixItemFunc: BuildRegionList,
 		Columns: []*plugin.Column{
 			{Name: "app_name", Type: proto.ColumnType_STRING, Transform: transform.FromQual("app_name"), Description: "Name of the app."},
 

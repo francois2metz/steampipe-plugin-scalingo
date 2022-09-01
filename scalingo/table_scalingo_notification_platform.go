@@ -3,16 +3,16 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
 )
 
 func tableScalingoNotificationPlatform() *plugin.Table {
 	return &plugin.Table{
-		Name:          "scalingo_notification_platform",
-		Description:   "Scalingo lets you use different platforms to send your notifications.",
-		GetMatrixItem: BuildRegionList,
+		Name:              "scalingo_notification_platform",
+		Description:       "Scalingo lets you use different platforms to send your notifications.",
+		GetMatrixItemFunc: BuildRegionList,
 		List: &plugin.ListConfig{
 			Hydrate: listNotificationPlatform,
 		},

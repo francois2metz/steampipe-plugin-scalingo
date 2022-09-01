@@ -7,20 +7,11 @@ import (
 	"os"
 
 	"github.com/Scalingo/go-scalingo/v5"
-	"github.com/turbot/steampipe-plugin-sdk/v3/connection"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
 )
 
 const matrixKeyRegion = "region"
 const defaultScalingoRegion = "osc-fr1"
-
-var pluginQueryData *plugin.QueryData
-
-func init() {
-	pluginQueryData = &plugin.QueryData{
-		ConnectionManager: connection.NewManager(),
-	}
-}
 
 func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error) {
 	region := d.KeyColumnQualString(matrixKeyRegion)
@@ -30,7 +21,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 
 	// get scalingo client from cache
 	cacheKey := fmt.Sprintf("scalingo-%s", region)
-	if cachedData, ok := d.ConnectionManager.Cache.Get(cacheKey); ok {
+	if cachedData, ok := d.ConnectionCache.Get(ctx, cacheKey); ok {
 		return cachedData.(*scalingo.Client), nil
 	}
 
@@ -61,19 +52,17 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	return client, nil
 }
 
-func BuildRegionList(ctx context.Context, connection *plugin.Connection) []map[string]interface{} {
-	pluginQueryData.Connection = connection
-
+func BuildRegionList(ctx context.Context, d *plugin.QueryData) []map[string]interface{} {
 	// cache matrix
 	cacheKey := "RegionListMatrix"
-	if cachedData, ok := pluginQueryData.ConnectionManager.Cache.Get(cacheKey); ok {
+	if cachedData, ok := d.ConnectionCache.Get(ctx, cacheKey); ok {
 		return cachedData.([]map[string]interface{})
 	}
 
 	var regions []string
 
 	// retrieve regions from connection config
-	scalingoConfig := GetConfig(connection)
+	scalingoConfig := GetConfig(d.Connection)
 
 	// handle compatibility with the old region configuration
 	if scalingoConfig.Region != nil {
@@ -92,7 +81,7 @@ func BuildRegionList(ctx context.Context, connection *plugin.Connection) []map[s
 		}
 
 		// set cache
-		pluginQueryData.ConnectionManager.Cache.Set(cacheKey, matrix)
+		d.ConnectionCache.Set(ctx, cacheKey, matrix)
 		return matrix
 	}
 
@@ -101,6 +90,6 @@ func BuildRegionList(ctx context.Context, connection *plugin.Connection) []map[s
 	}
 
 	// set cache
-	pluginQueryData.ConnectionManager.Cache.Set(cacheKey, matrix)
+	d.ConnectionCache.Set(ctx, cacheKey, matrix)
 	return matrix
 }

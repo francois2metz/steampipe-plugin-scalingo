@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	scalingohttp "github.com/Scalingo/go-scalingo/v5/http"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
 	"gopkg.in/errgo.v1"
 )
 

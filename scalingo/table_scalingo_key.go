@@ -3,8 +3,8 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
 )
 
 func tableScalingoKey() *plugin.Table {
@@ -14,7 +14,7 @@ func tableScalingoKey() *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listKey,
 		},
-		GetMatrixItem: BuildRegionList,
+		GetMatrixItemFunc: BuildRegionList,
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the key."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Given name to the key."},

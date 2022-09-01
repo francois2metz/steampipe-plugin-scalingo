@@ -3,16 +3,16 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
 )
 
 func tableScalingoEventType() *plugin.Table {
 	return &plugin.Table{
-		Name:          "scalingo_event_type",
-		Description:   "The list of event types to get IDs to create Notifiers.",
-		GetMatrixItem: BuildRegionList,
+		Name:              "scalingo_event_type",
+		Description:       "The list of event types to get IDs to create Notifiers.",
+		GetMatrixItemFunc: BuildRegionList,
 		List: &plugin.ListConfig{
 			Hydrate: listEventType,
 		},

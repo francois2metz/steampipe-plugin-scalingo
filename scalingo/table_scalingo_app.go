@@ -3,9 +3,9 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v3/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v3/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
 )
 
 func tableScalingoApp() *plugin.Table {
@@ -19,7 +19,7 @@ func tableScalingoApp() *plugin.Table {
 			KeyColumns: plugin.SingleColumn("name"),
 			Hydrate:    getApp,
 		},
-		GetMatrixItem: BuildRegionList,
+		GetMatrixItemFunc: BuildRegionList,
 		Columns: []*plugin.Column{
 			{Name: "id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Id"), Description: "Unique id of the application."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Name of the application."},
