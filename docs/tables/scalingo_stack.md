@@ -26,3 +26,15 @@ from
 where
   "default";
 ```
+
+### Get deprecated stacks
+
+```sql
+select
+  id,
+  name
+from
+  scalingo_stack
+where
+  deprecated_at < now();
+```
