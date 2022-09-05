@@ -1,3 +1,9 @@
+## v0.8.1 [2022-09-01]
+
+_What's new?_
+
+- Update steampipe sdk to 4.1.6
+
 ## v0.8.0 [2022-09-01]
 
 _What's new?_
