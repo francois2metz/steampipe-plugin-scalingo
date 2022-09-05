@@ -5,6 +5,7 @@ import (
 
 	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
 )
 
 func tableScalingoStack() *plugin.Table {
@@ -21,6 +22,7 @@ func tableScalingoStack() *plugin.Table {
 			{Name: "default", Type: proto.ColumnType_BOOL, Description: "Is this the default stack for new app."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the stack."},
 			{Name: "description", Type: proto.ColumnType_STRING, Description: "Human readable description of the stack."},
+			{Name: "deprecated_at", Type: proto.ColumnType_TIMESTAMP, Description: "Deprecation date of the stack.", Transform: transform.FromField("DeprecatedAt.Time").NullIfZero()},
 		},
 	}
 }
