@@ -1,4 +1,10 @@
-## v0.8.1 [2022-09-01]
+## v0.8.2 [2022-09-05]
+
+_What's new?_
+
+- Add `deprecated_at` column to the `scalingo_stack` table
+
+## v0.8.1 [2022-09-05]
 
 _What's new?_
 
