@@ -40,8 +40,8 @@ github.com/PuerkitoBio/purell v1.0.0/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbt
 github.com/PuerkitoBio/purell v1.1.1/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbtSwDGJws/X0=
 github.com/PuerkitoBio/urlesc v0.0.0-20160726150825-5bd2802263f2/go.mod h1:uGdkoq3SwY9Y+13GIhn11/XLaGBb4BfwItxLd5jeuXE=
 github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578/go.mod h1:uGdkoq3SwY9Y+13GIhn11/XLaGBb4BfwItxLd5jeuXE=
-github.com/Scalingo/go-scalingo/v5 v5.1.0 h1:NoPimHk7VGBChig67a8CpOBbMXwAsy206aqnO3IMoes=
-github.com/Scalingo/go-scalingo/v5 v5.1.0/go.mod h1:b/SeZwa10u6/CpB6WmxeToZ5FES8N/o83YpHBGLDvQ8=
+github.com/Scalingo/go-scalingo/v5 v5.2.0 h1:UHcVux2lEZ+rf3EYxr2cWehHoXcS6sseWLxi1/VaYz8=
+github.com/Scalingo/go-scalingo/v5 v5.2.0/go.mod h1:b/SeZwa10u6/CpB6WmxeToZ5FES8N/o83YpHBGLDvQ8=
 github.com/XiaoMi/pegasus-go-client v0.0.0-20210427083443-f3b6b08bc4c2 h1:pami0oPhVosjOu/qRHepRmdjD6hGILF7DBr+qQZeP10=
 github.com/XiaoMi/pegasus-go-client v0.0.0-20210427083443-f3b6b08bc4c2/go.mod h1:jNIx5ykW1MroBuaTja9+VpglmaJOUzezumfhLlER3oY=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d h1:licZJFw2RwpHMqeKTCYkitsPqHNxTmd4SNR5r94FGM8=
