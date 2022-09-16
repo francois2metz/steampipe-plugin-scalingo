@@ -24,10 +24,14 @@ func tableScalingoScmIntegration() *plugin.Table {
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the SCM integration."},
 			{Name: "scm_type", Type: proto.ColumnType_STRING, Transform: transform.FromField("SCMType"), Description: "SCM type (github, gitlab, github-enterprise or gitlab-self-hosted)"},
 			{Name: "url", Type: proto.ColumnType_STRING, Description: "URL where the SCM platform is hosted"},
-			{Name: "uid", Type: proto.ColumnType_STRING, Transform: transform.FromField("Uid"), Description: "User ID provided by the SCM platform."},
+			{Name: "uid", Type: proto.ColumnType_STRING, Description: "User ID provided by the SCM platform."},
 			{Name: "username", Type: proto.ColumnType_STRING, Description: "Username provided by the SCM platform."},
 			{Name: "avatar_url", Type: proto.ColumnType_STRING, Description: "User avatar URL provided by the SCM platform."},
 			{Name: "profile_url", Type: proto.ColumnType_STRING, Description: "User profile URL provided by the SCM platform."},
+			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "creation date of the SCM integration."},
+			{Name: "owner_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.ID"), Description: "Unique id of the owner."},
+			{Name: "owner_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.Username"), Description: "Username of the owner."},
+			{Name: "owner_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.Email"), Description: "Email of the owner."},
 		},
 	}
 }
