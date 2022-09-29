@@ -2,6 +2,7 @@ package scalingo
 
 import (
 	"context"
+	"time"
 
 	"github.com/Scalingo/go-scalingo/v6"
 	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
@@ -25,6 +26,7 @@ func tableScalingoInvoice() *plugin.Table {
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the invoice."},
 			{Name: "total_price", Type: proto.ColumnType_INT, Description: "price of this invoice (cents)."},
 			{Name: "total_price_with_vat", Type: proto.ColumnType_INT, Description: "Price of this invoice including VAT (cents)."},
+			{Name: "billing_month", Type: proto.ColumnType_TIMESTAMP, Description: "This invoice is related to this month.", Transform: transform.FromP(toTime, nil)},
 			{Name: "pdf_url", Type: proto.ColumnType_STRING, Description: "URL to download the PDF invoice."},
 			{Name: "invoice_number", Type: proto.ColumnType_STRING, Description: "The invoice number."},
 			{Name: "state", Type: proto.ColumnType_STRING, Description: "The state of this invoice (new, paid or failed)."},
@@ -82,4 +84,9 @@ func getInvoice(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData)
 		return nil, err
 	}
 	return result, nil
+}
+
+func toTime(ctx context.Context, d *transform.TransformData) (interface{}, error) {
+	invoice := d.HydrateItem.(*scalingo.Invoice)
+	return time.Time(invoice.BillingMonth), nil
 }
