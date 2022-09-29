@@ -29,6 +29,7 @@ func tableScalingoScmRepoLink() *plugin.Table {
 			{Name: "linker_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.Username"), Description: "Username of the user that linked the repository."},
 			{Name: "linker_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.Email"), Description: "Email of the user that linked the repository."},
 			{Name: "linker_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Linker.ID"), Description: "ID of the user that linked the repository."},
+			{Name: "url", Type: proto.ColumnType_STRING, Description: "URL of the scm type."},
 			{Name: "owner", Type: proto.ColumnType_STRING, Description: "Repository owner name."},
 			{Name: "repo", Type: proto.ColumnType_STRING, Description: "Repository name."},
 			{Name: "branch", Type: proto.ColumnType_STRING, Description: "The branch used for auto deployment."},
