@@ -5,7 +5,7 @@ import (
 	"gopkg.in/errgo.v1"
 	"regexp"
 
-	"github.com/Scalingo/go-scalingo/v5"
+	"github.com/Scalingo/go-scalingo/v6"
 	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
@@ -70,8 +70,8 @@ func featureValueToBool(ctx context.Context, d *transform.TransformData) (interf
 		return false, nil
 	}
 	for i := range dbInfo.Features {
-		if dbInfo.Features[i]["name"] == param {
-			return dbInfo.Features[i]["status"] == "ACTIVATED", nil
+		if dbInfo.Features[i].Name == param {
+			return dbInfo.Features[i].Status == "ACTIVATED", nil
 		}
 	}
 	return false, nil

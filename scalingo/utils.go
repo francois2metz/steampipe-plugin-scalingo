@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Scalingo/go-scalingo/v5"
+	"github.com/Scalingo/go-scalingo/v6"
 	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
 )
 
