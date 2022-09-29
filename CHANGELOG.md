@@ -1,3 +1,16 @@
+## v0.9.0 [2022-09-29]
+
+_What's new?_
+
+- Update steampipe sdk to 4.1.7
+- Update go-scalingo to v6
+- Add `scalingo_invoice` table
+- Add `created_at`, `updated_at` and `metadata` to the `scalingo_alert` table
+- Add `created_at`, `owner_id`, `owner_username` and `owner_email` to the `scalingo_scm_integration` table
+- Add `provider_hds_available`, `provider_short_description`, `provider_description`, `plan_on_demand`, `plan_disabled`, `plan_disabled_alternative_plan_id` and `plan_hds_available` to the `scalingo_addon` table
+- Remove `plan_logo_url` of the `scalingo_addon` table
+- Add `url` to the `scalingo_scm_repo_link` table
+
 ## v0.8.2 [2022-09-05]
 
 _What's new?_
