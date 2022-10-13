@@ -11,7 +11,7 @@ import (
 func tableScalingoAutoscaler() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_autoscaler",
-		Description: "",
+		Description: "An autoscaler will increase or decrease the number of containers given a specific metric.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.SingleColumn("app_name"),
 			Hydrate:    listAutoscaler,
