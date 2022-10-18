@@ -1,3 +1,10 @@
+## v0.10.0 [2022-10-18]
+
+_What's new?_
+
+- Add `type_data` to the `scalingo_alert` table
+- Fix the description to the `scalingo_autoscaler`
+
 ## v0.9.0 [2022-09-29]
 
 _What's new?_
@@ -52,7 +59,7 @@ _What's new?_
 - Fix the scalingo_database_type_version name and error
 - Add some examples on scalingo_alert
 - Comment the scalingo token on the default config
-  
+
 ## v0.6.0 [2022-07-24]
 
 _What's new?_
