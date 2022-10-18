@@ -28,6 +28,7 @@ func tableScalingoNotifier() *plugin.Table {
 			{Name: "send_all_events", Type: proto.ColumnType_BOOL, Description: "Should the notifier accept all events."},
 			{Name: "send_all_alerts", Type: proto.ColumnType_BOOL, Description: "Should the notifier accept all alerts."},
 			{Name: "selected_event_ids", Type: proto.ColumnType_JSON, Description: "List of events accepted by this notifier.", Transform: transform.FromField("SelectedEventIDs")},
+			{Name: "type_data", Type: proto.ColumnType_JSON, Description: "Notification platform dependant additional data"},
 			{Name: "platform_id", Type: proto.ColumnType_STRING, Description: "Notification platform used by this notifer."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Date of creation of the notifier."},
 			{Name: "updated_at", Type: proto.ColumnType_TIMESTAMP, Description: "When was the notifier updated."},
