@@ -38,7 +38,9 @@ func tableScalingoApp() *plugin.Table {
 			{Name: "router_logs", Type: proto.ColumnType_BOOL, Description: "Activation of the router logs in your app logs."},
 			{Name: "last_deployed_at", Type: proto.ColumnType_TIMESTAMP, Description: "Date of the last deployment attempt."},
 			{Name: "last_deployed_by", Type: proto.ColumnType_STRING, Description: "User who attempted the last deployment."},
-			{Name: "stack_id", Type: proto.ColumnType_STRING, Description: "Id of the stack used."},
+			{Name: "stack_id", Type: proto.ColumnType_STRING, Description: "ID of the stack used."},
+			{Name: "flags", Type: proto.ColumnType_JSON, Description: "List of flags associated to the app."},
+			{Name: "limits", Type: proto.ColumnType_JSON, Description: "List of limits associated to the app."},
 		},
 	}
 }
