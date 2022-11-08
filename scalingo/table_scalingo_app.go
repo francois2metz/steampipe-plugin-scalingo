@@ -41,6 +41,9 @@ func tableScalingoApp() *plugin.Table {
 			{Name: "stack_id", Type: proto.ColumnType_STRING, Description: "ID of the stack used."},
 			{Name: "flags", Type: proto.ColumnType_JSON, Description: "List of flags associated to the app."},
 			{Name: "limits", Type: proto.ColumnType_JSON, Description: "List of limits associated to the app."},
+			{Name: "data_access_consent_user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("DataAccessConsent.UserID"), Description: "Unique ID of the user who allowed data operators to inspect the application."},
+			{Name: "data_access_consent_containers_until", Type: proto.ColumnType_TIMESTAMP, Transform: transform.FromField("DataAccessConsent.ContainersUntil"), Description: "End date when data operators can inspect containers."},
+			{Name: "data_access_consent_databases_until", Type: proto.ColumnType_TIMESTAMP, Transform: transform.FromField("DataAccessConsent.DatabasesUntil"), Description: "End data when data operator can inspect databases."},
 		},
 	}
 }
