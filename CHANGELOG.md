@@ -1,3 +1,10 @@
+## v0.11.0 [2022-11-10]
+
+_What's new?_
+
+- Add `flags`, `limits` and `data_access_consent_*` columns to the `scalingo_app` table
+- Update steampipe sdk to 4.1.8
+
 ## v0.10.0 [2022-10-18]
 
 _What's new?_
