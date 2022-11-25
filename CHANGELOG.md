@@ -1,3 +1,11 @@
+## v0.12.0 [2022-11-25]
+
+_What's new?_
+
+- Query all regions on `scalingo_stack` table
+- Add a column `region` on `scalingo_stack` table
+- Update go-scalingo to v6.1
+
 ## v0.11.0 [2022-11-10]
 
 _What's new?_
