@@ -15,7 +15,10 @@ func tableScalingoStack() *plugin.Table {
 		List: &plugin.ListConfig{
 			Hydrate: listStack,
 		},
+		GetMatrixItemFunc: BuildRegionList,
 		Columns: []*plugin.Column{
+			{Name: "region", Type: proto.ColumnType_STRING, Transform: transform.FromMatrixItem(matrixKeyRegion), Description: "The region associated to this stack."},
+
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID of the stack."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Stack display name."},
 			{Name: "base_image", Type: proto.ColumnType_STRING, Description: "Docker image used to build your app."},
