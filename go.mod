@@ -3,7 +3,7 @@ module github.com/francois2metz/steampipe-plugin-scalingo
 go 1.19
 
 require (
-	github.com/Scalingo/go-scalingo/v6 v6.0.1
+	github.com/Scalingo/go-scalingo/v6 v6.1.0
 	github.com/turbot/steampipe-plugin-sdk/v4 v4.1.8
 	gopkg.in/errgo.v1 v1.0.1
 )
@@ -29,7 +29,7 @@ require (
 	github.com/go-logr/logr v1.2.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-redis/redis/v8 v8.11.5 // indirect
-	github.com/golang-jwt/jwt/v4 v4.4.2 // indirect
+	github.com/golang-jwt/jwt/v4 v4.4.3 // indirect
 	github.com/golang/glog v1.0.0 // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
