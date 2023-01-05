@@ -3,9 +3,9 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableScalingoAutoscaler() *plugin.Table {
@@ -41,7 +41,7 @@ func listAutoscaler(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 		plugin.Logger(ctx).Error("scalingo_autoscaler.listAutoscaler", "connection_error", err)
 		return nil, err
 	}
-	appName := d.KeyColumnQuals["app_name"].GetStringValue()
+	appName := d.EqualsQuals["app_name"].GetStringValue()
 
 	autoscalers, err := client.AutoscalersList(ctx, appName)
 	if err != nil {
@@ -60,7 +60,7 @@ func getAutoscaler(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateDa
 		plugin.Logger(ctx).Error("scalingo_autoscaler.getAutoscaler", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 
 	id := quals["id"].GetStringValue()
 	appName := quals["app_name"].GetStringValue()

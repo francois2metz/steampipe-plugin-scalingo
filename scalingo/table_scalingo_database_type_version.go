@@ -3,9 +3,9 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableScalingoDatabaseTypeVersion() *plugin.Table {
@@ -50,9 +50,9 @@ func getDatabaseTypeVersion(ctx context.Context, d *plugin.QueryData, _ *plugin.
 		plugin.Logger(ctx).Error("scalingo_database_type_version.getDatabaseTypeVersion", "connection_error", err)
 		return nil, err
 	}
-	appName := d.KeyColumnQuals["app_name"].GetStringValue()
-	addon := d.KeyColumnQuals["addon_id"].GetStringValue()
-	id := d.KeyColumnQuals["id"].GetStringValue()
+	appName := d.EqualsQuals["app_name"].GetStringValue()
+	addon := d.EqualsQuals["addon_id"].GetStringValue()
+	id := d.EqualsQuals["id"].GetStringValue()
 
 	dbVersion, err := client.DatabaseTypeVersion(ctx, appName, addon, id)
 	if err != nil {

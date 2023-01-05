@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/Scalingo/go-scalingo/v6"
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableScalingoUserEvent() *plugin.Table {
@@ -54,7 +54,7 @@ func listUserEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 			break
 		}
 		opts.Page = pagination.NextPage
-		if d.QueryStatus.RowsRemaining(ctx) <= 0 {
+		if d.RowsRemaining(ctx) <= 0 {
 			break
 		}
 	}

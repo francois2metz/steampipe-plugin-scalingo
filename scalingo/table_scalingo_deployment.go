@@ -4,9 +4,9 @@ import (
 	"context"
 
 	"github.com/Scalingo/go-scalingo/v6"
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableScalingoDeployment() *plugin.Table {
@@ -46,7 +46,7 @@ func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 		plugin.Logger(ctx).Error("scalingo_deployment.listDeployment", "connection_error", err)
 		return nil, err
 	}
-	appName := d.KeyColumnQuals["app_name"].GetStringValue()
+	appName := d.EqualsQuals["app_name"].GetStringValue()
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
 
 	for {
@@ -72,7 +72,7 @@ func getDeployment(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateDa
 		plugin.Logger(ctx).Error("scalingo_deployment.getDeployment", "connection_error", err)
 		return nil, err
 	}
-	quals := d.KeyColumnQuals
+	quals := d.EqualsQuals
 
 	id := quals["id"].GetStringValue()
 	appName := quals["app_name"].GetStringValue()

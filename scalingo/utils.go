@@ -7,14 +7,14 @@ import (
 	"os"
 
 	"github.com/Scalingo/go-scalingo/v6"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
 const matrixKeyRegion = "region"
 const defaultScalingoRegion = "osc-fr1"
 
 func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error) {
-	region := d.KeyColumnQualString(matrixKeyRegion)
+	region := d. EqualsQualString(matrixKeyRegion)
 	if region == "" {
 		region = defaultScalingoRegion
 	}

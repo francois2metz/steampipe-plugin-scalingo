@@ -3,9 +3,9 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableScalingoContainerType() *plugin.Table {
@@ -35,7 +35,7 @@ func listContainerType(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 		plugin.Logger(ctx).Error("scalingo_container_type.listContainerType", "connection_error", err)
 		return nil, err
 	}
-	appName := d.KeyColumnQuals["app_name"].GetStringValue()
+	appName := d.EqualsQuals["app_name"].GetStringValue()
 
 	containers, err := client.AppsContainerTypes(ctx, appName)
 	if err != nil {

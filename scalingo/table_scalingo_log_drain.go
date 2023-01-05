@@ -3,9 +3,9 @@ package scalingo
 import (
 	"context"
 
-	"github.com/turbot/steampipe-plugin-sdk/v4/grpc/proto"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v4/plugin/transform"
+	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableScalingoLogDrain() *plugin.Table {
@@ -32,7 +32,7 @@ func listLogDrain(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 		plugin.Logger(ctx).Error("scalingo_log_drain.listLogDrain", "connection_error", err)
 		return nil, err
 	}
-	appName := d.KeyColumnQuals["app_name"].GetStringValue()
+	appName := d.EqualsQuals["app_name"].GetStringValue()
 
 	logDrains, err := client.LogDrainsList(ctx, appName)
 	if err != nil {
