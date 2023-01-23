@@ -29,5 +29,5 @@ join
 on
   a.name = e.app_name
 where
-  e.value = 'my variable value'
+  e.value = 'my variable value';
 ```
