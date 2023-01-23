@@ -28,5 +28,5 @@ from
 inner join
   scalingo_app as a
 on
-  a.name = c.app_name
+  a.name = c.app_name;
 ```

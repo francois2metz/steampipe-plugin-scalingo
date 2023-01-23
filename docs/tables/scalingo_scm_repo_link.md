@@ -15,7 +15,7 @@ select
   repo,
   branch
 from
-  scalingo_scm_repo_link
+  scalingo_scm_repo_link;
 ```
 
 ### Get scm integration of an app

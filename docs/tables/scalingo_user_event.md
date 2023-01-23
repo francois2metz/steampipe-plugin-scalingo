@@ -14,5 +14,5 @@ select
   type,
   user_username
 from
-  scalingo_user_event
+  scalingo_user_event;
 ```

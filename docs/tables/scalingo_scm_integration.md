@@ -11,7 +11,7 @@ select
   scm_type
   username
 from
-  scalingo_scm_integration
+  scalingo_scm_integration;
 ```
 
 ### List scm integrations from GitHub
@@ -22,5 +22,5 @@ select
 from
   scalingo_scm_integration
 where
-  scm_type='github'
+  scm_type='github';
 ```

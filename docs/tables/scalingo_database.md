@@ -14,7 +14,7 @@ select
 from
   scalingo_database
 where
-  app_name='caresteouvert-api' and addon_id='ad-0c33a92f-000-000-000-0000000'
+  app_name='caresteouvert-api' and addon_id='ad-0c33a92f-000-000-000-0000000';
 ```
 
 ### List database from all addons of an application
@@ -31,5 +31,5 @@ inner join
 on
   ad.id = db.addon_id and ad.app_name = db.app_name
 where
-  ad.app_name='caresteouvert-api'
+  ad.app_name='caresteouvert-api';
 ```
