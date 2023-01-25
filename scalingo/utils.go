@@ -14,7 +14,7 @@ const matrixKeyRegion = "region"
 const defaultScalingoRegion = "osc-fr1"
 
 func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error) {
-	region := d. EqualsQualString(matrixKeyRegion)
+	region := d.EqualsQualString(matrixKeyRegion)
 	if region == "" {
 		region = defaultScalingoRegion
 	}
@@ -39,6 +39,7 @@ func connect(ctx context.Context, d *plugin.QueryData) (*scalingo.Client, error)
 	config := scalingo.ClientConfig{
 		APIToken: token,
 		Region:   region,
+		Timeout:  -1,
 	}
 	client, err := scalingo.New(ctx, config)
 
