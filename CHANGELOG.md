@@ -1,10 +1,19 @@
+## v0.12.1 [2023-01-25]
+
+_What's new?_
+
+- Disable query timeout from the scalingo sdk
+- Update steampipe sdk to 5.1.2
+- Update go-scalingo to v6.1.0
+- Update doc
+
 ## v0.12.0 [2022-11-25]
 
 _What's new?_
 
 - Query all regions on `scalingo_stack` table
 - Add a column `region` on `scalingo_stack` table
-- Update go-scalingo to v6.1
+- Update go-scalingo to v6.0.1
 
 ## v0.11.0 [2022-11-10]
 
