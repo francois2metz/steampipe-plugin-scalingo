@@ -50,27 +50,41 @@ Download and install the latest Scalingo plugin:
 steampipe plugin install francois2metz/scalingo
 ```
 
+### Credentials
+
+| Item        | Description                                                                                                                                                                   |
+|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Credentials | Scalingo requires a [token](https://dashboard.scalingo.com/account/tokens).                                                                                                   |
+| Permissions | Tokens have the same permissions as the user who creates them.                                                                                                                |
+| Radius      | Each connection represents a single Scalingo account.                                                                                                                         |
+| Resolution  | 1. Credentials explicitly set in a steampipe config file (`~/.steampipe/config/scalingo.spc`)<br />2. Credentials specified in environment variables, e.g., `SCALINGO_TOKEN`. |
+
 ### Configuration
 
 Installing the latest scalingo plugin will create a config file (`~/.steampipe/config/scalingo.spc`) with a single connection named `scalingo`:
 
 ```hcl
 connection "scalingo" {
-  plugin = "francois2metz/scalingo"
+    plugin = "francois2metz/scalingo"
 
-  # API token for your scalingo instance (required).
-  # Get it on: https://dashboard.scalingo.com/account/tokens
-  # token = "tk-us-0000-0000-000000000-000000000000000"
+    # API token for your scalingo instance (required).
+    # Get it on: https://dashboard.scalingo.com/account/tokens
+    # This can also be set via the `SCALINGO_TOKEN` environment variable.
+    # token = "tk-us-0000-0000-000000000-000000000000000"
 
-  # Regions
-  # By default the scalingo plugin will only use the osc-fr1 region
-  # regions = ["osc-fr1", "osc-secnum-fr1"]
+    # Regions
+    # By default the scalingo plugin will only use the osc-fr1 region
+    # regions = ["osc-fr1", "osc-secnum-fr1"]
 }
 ```
 
-You can also use environment variables:
+### Credentials from Environment Variables
 
-- `SCALINGO_TOKEN` for the API token (ex: tk-us-00000-0000-000)
+The Scalingo plugin will use the following environment variables to obtain credentials **only if other argument (`token`) is not specified** in the connection:
+
+```sh
+export SCALINGO_TOKEN=tk-us-00000-0000-000
+```
 
 ## Get Involved
 

@@ -3,6 +3,7 @@ connection "scalingo" {
 
     # API token for your scalingo instance (required).
     # Get it on: https://dashboard.scalingo.com/account/tokens
+    # This can also be set via the `SCALINGO_TOKEN` environment variable.
     # token = "tk-us-0000-0000-000000000-000000000000000"
 
     # Regions
