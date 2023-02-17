@@ -33,6 +33,7 @@ func tableScalingoDeployment() *plugin.Table {
 			{Name: "image", Type: proto.ColumnType_STRING, Description: "Link to the resulting image."},
 			{Name: "registry", Type: proto.ColumnType_STRING, Description: "Name of the registry."},
 			{Name: "duration", Type: proto.ColumnType_INT, Description: "Duration of the deployment."},
+			{Name: "image_size", Type: proto.ColumnType_INT, Description: "Size of the deployment image (in bytes)."},
 			{Name: "user_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.ID"), Description: "Unique id of the user."},
 			{Name: "user_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Username"), Description: "Username of the user."},
 			{Name: "user_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("User.Email"), Description: "Email of the user."},
