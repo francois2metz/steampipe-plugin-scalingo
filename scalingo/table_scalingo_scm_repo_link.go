@@ -44,6 +44,7 @@ func tableScalingoScmRepoLink() *plugin.Table {
 			{Name: "hours_before_delete_on_close", Type: proto.ColumnType_INT, Description: "Time to wait before deleting a review app linked to a closed pull request (in hours)."},
 			{Name: "hours_before_delete_stale", Type: proto.ColumnType_INT, Description: "Time to wait for activity on the pull request before deleting the review app (in hours)"},
 			{Name: "last_auto_deploy_at", Type: proto.ColumnType_TIMESTAMP, Description: "Date of the last deployment triggered by this link"},
+			{Name: "automatic_creation_from_forks_allowed", Type: proto.ColumnType_BOOL, Description: "Create a review app from forks."},
 		},
 	}
 }
