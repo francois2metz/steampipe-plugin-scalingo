@@ -1,3 +1,13 @@
+## v0.13.0 [2023-02-17]
+
+_What's new?_
+
+- Add a column `automatic_creation_from_forks_allowed` to `scalingo_scm_repo_link` table
+- Add a column `image_size` to `scalingo_deployment` table
+- Add a column `hds_resource` to `scalingo_app` table
+- Update steampipe sdk to 5.1.4
+- Update go-scalingo to v6.3.0
+
 ## v0.12.1 [2023-01-25]
 
 _What's new?_
