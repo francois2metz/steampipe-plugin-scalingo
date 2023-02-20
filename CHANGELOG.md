@@ -1,3 +1,9 @@
+## v0.13.1 [2023-02-20]
+
+_What's new?_
+
+- Add columns `items` and `detailed_items` to `scalingo_invoice` table
+
 ## v0.13.0 [2023-02-17]
 
 _What's new?_
