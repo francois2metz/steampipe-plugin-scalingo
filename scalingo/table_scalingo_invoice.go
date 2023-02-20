@@ -31,6 +31,8 @@ func tableScalingoInvoice() *plugin.Table {
 			{Name: "invoice_number", Type: proto.ColumnType_STRING, Description: "The invoice number."},
 			{Name: "state", Type: proto.ColumnType_STRING, Description: "The state of this invoice (new, paid or failed)."},
 			{Name: "vat_rate", Type: proto.ColumnType_INT, Description: "The VAT rate applied to this invoice (in ‰)."},
+			{Name: "items", Type: proto.ColumnType_JSON, Description: "The list of items to pay."},
+			{Name: "detailed_items", Type: proto.ColumnType_JSON, Description: "Detail breakdown of the consumption."},
 		},
 	}
 }
