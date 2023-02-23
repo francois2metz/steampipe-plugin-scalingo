@@ -2,7 +2,7 @@
 
 List of backup of a database associated to an app.
 
-The `scalingo_database_backup` table can be used to query information about a backup of addon database, and you must specify which application and addon in the where or join clause using the `app_name`, the `addon_id`.
+The `scalingo_database_backup` table can be used to query information about a backup of addon database, and you must specify which application and addon in the where or join clause using the `app_name` and the `addon_id` columns.
 
 ## Examples
 
@@ -10,7 +10,9 @@ The `scalingo_database_backup` table can be used to query information about a ba
 
 ```sql
 select
-  *
+  created_at,
+  size,
+  status
 from
   scalingo_database_backup
 where
@@ -21,23 +23,25 @@ where
 
 ```sql
 with apps_and_addons as (
-select
+  select
     ad.id as addon_id,
     ad.app_name as app_name
-from
+  from
     scalingo_app app
-join
+  join
     scalingo_addon ad
-on
+  on
     ad.app_name = app.name
-order by
-    app.id
+  order by
+      app.id
 )
 select
-  *
-from 
+  created_at,
+  size,
+  status
+from
   scalingo_database_backup bk
-inner join
+join
   apps_and_addons db
 on
   db.addon_id = bk.addon_id and db.app_name = bk.app_name;
