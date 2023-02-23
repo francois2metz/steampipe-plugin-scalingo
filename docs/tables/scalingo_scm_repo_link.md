@@ -2,9 +2,21 @@
 
 Link your Scalingo application to an existing integration.
 
-The `scalingo_scm_repo_link` table can be used to query information about links to an scm and you must specify which application in the where or join clause using the `app_name` column.
+The `scalingo_scm_repo_link` table can be used to query information about links to an scm.
 
 ## Examples
+
+### List all scm repo links
+
+```sql
+select
+  scm_type
+  owner,
+  repo,
+  branch
+from
+  scalingo_scm_repo_link;
+```
 
 ### Get scm integration of an app
 
@@ -18,4 +30,18 @@ from
   scalingo_scm_repo_link
 where
   app_name='caresteouvert-api';
+```
+
+### Get all scm integration with auto deploy enabled
+
+```sql
+select
+  scm_type,
+  owner,
+  repo,
+  branch
+from
+  scalingo_scm_repo_link
+where
+  auto_deploy_enabled=true;
 ```
