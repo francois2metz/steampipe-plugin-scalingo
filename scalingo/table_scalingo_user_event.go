@@ -12,7 +12,7 @@ import (
 func tableScalingoUserEvent() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_user_event",
-		Description: "A user event is generated automatically according to your, other, or the plaform action ",
+		Description: "A user event is generated automatically according to your, other, or the plaform action .",
 		List: &plugin.ListConfig{
 			Hydrate: listUserEvent,
 		},
