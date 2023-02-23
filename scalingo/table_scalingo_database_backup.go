@@ -8,20 +8,20 @@ import (
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
-func tableScalingoBackup() *plugin.Table {
+func tableScalingoDatabaseBackup() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_database_backup",
-		Description: "Backup database",
+		Description: "Backup from a database.",
 		List: &plugin.ListConfig{
 			KeyColumns: plugin.AllColumns([]string{"app_name", "addon_id"}),
-			Hydrate:    listBackup,
+			Hydrate:    listDatabaseBackup,
 			IgnoreConfig: &plugin.IgnoreConfig{
 				ShouldIgnoreErrorFunc: isAddonTokenError,
 			},
 		},
 		Get: &plugin.GetConfig{
 			KeyColumns: plugin.AllColumns([]string{"app_name", "addon_id", "id"}),
-			Hydrate:    getBackup,
+			Hydrate:    getDatabaseBackup,
 		},
 		GetMatrixItemFunc: BuildRegionList,
 		Columns: []*plugin.Column{
@@ -36,11 +36,11 @@ func tableScalingoBackup() *plugin.Table {
 	}
 }
 
-func listBackup(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
+func listDatabaseBackup(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_database_backup.listBackup", "connection_error", err)
+		plugin.Logger(ctx).Error("scalingo_database_backup.listDatabaseBackup", "connection_error", err)
 		return nil, err
 	}
 	appName := d.EqualsQuals["app_name"].GetStringValue()
@@ -48,7 +48,7 @@ func listBackup(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 
 	backups, err := client.BackupList(ctx, appName, addon)
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_database_backup.listBackup", err)
+		plugin.Logger(ctx).Error("scalingo_database_backup.listDatabaseBackup", err)
 		return nil, err
 	}
 
@@ -58,11 +58,11 @@ func listBackup(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 	return nil, nil
 }
 
-func getBackup(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
+func getDatabaseBackup(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_database_backup.getBackup", "connection_error", err)
+		plugin.Logger(ctx).Error("scalingo_database_backup.getDatabaseBackup", "connection_error", err)
 		return nil, err
 	}
 	quals := d.EqualsQuals
@@ -72,9 +72,8 @@ func getBackup(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData) 
 	addon := quals["addon_id"].GetStringValue()
 
 	result, err := client.BackupShow(ctx, appName, addon, id)
-	plugin.Logger(ctx).Info("scalingo_database_backup.getBackup", result)
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_database_backup.getBackup", err)
+		plugin.Logger(ctx).Error("scalingo_database_backup.getDatabaseBackup", err)
 		return nil, err
 	}
 	return result, nil
