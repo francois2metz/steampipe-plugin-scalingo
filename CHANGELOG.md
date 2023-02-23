@@ -1,3 +1,9 @@
+## v0.14.0 [2023-02-22]
+
+_What's new?_
+
+- Add `scalingo_database_backup` table
+
 ## v0.13.1 [2023-02-20]
 
 _What's new?_
