@@ -22,14 +22,14 @@ func tableScalingoUserScmRepoLink() *plugin.Table {
 func listUserScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_user_scm_repo_link.listScmRepoLink", "connection_error", err)
+		plugin.Logger(ctx).Error("scalingo_user_scm_repo_link.listUserScmRepoLink", "connection_error", err)
 		return nil, err
 	}
 	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
 	for {
 		scmRepoLinks, pagination, err := client.SCMRepoLinkList(ctx, opts)
 		if err != nil {
-			plugin.Logger(ctx).Error("scalingo_user_scm_repo_link.listScmRepoLink", err)
+			plugin.Logger(ctx).Error("scalingo_user_scm_repo_link.listUserScmRepoLink", err)
 			return nil, err
 		}
 		for _, scmRepoLink := range scmRepoLinks {

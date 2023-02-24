@@ -55,14 +55,14 @@ func tableScalingoScmRepoLink() *plugin.Table {
 func listScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (interface{}, error) {
 	client, err := connect(ctx, d)
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_scm_repo_link.getScmRepoLink", "connection_error", err)
+		plugin.Logger(ctx).Error("scalingo_scm_repo_link.listScmRepoLink", "connection_error", err)
 		return nil, err
 	}
 	appName := d.EqualsQuals["app_name"].GetStringValue()
 
 	scmRepoLink, err := client.SCMRepoLinkShow(ctx, appName)
 	if err != nil {
-		plugin.Logger(ctx).Error("scalingo_scm_repo_link.getScmRepoLink", err)
+		plugin.Logger(ctx).Error("scalingo_scm_repo_link.listScmRepoLink", err)
 		return nil, err
 	}
 	d.StreamListItem(ctx, scmRepoLink)
