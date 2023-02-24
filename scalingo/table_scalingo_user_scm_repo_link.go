@@ -10,7 +10,7 @@ import (
 func tableScalingoUserScmRepoLink() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_user_scm_repo_link",
-		Description: "List all the SCM integrations of your account.",
+		Description: "List all the SCM links associated to your account.",
 		List: &plugin.ListConfig{
 			Hydrate: listUserScmRepoLink,
 		},

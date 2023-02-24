@@ -11,7 +11,7 @@ import (
 func tableScalingoScmIntegration() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_scm_integration",
-		Description: "A link between an application and an SCM.",
+		Description: "A link between your account and an SCM.",
 		List: &plugin.ListConfig{
 			Hydrate: listScmIntegration,
 		},
