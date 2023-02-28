@@ -33,7 +33,7 @@ with apps_and_addons as (
   on
     ad.app_name = app.name
   order by
-      app.id
+    app.id
 )
 select
   created_at,
