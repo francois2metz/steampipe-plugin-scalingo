@@ -19,7 +19,7 @@ where
   app_name='caresteouvert-api' and addon_id='ad-0c33a92f-000-000-000-0000000';
 ```
 
-### List backup from all addons of an application
+### List backups from all addons from all applications
 
 ```sql
 with apps_and_addons as (
@@ -36,9 +36,11 @@ with apps_and_addons as (
     app.id
 )
 select
-  created_at,
-  size,
-  status
+  db.app_name,
+  db.addon_id,
+  bk.created_at,
+  bk.size,
+  bk.status
 from
   scalingo_database_backup bk
 join
