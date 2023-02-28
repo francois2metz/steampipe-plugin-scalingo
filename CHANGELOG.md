@@ -1,3 +1,10 @@
+## v0.15.0 [2023-02-28]
+
+_What's new?_
+
+- **Breaking change**: The *scalingo_scm_repo_link* table has been splitted to not mix different behavior of the Scalingo API. The *scalingo_scm_repo_link* table is now only used to get the repo link from a specific application with the where clause `app_name`. The *scalingo_user_scm_repo_link* table now is used to list all repository links associated to your account and there is no where clause to use to make it works.
+- Update the *scalingo_database_backup* table doc.
+
 ## v0.14.0 [2023-02-23]
 
 _What's new?_
@@ -120,7 +127,7 @@ _What's new?_
 
 _What's new?_
 
-- **Breaking change**: The *scalingo_container* has been rename to *scalingo_container_type*
+- **Breaking change**: The *scalingo_container* table has been renamed to *scalingo_container_type*
 - Add *scalingo_container* table
 
 ## v0.4.0 [2022-05-31]
