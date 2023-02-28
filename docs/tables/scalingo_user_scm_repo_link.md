@@ -1,6 +1,6 @@
 # Table: scalingo_user_scm_repo_link
 
-List all the SCM integrations of your account.
+List all the SCM repository link of your account.
 
 ## Examples
 
@@ -16,7 +16,7 @@ from
   scalingo_scm_repo_link;
 ```
 
-### Get all scm integration from your account with auto deploy enabled
+### Get all scm repo link from your account with auto deploy enabled
 
 ```sql
 select
