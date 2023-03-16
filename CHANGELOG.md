@@ -1,3 +1,12 @@
+## v0.16.0 [2023-03-16]
+
+_What's new?_
+
+- Add columns `started_at` and `method` to `scalingo_database_backup` table
+- Add a column `stack_base_image` to `scalingo_deployment` table
+- Update steampipe sdk to 5.3.0
+- Update go-scalingo to v6.4.0
+
 ## v0.15.0 [2023-02-28]
 
 _What's new?_
