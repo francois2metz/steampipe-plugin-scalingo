@@ -29,9 +29,11 @@ func tableScalingoDatabaseBackup() *plugin.Table {
 			{Name: "addon_id", Type: proto.ColumnType_STRING, Transform: transform.FromQual("addon_id"), Description: "ID of the addon."},
 			{Name: "id", Type: proto.ColumnType_STRING, Description: "Unique ID identifying the backup."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the backup."},
+			{Name: "started_at", Type: proto.ColumnType_TIMESTAMP, Description: "Start date of the backup."},
 			{Name: "name", Type: proto.ColumnType_STRING, Description: "Name of backup."},
 			{Name: "size", Type: proto.ColumnType_INT, Description: "Size of backup."},
 			{Name: "status", Type: proto.ColumnType_STRING, Description: "Status of the current backup."},
+			{Name: "method", Type: proto.ColumnType_STRING, Description: "The method of the backup (periodic or manual)."},
 		},
 	}
 }
