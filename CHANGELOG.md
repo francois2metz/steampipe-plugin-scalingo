@@ -1,3 +1,9 @@
+## v0.16.1 [2023-04-19]
+
+_What's new?_
+
+- Update go-scalingo to v6.5.0
+
 ## v0.16.0 [2023-03-16]
 
 _What's new?_
