@@ -41,6 +41,9 @@ func tableScalingoDatabase() *plugin.Table {
 			{Name: "readable_version", Type: proto.ColumnType_STRING, Description: "Human readable database version"},
 			{Name: "periodic_backups_enabled", Type: proto.ColumnType_BOOL, Description: "True if periodic backups are enabled."},
 			{Name: "periodic_backups_scheduled_at", Type: proto.ColumnType_STRING, Description: "Hours of the day of the periodic backup (UTC)."},
+			{Name: "maintenance_window_weekday_utc", Type: proto.ColumnType_INT, Description: "Week day of the maintenance window.", Transform: transform.FromField("MaintenanceWindow.WeekdayUTC")},
+			{Name: "maintenance_window_starting_hour_utc", Type: proto.ColumnType_INT, Description: "Hour of the maintenance window.", Transform: transform.FromField("MaintenanceWindow.StartingHourUTC")},
+			{Name: "maintenance_window_duration_in_hour", Type: proto.ColumnType_INT, Description: "Duration in hour of the maintenance window.", Transform: transform.FromField("MaintenanceWindow.DurationInHour")},
 		},
 	}
 }
