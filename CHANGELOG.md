@@ -1,3 +1,11 @@
+## v0.17.0 [2023-07-18]
+
+_What's new?_
+
+- Update go-scalingo to v6.7.1
+- Update steampipe sdk to 5.5.0
+- Add `maintenance_window_*` columns to the database table
+
 ## v0.16.1 [2023-04-19]
 
 _What's new?_
