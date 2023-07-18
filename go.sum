@@ -192,8 +192,8 @@ github.com/NYTimes/gziphandler v0.0.0-20170623195520-56545f4a5d46/go.mod h1:3wb0
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/PuerkitoBio/purell v1.0.0/go.mod h1:c11w/QuzBsJSee3cPx9rAFu61PvFxuPbtSwDGJws/X0=
 github.com/PuerkitoBio/urlesc v0.0.0-20160726150825-5bd2802263f2/go.mod h1:uGdkoq3SwY9Y+13GIhn11/XLaGBb4BfwItxLd5jeuXE=
-github.com/Scalingo/go-scalingo/v6 v6.7.1 h1:Jn5uQVXrrig+tDCfCX3BhcA+zjqHjFvHgprQdo3aeBQ=
-github.com/Scalingo/go-scalingo/v6 v6.7.1/go.mod h1:h58MZqmLQauBsyFWL8UkQAOdmX4jRTz4jc9vsDr8bTA=
+github.com/Scalingo/go-scalingo/v6 v6.7.2 h1:CPuJNPE/TtI0AQB4RFgwS5t4ZWNGRTNwGDZQ1iznpcA=
+github.com/Scalingo/go-scalingo/v6 v6.7.2/go.mod h1:h58MZqmLQauBsyFWL8UkQAOdmX4jRTz4jc9vsDr8bTA=
 github.com/Scalingo/go-utils/errors/v2 v2.3.0 h1:9Ju4EmxXWoUsm0LOEWyEYUfT503l78YeQx0r6i1MdBI=
 github.com/Scalingo/go-utils/errors/v2 v2.3.0/go.mod h1:ovQmOjKaifysELQaMU21SAy8nqhZQ3xW/xrj0Ed9lWo=
 github.com/XiaoMi/pegasus-go-client v0.0.0-20210427083443-f3b6b08bc4c2 h1:pami0oPhVosjOu/qRHepRmdjD6hGILF7DBr+qQZeP10=
