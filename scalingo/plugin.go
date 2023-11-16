@@ -31,6 +31,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scalingo_database":              tableScalingoDatabase(),
 			"scalingo_database_backup":       tableScalingoDatabaseBackup(),
 			"scalingo_database_type_version": tableScalingoDatabaseTypeVersion(),
+			"scalingo_database_user":         tableScalingoDatabaseUser(),
 			"scalingo_deployment":            tableScalingoDeployment(),
 			"scalingo_domain":                tableScalingoDomain(),
 			"scalingo_environment":           tableScalingoEnvironment(),

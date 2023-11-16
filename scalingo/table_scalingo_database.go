@@ -2,8 +2,6 @@ package scalingo
 
 import (
 	"context"
-	"gopkg.in/errgo.v1"
-	"regexp"
 
 	"github.com/Scalingo/go-scalingo/v6"
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
@@ -160,17 +158,4 @@ func featureValueToBool(ctx context.Context, d *transform.TransformData) (interf
 		}
 	}
 	return false, nil
-}
-
-func isAddonTokenError(ctx context.Context, d *plugin.QueryData, h *plugin.HydrateData, err error) bool {
-	errgo, ok := err.(*errgo.Err)
-	if !ok {
-		return false
-	}
-	underlyingError := errgo.Underlying()
-	matched, _ := regexp.MatchString("fail to get addon token", underlyingError.Error())
-	if matched {
-		return true
-	}
-	return isNotFoundError(ctx, d, h, err)
 }
