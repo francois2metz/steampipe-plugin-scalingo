@@ -1,3 +1,12 @@
+## v0.19.0 [2023-11-17]
+
+_What's new?_
+
+- Add table `scalingo_database_user`
+- Add table `scalingo_database_maintenance`
+- Update go-scalingo to v6.7.4
+- Update steampipe sdk to 5.6.3
+
 ## v0.18.0 [2023-10-13]
 
 _What's new?_
