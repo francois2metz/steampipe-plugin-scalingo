@@ -30,6 +30,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scalingo_cron":                  tableScalingoCron(),
 			"scalingo_database":              tableScalingoDatabase(),
 			"scalingo_database_backup":       tableScalingoDatabaseBackup(),
+			"scalingo_database_maintenance":  tableScalingoDatabaseMaintenance(),
 			"scalingo_database_type_version": tableScalingoDatabaseTypeVersion(),
 			"scalingo_database_user":         tableScalingoDatabaseUser(),
 			"scalingo_deployment":            tableScalingoDeployment(),
