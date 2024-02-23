@@ -196,6 +196,8 @@ github.com/Scalingo/go-scalingo/v6 v6.7.4 h1:bO2POIVsaORI78JMZV9DYa17YVD5ppNBmUn
 github.com/Scalingo/go-scalingo/v6 v6.7.4/go.mod h1:i7SU6/4FF1PsZ9NjvJ5yVQlHmrYSBkoIP6O2X7LkIWI=
 github.com/Scalingo/go-scalingo/v6 v6.7.6 h1:VXpF0bULRe4r+dvoAPlnxs8OK4B2awPyIdywppBkaw8=
 github.com/Scalingo/go-scalingo/v6 v6.7.6/go.mod h1:GCQ0KuiYKWr1EXqYXolZ+j7R5+DVjKr2K2t7CrayzW0=
+github.com/Scalingo/go-scalingo/v6 v6.7.7 h1:pDjEtcl7z3oJ3t7s5TieWBbr5wlzF/J/7mIHzBCrRBY=
+github.com/Scalingo/go-scalingo/v6 v6.7.7/go.mod h1:GCQ0KuiYKWr1EXqYXolZ+j7R5+DVjKr2K2t7CrayzW0=
 github.com/Scalingo/go-utils/errors/v2 v2.3.0 h1:9Ju4EmxXWoUsm0LOEWyEYUfT503l78YeQx0r6i1MdBI=
 github.com/Scalingo/go-utils/errors/v2 v2.3.0/go.mod h1:ovQmOjKaifysELQaMU21SAy8nqhZQ3xW/xrj0Ed9lWo=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d h1:licZJFw2RwpHMqeKTCYkitsPqHNxTmd4SNR5r94FGM8=
