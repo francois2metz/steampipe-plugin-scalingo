@@ -6,6 +6,7 @@ require (
 	github.com/Scalingo/go-scalingo/v6 v6.7.7
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.8.0
 	gopkg.in/errgo.v1 v1.0.1
+	gopkg.in/errgo.v2 v2.1.0
 )
 
 require (
