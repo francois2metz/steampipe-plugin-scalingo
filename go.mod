@@ -6,7 +6,6 @@ toolchain go1.22.2
 
 require (
 	github.com/Scalingo/go-scalingo/v6 v6.7.7
-	github.com/Scalingo/go-scalingo/v7 v7.0.0
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.0
 	gopkg.in/errgo.v1 v1.0.1
 )
@@ -83,6 +82,7 @@ require (
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/sethvargo/go-retry v0.2.4 // indirect
 	github.com/stevenle/topsort v0.2.0 // indirect
+	github.com/stretchr/testify v1.9.0 // indirect
 	github.com/tkrajina/go-reflector v0.5.6 // indirect
 	github.com/turbot/go-kit v0.10.0-rc.0 // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
@@ -102,7 +102,7 @@ require (
 	golang.org/x/crypto v0.21.0 // indirect
 	golang.org/x/exp v0.0.0-20230522175609-2e198f4a06a1 // indirect
 	golang.org/x/mod v0.8.0 // indirect
-	golang.org/x/net v0.22.0 // indirect
+	golang.org/x/net v0.23.0 // indirect
 	golang.org/x/oauth2 v0.17.0 // indirect
 	golang.org/x/sync v0.6.0 // indirect
 	golang.org/x/sys v0.18.0 // indirect
