@@ -1,6 +1,8 @@
 module github.com/francois2metz/steampipe-plugin-scalingo
 
-go 1.21
+go 1.21.0
+
+toolchain go1.21.3
 
 require (
 	github.com/Scalingo/go-scalingo/v7 v7.0.0
