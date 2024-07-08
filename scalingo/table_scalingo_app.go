@@ -45,6 +45,7 @@ func tableScalingoApp() *plugin.Table {
 			{Name: "data_access_consent_containers_until", Type: proto.ColumnType_TIMESTAMP, Transform: transform.FromField("DataAccessConsent.ContainersUntil"), Description: "End date when data operators can inspect containers."},
 			{Name: "data_access_consent_databases_until", Type: proto.ColumnType_TIMESTAMP, Transform: transform.FromField("DataAccessConsent.DatabasesUntil"), Description: "End data when data operator can inspect databases."},
 			{Name: "hds_resource", Type: proto.ColumnType_BOOL, Transform: transform.FromField("HDSResource"), Description: "True if the app is HDS."},
+			{Name: "private_networks_ids", Type: proto.ColumnType_JSON, Transform: transform.FromField("PrivateNetworksIDs"), Description: "IDs of the private networks."},
 		},
 	}
 }
