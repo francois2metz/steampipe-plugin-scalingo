@@ -1,3 +1,11 @@
+## v0.20.0 [2024-07-08]
+
+_What's new?_
+
+- Add column `private_networks_ids` to the `scalingo_app` table
+- Update go-scalingo to v7
+- Update steampipe sdk to 5.10.1
+
 ## v0.19.0 [2023-11-17]
 
 _What's new?_
