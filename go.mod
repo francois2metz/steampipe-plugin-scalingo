@@ -6,7 +6,7 @@ toolchain go1.21.3
 
 require (
 	github.com/Scalingo/go-scalingo/v7 v7.0.1
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.1
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.2
 	gopkg.in/errgo.v1 v1.0.1
 )
 
