@@ -3,7 +3,7 @@ module github.com/francois2metz/steampipe-plugin-scalingo
 go 1.22.6
 
 require (
-	github.com/Scalingo/go-scalingo/v7 v7.0.1
+	github.com/Scalingo/go-scalingo/v7 v7.0.2
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.3
 	gopkg.in/errgo.v1 v1.0.1
 )
