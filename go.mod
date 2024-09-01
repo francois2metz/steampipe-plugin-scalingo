@@ -4,7 +4,7 @@ go 1.22.6
 
 require (
 	github.com/Scalingo/go-scalingo/v7 v7.0.2
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.3
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.10.4
 	gopkg.in/errgo.v1 v1.0.1
 )
 
