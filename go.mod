@@ -4,7 +4,7 @@ go 1.22.6
 
 require (
 	github.com/Scalingo/go-scalingo/v7 v7.0.2
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.11.1
+	github.com/turbot/steampipe-plugin-sdk/v5 v5.11.2
 	gopkg.in/errgo.v1 v1.0.1
 )
 
@@ -117,7 +117,7 @@ require (
 	github.com/tklauser/numcpus v0.3.0 // indirect
 	github.com/tkrajina/go-reflector v0.5.6 // indirect
 	github.com/turbot/go-kit v0.10.0-rc.0 // indirect
-	github.com/turbot/pipe-fittings v1.6.0 // indirect
+	github.com/turbot/pipe-fittings v1.6.8 // indirect
 	github.com/turbot/terraform-components v0.0.0-20231213122222-1f3526cab7a7 // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/yusufpapurcu/wmi v1.2.2 // indirect
