@@ -3,7 +3,7 @@ package scalingo
 import (
 	"context"
 
-	"github.com/Scalingo/go-scalingo/v7"
+	"github.com/Scalingo/go-scalingo/v8"
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
