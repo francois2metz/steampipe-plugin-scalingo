@@ -186,8 +186,8 @@ dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
-github.com/Scalingo/go-scalingo/v8 v8.0.0 h1:iaWtSN6bUiPm2lt/vF62e3FHiAwQoqHkk6jhIThtLlg=
-github.com/Scalingo/go-scalingo/v8 v8.0.0/go.mod h1:Hr4gcDqfOs8hRlYgY6AZ2GcwBQ/Q7DL8/60Bcp5XAzE=
+github.com/Scalingo/go-scalingo/v8 v8.2.0 h1:yZcSmScEFTLqhg6WdPRBh42ao8YFtKpOBOVDVtjzEhQ=
+github.com/Scalingo/go-scalingo/v8 v8.2.0/go.mod h1:yrP2S/xSekYqcNwBcOC6w+n1G+8n7OEkxDPXMyXFFts=
 github.com/Scalingo/go-utils/errors/v2 v2.4.0 h1:vKG0Js3kzWG7+03LEvH7j8fw+picEcRhbjMm3i9Xbb8=
 github.com/Scalingo/go-utils/errors/v2 v2.4.0/go.mod h1:WU6Kzi19AlZyUfoxFkdvEeYkIa0W0f172hKPqkOeIpU=
 github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d h1:licZJFw2RwpHMqeKTCYkitsPqHNxTmd4SNR5r94FGM8=
