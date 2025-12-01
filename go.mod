@@ -3,7 +3,7 @@ module github.com/francois2metz/steampipe-plugin-scalingo
 go 1.24.0
 
 require (
-	github.com/Scalingo/go-scalingo/v8 v8.7.0
+	github.com/Scalingo/go-scalingo/v8 v8.7.1
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.13.1
 	gopkg.in/errgo.v1 v1.0.1
 )
@@ -14,7 +14,7 @@ require (
 	cloud.google.com/go/iam v1.1.6 // indirect
 	cloud.google.com/go/storage v1.38.0 // indirect
 	github.com/Scalingo/go-utils/errors/v2 v2.5.1 // indirect
-	github.com/Scalingo/go-utils/pagination v1.1.1 // indirect
+	github.com/Scalingo/go-utils/pagination v1.1.2 // indirect
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/allegro/bigcache/v3 v3.1.0 // indirect
