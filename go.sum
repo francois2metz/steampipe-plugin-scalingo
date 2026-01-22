@@ -607,8 +607,8 @@ github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
 github.com/JohnCGriffin/overflow v0.0.0-20211019200055-46fa312c352c/go.mod h1:X0CRv0ky0k6m906ixxpzmDRLvX58TFUKS2eePweuyxk=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
-github.com/Scalingo/go-scalingo/v9 v9.0.3 h1:raWwlk8D1OStnX5IKapcP7VwqEcctNnD0pLDaRx8TyA=
-github.com/Scalingo/go-scalingo/v9 v9.0.3/go.mod h1:35IIuHmIYXHfwwRF1bik8ZJwkyIpsI7dmhqtWslzoYc=
+github.com/Scalingo/go-scalingo/v9 v9.1.0 h1:VyXg120FnHcgs9i305PC2RF3lEh37JmrEdZxy49g5kQ=
+github.com/Scalingo/go-scalingo/v9 v9.1.0/go.mod h1:35IIuHmIYXHfwwRF1bik8ZJwkyIpsI7dmhqtWslzoYc=
 github.com/Scalingo/go-utils/errors/v2 v2.5.1 h1:1tfJW6/ZxTgrRmFTlKQCOtArQquOW0/XdZQzx8wMHoM=
 github.com/Scalingo/go-utils/errors/v2 v2.5.1/go.mod h1:SbR1JuMtfAl+gpM7ahUW/c3Jm5MMzMAwJBk1pEHkVd8=
 github.com/Scalingo/go-utils/pagination v1.1.2 h1:DfHxWXK76F6+UyJqmJ/XIxTuwurMIJHRFfiejmPBC+8=
