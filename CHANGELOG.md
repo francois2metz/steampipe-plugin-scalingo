@@ -1,3 +1,11 @@
+## v0.22.0 [2026-03-03]
+
+_What's new?_
+
+- Fix the `field plan_disabled_alternative_plan_id` of the table `scalingo_addon` to type string.
+- Update go to 1.26
+- Update steampipe sdk to 5.14.0
+
 ## v0.21.0 [2025-03-01]
 
 _What's new?_
