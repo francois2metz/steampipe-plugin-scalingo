@@ -44,7 +44,7 @@ func tableScalingoAddon() *plugin.Table {
 			{Name: "plan_sku", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.SKU"), Description: "SKU of the plan."},
 			{Name: "plan_on_demand", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Plan.OnDemand"), Description: "Is this addon available only on demand."},
 			{Name: "plan_disabled", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Plan.Disabled"), Description: "Is this plan disabled."},
-			{Name: "plan_disabled_alternative_plan_id", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Plan.DisabledAlternativePlanID"), Description: "ID of other plan if this plan disabled."},
+			{Name: "plan_disabled_alternative_plan_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Plan.DisabledAlternativePlanID"), Description: "ID of other plan if this plan disabled."},
 			{Name: "plan_hds_available", Type: proto.ColumnType_BOOL, Transform: transform.FromField("Plan.HDSAvailable"), Description: "is this plan HDS compliant."},
 		},
 	}
