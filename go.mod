@@ -4,7 +4,6 @@ go 1.26.0
 
 require (
 	github.com/Scalingo/go-scalingo/v10 v10.0.0
-	github.com/Scalingo/go-scalingo/v9 v9.2.0
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.14.0
 	gopkg.in/errgo.v1 v1.0.1
 )
@@ -14,7 +13,7 @@ require (
 	cloud.google.com/go/compute/metadata v0.3.0 // indirect
 	cloud.google.com/go/iam v1.1.6 // indirect
 	cloud.google.com/go/storage v1.38.0 // indirect
-	github.com/Scalingo/go-utils/errors/v2 v2.5.1 // indirect
+	github.com/Scalingo/go-utils/errors/v3 v3.2.0 // indirect
 	github.com/Scalingo/go-utils/pagination v1.2.0 // indirect
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
@@ -41,7 +40,7 @@ require (
 	github.com/ghodss/yaml v1.0.0 // indirect
 	github.com/go-logr/logr v1.4.3 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
-	github.com/golang-jwt/jwt/v4 v4.5.2 // indirect
+	github.com/golang-jwt/jwt/v5 v5.3.1 // indirect
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.4 // indirect

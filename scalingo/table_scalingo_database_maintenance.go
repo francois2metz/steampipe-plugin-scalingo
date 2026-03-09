@@ -3,7 +3,7 @@ package scalingo
 import (
 	"context"
 
-	"github.com/Scalingo/go-scalingo/v9"
+	"github.com/Scalingo/go-utils/pagination"
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
@@ -76,7 +76,7 @@ func listDatabaseMaintenance(ctx context.Context, d *plugin.QueryData, _ *plugin
 	}
 	appName := d.EqualsQuals["app_name"].GetStringValue()
 	addon := d.EqualsQuals["addon_id"].GetStringValue()
-	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
+	opts := pagination.Request{Page: 1, PerPage: 50}
 
 	for {
 		maintenances, pagination, err := client.DatabaseListMaintenance(ctx, appName, addon, opts)

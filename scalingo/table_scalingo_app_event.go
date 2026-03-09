@@ -3,7 +3,7 @@ package scalingo
 import (
 	"context"
 
-	"github.com/Scalingo/go-scalingo/v9"
+	"github.com/Scalingo/go-utils/pagination"
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
@@ -39,7 +39,7 @@ func listAppEvent(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 		return nil, err
 	}
 	appName := d.EqualsQuals["app_name"].GetStringValue()
-	opts := scalingo.PaginationOpts{Page: 1, PerPage: 100}
+	opts := pagination.Request{Page: 1, PerPage: 100}
 
 	if d.QueryContext.Limit != nil && *d.QueryContext.Limit < int64(opts.PerPage) {
 		opts.PerPage = int(*d.QueryContext.Limit)
