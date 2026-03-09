@@ -3,7 +3,7 @@ package scalingo
 import (
 	"context"
 
-	"github.com/Scalingo/go-scalingo/v9"
+	"github.com/Scalingo/go-utils/pagination"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )
 
@@ -25,7 +25,7 @@ func listUserScmRepoLink(ctx context.Context, d *plugin.QueryData, _ *plugin.Hyd
 		plugin.Logger(ctx).Error("scalingo_user_scm_repo_link.listUserScmRepoLink", "connection_error", err)
 		return nil, err
 	}
-	opts := scalingo.PaginationOpts{Page: 1, PerPage: 50}
+	opts := pagination.Request{Page: 1, PerPage: 50}
 	for {
 		scmRepoLinks, pagination, err := client.SCMRepoLinkList(ctx, opts)
 		if err != nil {
