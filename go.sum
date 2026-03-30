@@ -609,6 +609,7 @@ github.com/JohnCGriffin/overflow v0.0.0-20211019200055-46fa312c352c/go.mod h1:X0
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/Scalingo/go-scalingo/v10 v10.0.0 h1:xUbb+MTkzdgWisXhw3MHa0nVSVuossNZJBjw8ak1AFc=
 github.com/Scalingo/go-scalingo/v10 v10.0.0/go.mod h1:d5J8wm6cO1bEycKuLXuWfGY99OhmYR3ATu7QRYvAEAk=
+github.com/Scalingo/go-scalingo/v11 v11.0.0/go.mod h1:SKmfy5pA4i9jb6Zxx5n2X9uh9Q7Hwkr1sCDICA/3Z4U=
 github.com/Scalingo/go-utils/errors/v3 v3.2.0 h1:Ks+v2oRwv3VZfe+xVB+kpfmZouXHVCPHHtwL5W60prc=
 github.com/Scalingo/go-utils/errors/v3 v3.2.0/go.mod h1:jVVNoOdYFjuNkR/BeEZWNWJVvu4jmyLY4udlsQQyBss=
 github.com/Scalingo/go-utils/pagination v1.2.0 h1:dTvce+thcZXH/S13HF5dxGNPCMdGALNsW6p2EYe2Pno=
