@@ -13,14 +13,12 @@ func isNotFoundError(ctx context.Context, d *plugin.QueryData, h *plugin.Hydrate
 	var requestFailed *scalingohttp.RequestFailedError
 	if errors.As(err, &requestFailed) {
 		errorsCode := []int{http.StatusNotFound, http.StatusUnauthorized}
-		result := false
 		for _, code := range errorsCode {
 			if code == requestFailed.Code {
-				result = true
-				break
+				return true
 			}
 		}
-		return result
+		return false
 	}
 
 	return false
