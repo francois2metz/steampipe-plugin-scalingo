@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/Scalingo/go-scalingo/v10"
+	"github.com/Scalingo/go-scalingo/v11"
 	"github.com/Scalingo/go-utils/pagination"
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
