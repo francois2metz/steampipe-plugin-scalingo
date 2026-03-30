@@ -11,7 +11,7 @@ import (
 func tableScalingoProject() *plugin.Table {
 	return &plugin.Table{
 		Name:        "scalingo_project",
-		Description: "",
+		Description: "A project regroup one or more apps",
 		List: &plugin.ListConfig{
 			Hydrate: listProject,
 		},
