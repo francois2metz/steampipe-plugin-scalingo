@@ -4,6 +4,7 @@ go 1.26.0
 
 require (
 	github.com/Scalingo/go-scalingo/v10 v10.0.0
+	github.com/Scalingo/go-utils/errors/v3 v3.2.0
 	github.com/Scalingo/go-utils/pagination v1.2.0
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.14.0
 	gopkg.in/errgo.v1 v1.0.1
@@ -14,7 +15,6 @@ require (
 	cloud.google.com/go/compute/metadata v0.9.0 // indirect
 	cloud.google.com/go/iam v1.1.6 // indirect
 	cloud.google.com/go/storage v1.38.0 // indirect
-	github.com/Scalingo/go-utils/errors/v3 v3.2.0 // indirect
 	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
 	github.com/allegro/bigcache/v3 v3.1.0 // indirect
