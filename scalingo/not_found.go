@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	scalingohttp "github.com/Scalingo/go-scalingo/v10/http"
+	scalingohttp "github.com/Scalingo/go-scalingo/v11/http"
 	"github.com/Scalingo/go-utils/errors/v3"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
 )

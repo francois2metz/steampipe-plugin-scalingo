@@ -3,7 +3,6 @@ module github.com/francois2metz/steampipe-plugin-scalingo
 go 1.26.0
 
 require (
-	github.com/Scalingo/go-scalingo/v10 v10.0.0
 	github.com/Scalingo/go-scalingo/v11 v11.0.0
 	github.com/Scalingo/go-utils/errors/v3 v3.2.0
 	github.com/Scalingo/go-utils/pagination v1.2.0
@@ -98,6 +97,7 @@ require (
 	go.opentelemetry.io/otel/sdk/metric v1.40.0 // indirect
 	go.opentelemetry.io/otel/trace v1.40.0 // indirect
 	go.opentelemetry.io/proto/otlp v1.2.0 // indirect
+	go.uber.org/mock v0.6.0 // indirect
 	golang.org/x/crypto v0.47.0 // indirect
 	golang.org/x/exp v0.0.0-20240719175910-8a7402abbf56 // indirect
 	golang.org/x/mod v0.32.0 // indirect
