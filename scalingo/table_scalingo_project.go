@@ -5,6 +5,7 @@ import (
 
 	"github.com/turbot/steampipe-plugin-sdk/v5/grpc/proto"
 	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/transform"
 )
 
 func tableScalingoProject() *plugin.Table {
@@ -25,6 +26,10 @@ func tableScalingoProject() *plugin.Table {
 			{Name: "default", Type: proto.ColumnType_BOOL, Description: "Is this the default project."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the project."},
 			{Name: "updated_at", Type: proto.ColumnType_TIMESTAMP, Description: "Last time the project has been updated."},
+			{Name: "owner_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.ID"), Description: "Unique id of the owner."},
+			{Name: "owner_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.Username"), Description: "Username of the owner."},
+			{Name: "owner_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.Email"), Description: "Email of the owner."},
+			{Name: "flags", Type: proto.ColumnType_JSON, Description: "List of flags associated to the project."},
 		},
 	}
 }
