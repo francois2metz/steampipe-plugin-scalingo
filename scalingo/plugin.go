@@ -43,6 +43,7 @@ func Plugin(ctx context.Context) *plugin.Plugin {
 			"scalingo_log_drain_addon":       tableScalingoLogDrainAddon(),
 			"scalingo_notification_platform": tableScalingoNotificationPlatform(),
 			"scalingo_notifier":              tableScalingoNotifier(),
+			"scalingo_project":               tableScalingoProject(),
 			"scalingo_region":                tableScalingoRegion(),
 			"scalingo_scm_integration":       tableScalingoScmIntegration(),
 			"scalingo_scm_repo_link":         tableScalingoScmRepoLink(),
