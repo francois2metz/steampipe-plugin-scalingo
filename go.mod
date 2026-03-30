@@ -7,7 +7,6 @@ require (
 	github.com/Scalingo/go-utils/errors/v3 v3.2.0
 	github.com/Scalingo/go-utils/pagination v1.2.0
 	github.com/turbot/steampipe-plugin-sdk/v5 v5.14.0
-	gopkg.in/errgo.v1 v1.0.1
 )
 
 require (
@@ -114,5 +113,6 @@ require (
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/grpc v1.79.3 // indirect
 	google.golang.org/protobuf v1.36.10 // indirect
+	gopkg.in/errgo.v1 v1.0.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
