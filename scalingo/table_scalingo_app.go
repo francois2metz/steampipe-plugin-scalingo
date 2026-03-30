@@ -28,6 +28,8 @@ func tableScalingoApp() *plugin.Table {
 			{Name: "owner_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.ID"), Description: "Unique id of the owner."},
 			{Name: "owner_username", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.Username"), Description: "Username of the owner."},
 			{Name: "owner_email", Type: proto.ColumnType_STRING, Transform: transform.FromField("Owner.Email"), Description: "Email of the owner."},
+			{Name: "project_id", Type: proto.ColumnType_STRING, Transform: transform.FromField("Project.ID"), Description: "Id of the parent project."},
+			{Name: "project_name", Type: proto.ColumnType_STRING, Transform: transform.FromField("Project.Name"), Description: "Name of the parent project."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the application."},
 			{Name: "updated_at", Type: proto.ColumnType_TIMESTAMP, Description: "Last time the application has been updated."},
 			{Name: "git_url", Type: proto.ColumnType_STRING, Description: "URL to the GIT remote to access your application."},
