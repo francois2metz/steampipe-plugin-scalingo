@@ -1,8 +1,17 @@
+## v1.0.0 [2026-03-30]
+
+_What's new?_
+
+- Add table `scalingo_database_project`
+- Add columns `project_id` and `project_name` to the `scalingo_app` table
+
+- Update go-scalingo to v11
+
 ## v0.22.0 [2026-03-03]
 
 _What's new?_
 
-- Fix the `field plan_disabled_alternative_plan_id` of the table `scalingo_addon` to type string.
+- Fix the column `plan_disabled_alternative_plan_id` of the table `scalingo_addon` to type string.
 - Update go to 1.26
 - Update steampipe sdk to 5.14.0
 
