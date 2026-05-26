@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/Scalingo/go-utils/pagination"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
 func tableScalingoUserScmRepoLink() *plugin.Table {

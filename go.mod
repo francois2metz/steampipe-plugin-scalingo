@@ -6,7 +6,6 @@ require (
 	github.com/Scalingo/go-scalingo/v11 v11.0.3
 	github.com/Scalingo/go-utils/errors/v3 v3.2.1
 	github.com/Scalingo/go-utils/pagination v1.2.0
-	github.com/turbot/steampipe-plugin-sdk/v5 v5.14.1
 	github.com/turbot/steampipe-plugin-sdk/v6 v6.0.0
 )
 
