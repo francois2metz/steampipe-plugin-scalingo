@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/Scalingo/go-scalingo/v11"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
 )
 
 const matrixKeyRegion = "region"

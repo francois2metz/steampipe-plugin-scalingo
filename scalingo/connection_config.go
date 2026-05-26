@@ -1,8 +1,8 @@
 package scalingo
 
 import (
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin"
-	"github.com/turbot/steampipe-plugin-sdk/v5/plugin/schema"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin"
+	"github.com/turbot/steampipe-plugin-sdk/v6/plugin/schema"
 )
 
 type scalingoConfig struct {
@@ -30,9 +30,9 @@ func ConfigInstance() interface{} {
 
 // GetConfig :: retrieve and cast connection config from query data
 func GetConfig(connection *plugin.Connection) scalingoConfig {
-	if connection == nil || connection.Config == nil {
+	if connection == nil || connection.GetConfig() == nil {
 		return scalingoConfig{}
 	}
-	config, _ := connection.Config.(scalingoConfig)
+	config, _ := connection.GetConfig().(scalingoConfig)
 	return config
 }
