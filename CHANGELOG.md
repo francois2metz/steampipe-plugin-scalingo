@@ -1,10 +1,16 @@
+## v1.1.0 [2026-06-23]
+
+_What's new?_
+
+- Respect the LIMIT clause on all tables
+- Update steampipe sdk to v6
+
 ## v1.0.0 [2026-03-30]
 
 _What's new?_
 
 - Add table `scalingo_database_project`
 - Add columns `project_id` and `project_name` to the `scalingo_app` table
-
 - Update go-scalingo to v11
 
 ## v0.22.0 [2026-03-03]
