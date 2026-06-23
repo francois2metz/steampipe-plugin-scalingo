@@ -40,6 +40,9 @@ func listRegion(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData)
 	}
 	for _, region := range regions {
 		d.StreamListItem(ctx, region)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 
 	return nil, nil

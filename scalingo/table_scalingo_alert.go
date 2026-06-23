@@ -55,6 +55,9 @@ func listAlert(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 	}
 	for _, alert := range alerts {
 		d.StreamListItem(ctx, alert)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

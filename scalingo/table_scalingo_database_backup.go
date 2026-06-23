@@ -56,6 +56,9 @@ func listDatabaseBackup(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydr
 
 	for _, backup := range backups {
 		d.StreamListItem(ctx, backup)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

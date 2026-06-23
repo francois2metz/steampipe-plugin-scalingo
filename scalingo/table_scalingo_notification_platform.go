@@ -42,6 +42,9 @@ func listNotificationPlatform(ctx context.Context, d *plugin.QueryData, _ *plugi
 	}
 	for _, notification_platform := range notification_platforms {
 		d.StreamListItem(ctx, notification_platform)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 
 	return nil, nil

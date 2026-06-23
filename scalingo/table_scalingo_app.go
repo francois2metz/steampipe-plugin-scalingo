@@ -65,6 +65,9 @@ func listApp(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 	}
 	for _, app := range apps {
 		d.StreamListItem(ctx, app)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

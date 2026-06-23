@@ -36,6 +36,9 @@ func listToken(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 	}
 	for _, token := range tokens {
 		d.StreamListItem(ctx, token)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 
 	return nil, nil

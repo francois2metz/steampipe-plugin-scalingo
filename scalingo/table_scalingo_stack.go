@@ -43,6 +43,9 @@ func listStack(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) 
 	}
 	for _, stack := range stacks {
 		d.StreamListItem(ctx, stack)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 
 	return nil, nil

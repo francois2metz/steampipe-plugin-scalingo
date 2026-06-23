@@ -41,6 +41,9 @@ func listEventType(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	}
 	for _, event_type := range event_types {
 		d.StreamListItem(ctx, event_type)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 
 	return nil, nil

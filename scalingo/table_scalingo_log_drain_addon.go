@@ -44,6 +44,9 @@ func listLogDrainAddon(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydra
 	}
 	for _, logDrain := range logDrains {
 		d.StreamListItem(ctx, logDrain)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

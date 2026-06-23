@@ -51,6 +51,9 @@ func listNotifier(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDat
 	}
 	for _, notifier := range notifiers {
 		d.StreamListItem(ctx, notifier)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

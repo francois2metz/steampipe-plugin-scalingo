@@ -42,6 +42,9 @@ func listEnvironment(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrate
 	}
 	for _, variable := range variables {
 		d.StreamListItem(ctx, variable)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

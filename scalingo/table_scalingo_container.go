@@ -55,6 +55,9 @@ func listContainer(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateDa
 	}
 	for _, container := range containers {
 		d.StreamListItem(ctx, container)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

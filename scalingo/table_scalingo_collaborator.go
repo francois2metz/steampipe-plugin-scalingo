@@ -45,6 +45,9 @@ func listCollaborator(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydrat
 	}
 	for _, collaborator := range collaborators {
 		d.StreamListItem(ctx, collaborator)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

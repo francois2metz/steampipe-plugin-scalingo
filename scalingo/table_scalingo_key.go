@@ -36,6 +36,9 @@ func listKey(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData) (i
 	}
 	for _, key := range keys {
 		d.StreamListItem(ctx, key)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 
 	return nil, nil

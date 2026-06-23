@@ -47,6 +47,9 @@ func listProject(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateData
 	}
 	for _, project := range projects {
 		d.StreamListItem(ctx, project)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }

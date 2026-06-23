@@ -50,6 +50,9 @@ func listScmIntegration(ctx context.Context, d *plugin.QueryData, _ *plugin.Hydr
 	}
 	for _, scmIntegration := range scmIntegrations {
 		d.StreamListItem(ctx, scmIntegration)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 
 	return nil, nil

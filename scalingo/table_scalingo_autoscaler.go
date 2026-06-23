@@ -50,6 +50,9 @@ func listAutoscaler(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 	}
 	for _, autoscaler := range autoscalers {
 		d.StreamListItem(ctx, autoscaler)
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }
