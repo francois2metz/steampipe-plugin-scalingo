@@ -64,6 +64,9 @@ func listDeployment(ctx context.Context, d *plugin.QueryData, _ *plugin.HydrateD
 			break
 		}
 		opts.Page = pagination.NextPage
+		if d.RowsRemaining(ctx) <= 0 {
+			break
+		}
 	}
 	return nil, nil
 }
