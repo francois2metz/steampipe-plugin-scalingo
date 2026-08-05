@@ -1,3 +1,9 @@
+## v1.1.1 [2026-08-05]
+
+_What's new?_
+
+- Update dependencies
+
 ## v1.1.0 [2026-06-23]
 
 _What's new?_
