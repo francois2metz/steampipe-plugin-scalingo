@@ -35,6 +35,7 @@ func tableScalingoAlert() *plugin.Table {
 			{Name: "remind_every", Type: proto.ColumnType_STRING, Description: "Send the alert at regular interval when activated."},
 			{Name: "created_at", Type: proto.ColumnType_TIMESTAMP, Description: "Creation date of the alert."},
 			{Name: "updated_at", Type: proto.ColumnType_TIMESTAMP, Description: "Last time the alert has been updated."},
+			{Name: "notifiers", Type: proto.ColumnType_JSON, Description: "Notifiers used by the alert."},
 			{Name: "metadata", Type: proto.ColumnType_JSON, Description: "Various data."},
 		},
 	}
