@@ -28,8 +28,8 @@ github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/cloudmock v0
 github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/cloudmock v0.57.0/go.mod h1:dzcEjy1WJ0Q4u9twNR3LcLhNoYMRCrMCMafpxa0TjPQ=
 github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.57.0 h1:RoO5+d7uCmDqovLrHCr2/BuViUXvdcrNxyNM1pN9dDQ=
 github.com/GoogleCloudPlatform/opentelemetry-operations-go/internal/resourcemapping v0.57.0/go.mod h1:YqwkQPrWSC7+byyc1VlKbWLBF5JsW5IoL6xUkemYSXk=
-github.com/Scalingo/go-scalingo/v11 v11.10.1 h1:Qav4Pu5kqgKfLH8OFLF7zzCFB0CNMleJAmayoV+gqVg=
-github.com/Scalingo/go-scalingo/v11 v11.10.1/go.mod h1:eWwajKddWEWZoGxHy1Tda/O8ZOkJSKA34RVSQq+3AJM=
+github.com/Scalingo/go-scalingo/v11 v11.11.0 h1:wllMYXLrW74+2CLXJVfPO9UVCQOVaWN4gfQPZlzUhkY=
+github.com/Scalingo/go-scalingo/v11 v11.11.0/go.mod h1:eWwajKddWEWZoGxHy1Tda/O8ZOkJSKA34RVSQq+3AJM=
 github.com/Scalingo/go-utils/errors/v3 v3.2.1 h1:2w3qUz6MxJa3aqx/biz2G3JquSKsFnfz/E7wrNf/LPc=
 github.com/Scalingo/go-utils/errors/v3 v3.2.1/go.mod h1:jVVNoOdYFjuNkR/BeEZWNWJVvu4jmyLY4udlsQQyBss=
 github.com/Scalingo/go-utils/pagination v1.2.0 h1:dTvce+thcZXH/S13HF5dxGNPCMdGALNsW6p2EYe2Pno=
